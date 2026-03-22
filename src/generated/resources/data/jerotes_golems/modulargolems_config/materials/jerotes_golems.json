@@ -1,0 +1,65 @@
+{
+  "ingredients": {
+    "jerotes_golems:meror": {
+      "item": "jerotesvillage:meror_metal_ingot"
+    },
+    "jerotes_golems:qoaiku": {
+      "item": "jerotesvillage:qoaiku_metal_ingot"
+    },
+    "jerotes_golems:refine_meror": {
+      "item": "jerotesvillage:refine_meror_metal_ingot"
+    },
+    "jerotes_golems:serpon_alloy": {
+      "item": "jerotesvillage:serpon_alloy_ingot"
+    },
+    "jerotes_golems:villager_metal": {
+      "item": "jerotesvillage:villager_metal_ingot"
+    }
+  },
+  "modifiers": {
+    "jerotes_golems:meror": {},
+    "jerotes_golems:qoaiku": {},
+    "jerotes_golems:refine_meror": {},
+    "jerotes_golems:serpon_alloy": {},
+    "jerotes_golems:villager_metal": {}
+  },
+  "repairIngredients": {
+    "jerotes_golems:meror": {
+      "item": "jerotesvillage:meror_metal_ingot"
+    },
+    "jerotes_golems:qoaiku": {
+      "item": "jerotesvillage:qoaiku_metal_ingot"
+    },
+    "jerotes_golems:refine_meror": {
+      "item": "jerotesvillage:refine_meror_metal_ingot"
+    },
+    "jerotes_golems:serpon_alloy": {
+      "item": "jerotesvillage:serpon_alloy_ingot"
+    },
+    "jerotes_golems:villager_metal": {
+      "item": "jerotesvillage:villager_metal_ingot"
+    }
+  },
+  "stats": {
+    "jerotes_golems:meror": {
+      "modulargolems:attack": 20.0,
+      "modulargolems:max_health": 200.0
+    },
+    "jerotes_golems:qoaiku": {
+      "modulargolems:attack": 20.0,
+      "modulargolems:max_health": 200.0
+    },
+    "jerotes_golems:refine_meror": {
+      "modulargolems:attack": 20.0,
+      "modulargolems:max_health": 200.0
+    },
+    "jerotes_golems:serpon_alloy": {
+      "modulargolems:attack": 20.0,
+      "modulargolems:max_health": 200.0
+    },
+    "jerotes_golems:villager_metal": {
+      "modulargolems:attack": 20.0,
+      "modulargolems:max_health": 200.0
+    }
+  }
+}

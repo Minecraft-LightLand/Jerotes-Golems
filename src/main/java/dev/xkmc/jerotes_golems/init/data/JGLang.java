@@ -1,6 +1,7 @@
 package dev.xkmc.jerotes_golems.init.data;
 
 import com.tterrag.registrate.providers.RegistrateLangProvider;
+import dev.xkmc.jerotes_golems.init.JerotesGolems;
 import dev.xkmc.modulargolems.init.ModularGolems;
 import net.minecraft.ChatFormatting;
 import net.minecraft.Util;
@@ -49,6 +50,11 @@ public enum JGLang {
 	}
 
 	public static void genLang(RegistrateLangProvider pvd) {
-
+		pvd.add("golem_material." + JerotesGolems.MODID + ".villager_metal", "Villager Metal");
+		pvd.add("golem_material." + JerotesGolems.MODID + ".qoaiku", "Qoaiku Metal");
+		pvd.add("golem_material." + JerotesGolems.MODID + ".serpon_alloy", "Serpon Alloy");
+		pvd.add("golem_material." + JerotesGolems.MODID + ".meror", "Meror Metal");
+		pvd.add("golem_material." + JerotesGolems.MODID + ".refine_meror", "Refined Meror Metal");
 	}
+
 }
