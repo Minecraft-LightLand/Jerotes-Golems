@@ -3,5 +3,13 @@
   "golem_material.jerotes_golems.qoaiku": "Qoaiku Metal",
   "golem_material.jerotes_golems.refine_meror": "Refined Meror Metal",
   "golem_material.jerotes_golems.serpon_alloy": "Serpon Alloy",
-  "golem_material.jerotes_golems.villager_metal": "Villager Metal"
+  "golem_material.jerotes_golems.villager_metal": "Villager Metal",
+  "modifier.jerotes_golems.fire_affinity": "Fire Affinity",
+  "modifier.jerotes_golems.fire_affinity.desc": "Absorb fire damage then get +%s natural healing and +%s%% damage bonus",
+  "modifier.jerotes_golems.meror_attack": "Meror Attack",
+  "modifier.jerotes_golems.meror_attack.desc": "Golem deal Meror damage",
+  "modifier.jerotes_golems.meror_defense": "Meror Defense",
+  "modifier.jerotes_golems.meror_defense.desc": "Reduce Non-Meror damage by %s%%",
+  "modifier.jerotes_golems.qoaiku_attack": "Qoaiku Attack",
+  "modifier.jerotes_golems.qoaiku_attack.desc": "Golem deal Drown damage if possible. Deal %s%% extra damage against mobs sensitive to water."
 }

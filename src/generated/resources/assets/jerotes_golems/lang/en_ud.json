@@ -3,5 +3,13 @@
   "golem_material.jerotes_golems.qoaiku": "ןɐʇǝW nʞıɐoὉ",
   "golem_material.jerotes_golems.refine_meror": "ןɐʇǝW ɹoɹǝW pǝuıɟǝᴚ",
   "golem_material.jerotes_golems.serpon_alloy": "ʎoןןⱯ uodɹǝS",
-  "golem_material.jerotes_golems.villager_metal": "ןɐʇǝW ɹǝbɐןןıΛ"
+  "golem_material.jerotes_golems.villager_metal": "ןɐʇǝW ɹǝbɐןןıΛ",
+  "modifier.jerotes_golems.fire_affinity": "ʎʇıuıɟɟⱯ ǝɹıℲ",
+  "modifier.jerotes_golems.fire_affinity.desc": "snuoq ǝbɐɯɐp %s%%+ puɐ buıןɐǝɥ ןɐɹnʇɐu %s+ ʇǝb uǝɥʇ ǝbɐɯɐp ǝɹıɟ qɹosqⱯ",
+  "modifier.jerotes_golems.meror_attack": "ʞɔɐʇʇⱯ ɹoɹǝW",
+  "modifier.jerotes_golems.meror_attack.desc": "ǝbɐɯɐp ɹoɹǝW ןɐǝp ɯǝןo⅁",
+  "modifier.jerotes_golems.meror_defense": "ǝsuǝɟǝᗡ ɹoɹǝW",
+  "modifier.jerotes_golems.meror_defense.desc": "%s%% ʎq ǝbɐɯɐp ɹoɹǝW-uoN ǝɔnpǝᴚ",
+  "modifier.jerotes_golems.qoaiku_attack": "ʞɔɐʇʇⱯ nʞıɐoὉ",
+  "modifier.jerotes_golems.qoaiku_attack.desc": "˙ɹǝʇɐʍ oʇ ǝʌıʇısuǝs sqoɯ ʇsuıɐbɐ ǝbɐɯɐp ɐɹʇxǝ %s%% ןɐǝᗡ ˙ǝןqıssod ɟı ǝbɐɯɐp uʍoɹᗡ ןɐǝp ɯǝןo⅁"
 }

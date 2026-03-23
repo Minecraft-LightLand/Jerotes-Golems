@@ -17,10 +17,26 @@
     }
   },
   "modifiers": {
-    "jerotes_golems:meror": {},
-    "jerotes_golems:qoaiku": {},
-    "jerotes_golems:refine_meror": {},
-    "jerotes_golems:serpon_alloy": {},
+    "jerotes_golems:meror": {
+      "jerotes_golems:fire_affinity": 1,
+      "jerotes_golems:meror_attack": 1,
+      "jerotes_golems:meror_defense": 1
+    },
+    "jerotes_golems:qoaiku": {
+      "jerotes_golems:qoaiku_attack": 1,
+      "modulargolems:swim": 1
+    },
+    "jerotes_golems:refine_meror": {
+      "jerotes_golems:fire_affinity": 1,
+      "jerotes_golems:meror_attack": 1,
+      "jerotes_golems:meror_defense": 2,
+      "modulargolems:add_slot": 1,
+      "modulargolems:armor_penetration": 2,
+      "modulargolems:magic_immune": 1
+    },
+    "jerotes_golems:serpon_alloy": {
+      "jerotes_golems:fire_affinity": 1
+    },
     "jerotes_golems:villager_metal": {}
   },
   "repairIngredients": {
@@ -42,23 +58,26 @@
   },
   "stats": {
     "jerotes_golems:meror": {
-      "modulargolems:attack": 20.0,
-      "modulargolems:max_health": 200.0
+      "modulargolems:attack": 30.0,
+      "modulargolems:max_health": 400.0,
+      "modulargolems:sweep": 1.0
     },
     "jerotes_golems:qoaiku": {
       "modulargolems:attack": 20.0,
-      "modulargolems:max_health": 200.0
+      "modulargolems:max_health": 250.0
     },
     "jerotes_golems:refine_meror": {
-      "modulargolems:attack": 20.0,
-      "modulargolems:max_health": 200.0
+      "modulargolems:attack": 30.0,
+      "modulargolems:max_health": 400.0,
+      "modulargolems:sweep": 1.0
     },
     "jerotes_golems:serpon_alloy": {
-      "modulargolems:attack": 20.0,
-      "modulargolems:max_health": 200.0
+      "modulargolems:attack": 25.0,
+      "modulargolems:max_health": 300.0,
+      "modulargolems:sweep": 1.0
     },
     "jerotes_golems:villager_metal": {
-      "modulargolems:attack": 20.0,
+      "modulargolems:attack": 15.0,
       "modulargolems:max_health": 200.0
     }
   }

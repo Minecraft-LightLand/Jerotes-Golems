@@ -4,6 +4,10 @@ import com.tterrag.registrate.builders.ItemBuilder;
 import com.tterrag.registrate.providers.ProviderType;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
+import dev.xkmc.jerotes_golems.content.FireAffinityModifier;
+import dev.xkmc.jerotes_golems.content.MerorAttackModifier;
+import dev.xkmc.jerotes_golems.content.MerorDefenseModifier;
+import dev.xkmc.jerotes_golems.content.QoaikuAttackModifier;
 import dev.xkmc.jerotes_golems.init.JerotesGolems;
 import dev.xkmc.l2library.base.L2Registrate;
 import dev.xkmc.modulargolems.content.item.upgrade.SimpleUpgradeItem;
@@ -21,7 +25,16 @@ import java.util.function.Supplier;
 
 public class JGModifiers {
 
+	public static final RegistryEntry<MerorAttackModifier> MEROR_ATK;
+	public static final RegistryEntry<MerorDefenseModifier> MEROR_DEF;
+	public static final RegistryEntry<FireAffinityModifier> FIRE_AFFINITY;
+	public static final RegistryEntry<QoaikuAttackModifier> QOAIKU_ATK;
+
 	static {
+		MEROR_ATK = reg("meror_attack", () -> new MerorAttackModifier(1), "Golem deal Meror damage");
+		MEROR_DEF = reg("meror_defense", () -> new MerorDefenseModifier(5), "Reduce Non-Meror damage by %s%%");
+		FIRE_AFFINITY = reg("fire_affinity", () -> new FireAffinityModifier(5), "Absorb fire damage then get +%s natural healing and +%s%% damage bonus");
+		QOAIKU_ATK = reg("qoaiku_attack", () -> new QoaikuAttackModifier(5), "Golem deal Drown damage if possible. Deal %s%% extra damage against mobs sensitive to water.");
 	}
 
 	public static <T extends GolemModifier> RegistryEntry<T> reg(String id, NonNullSupplier<T> sup, @Nullable String def) {
