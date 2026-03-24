@@ -24,7 +24,7 @@ public class JGDamageTypes extends DamageTypeAndTagsGen {
 	}
 
 	private static ResourceKey<DamageType> createDamage(String id) {
-		return ResourceKey.create(Registries.DAMAGE_TYPE, ModularGolems.loc(id));
+		return ResourceKey.create(Registries.DAMAGE_TYPE, JerotesGolems.loc(id));
 	}
 
 }
