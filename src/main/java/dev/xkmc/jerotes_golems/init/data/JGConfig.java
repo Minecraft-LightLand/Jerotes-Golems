@@ -17,14 +17,14 @@ public class JGConfig {
 
 	public static class Common {
 
-		public final ForgeConfigSpec.DoubleValue merorDefenseReduction;
+		public final ForgeConfigSpec.DoubleValue merorDefenseDamageReduction;
 		public final ForgeConfigSpec.DoubleValue fireAffinityHeal;
 		public final ForgeConfigSpec.DoubleValue fireAffinityDamageBonus;
 		public final ForgeConfigSpec.DoubleValue qoaikuAttackDamageBonus;
 
 		Common(ForgeConfigSpec.Builder builder) {
-			merorDefenseReduction = builder.comment("MerorDefense: Damage reduction per level")
-					.defineInRange("merorDefenseReduction", 0.12, 0, 1);
+			merorDefenseDamageReduction = builder.comment("MerorDefense: Damage reduction per level")
+					.defineInRange("merorDefenseDamageReduction", 0.2, 0, 1);
 			fireAffinityHeal = builder.comment("FireAffinity: Healing bonus per level")
 					.defineInRange("fireAffinityHeal", 0.5, 0, 10);
 			fireAffinityDamageBonus = builder.comment("FireAffinity: Damage bonus per level")

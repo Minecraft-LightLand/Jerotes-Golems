@@ -24,6 +24,8 @@ public class JGConfigGen extends ConfigDataProvider {
 				.addMaterial(JerotesGolems.loc("villager_metal"), Ingredient.of(JerotesVillageItems.VILLAGER_METAL_INGOT.get()))
 				.addStat(GolemTypes.STAT_HEALTH.get(), 200)
 				.addStat(GolemTypes.STAT_ATTACK.get(), 15)
+				.addModifier(GolemModifiers.EMERALD.get(), 2)
+				.addModifier(JGModifiers.GREEDY.get(), 1)
 				.end()
 
 				.addMaterial(JerotesGolems.loc("qoaiku"), Ingredient.of(JerotesVillageItems.QOAIKU_METAL_INGOT.get()))

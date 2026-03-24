@@ -2,6 +2,7 @@ package dev.xkmc.jerotes_golems.init;
 
 import com.tterrag.registrate.providers.ProviderType;
 import dev.xkmc.jerotes_golems.init.data.*;
+import dev.xkmc.jerotes_golems.init.reg.JGEffects;
 import dev.xkmc.jerotes_golems.init.reg.JGItems;
 import dev.xkmc.jerotes_golems.init.reg.JGModifiers;
 import dev.xkmc.l2library.base.L2Registrate;
@@ -23,7 +24,7 @@ import org.apache.logging.log4j.Logger;
 @Mod.EventBusSubscriber(modid = JerotesGolems.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class JerotesGolems {
 
-	public static final String MODID = "jerotes_golems";
+	public static final String MODID = "jerotes_village_golems";
 	public static final Logger LOGGER = LogManager.getLogger();
 	public static final L2Registrate REGISTRATE = new L2Registrate(MODID);
 	public static final IEventBus MOD_BUS = FMLJavaModLoadingContext.get().getModEventBus();
@@ -35,6 +36,7 @@ public class JerotesGolems {
 	public JerotesGolems() {
 		JGItems.register();
 		JGModifiers.register();
+		JGEffects.register();
 		JGConfig.init();
 
 	}

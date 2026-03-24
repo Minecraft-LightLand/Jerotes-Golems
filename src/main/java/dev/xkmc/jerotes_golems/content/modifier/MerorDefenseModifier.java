@@ -1,4 +1,4 @@
-package dev.xkmc.jerotes_golems.content;
+package dev.xkmc.jerotes_golems.content.modifier;
 
 import com.jerotes.jerotes.forge.JerotesMerorDamageEvent;
 import dev.xkmc.jerotes_golems.init.data.JGConfig;
@@ -29,16 +29,16 @@ public class MerorDefenseModifier extends GolemModifier {
 		if (source.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) return;
 		var pred = new JerotesMerorDamageEvent(source);
 		MinecraftForge.EVENT_BUS.post(pred);
-		if (pred.isMerorDamage()) {
-			float fac = 1 - level * JGConfig.COMMON.merorDefenseReduction.get().floatValue();
-			cache.addDealtModifier(DamageModifier.multTotal(fac));
+		if (!pred.isMerorDamage()) {
+			double fac = Math.pow(1 - JGConfig.COMMON.merorDefenseDamageReduction.get(), level);
+			cache.addDealtModifier(DamageModifier.multTotal((float) fac));
 		}
 	}
 
 	@Override
 	public List<MutableComponent> getDetail(int v) {
-		int rate = Math.round(JGConfig.COMMON.merorDefenseReduction.get().floatValue() * v * 100);
-		return List.of(Component.translatable(this.getDescriptionId() + ".desc", rate).withStyle(ChatFormatting.GREEN));
+		int fac = Math.round(100 * (1 - (float) Math.pow(1 - JGConfig.COMMON.merorDefenseDamageReduction.get(), v)));
+		return List.of(Component.translatable(this.getDescriptionId() + ".desc", fac).withStyle(ChatFormatting.GREEN));
 	}
 
 }

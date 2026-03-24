@@ -1,4 +1,4 @@
-package dev.xkmc.jerotes_golems.content;
+package dev.xkmc.jerotes_golems.content.modifier;
 
 import dev.xkmc.jerotes_golems.init.data.JGConfig;
 import dev.xkmc.l2damagetracker.contents.attack.AttackCache;

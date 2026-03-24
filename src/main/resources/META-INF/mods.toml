@@ -2,34 +2,39 @@ modLoader="javafml"
 loaderVersion="[47,)"
 license="All rights reserved"
 [[mods]]
-modId="jerotes_golems"
+modId="jerotes_village_golems"
 version="${file.jarVersion}" #mandatory
 displayName="Jerotes Golems" #mandatory
-logoFile="jerotes_golems.png" #optional
+logoFile="jerotes_village_golems.png" #optional
 credits="LightLand team" #optional
 authors="lcy0x1" #optional
 description='''
 '''
-[[dependencies.jerotes_golems]]
+[[dependencies.jerotes_village_golems]]
     modId="forge"
     mandatory=true
     versionRange="[47.1.0,)"
     ordering="AFTER"
     side="BOTH"
-[[dependencies.jerotes_golems]]
+[[dependencies.jerotes_village_golems]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.20,1.21)"
     ordering="NONE"
     side="BOTH"
-[[dependencies.jerotes_golems]]
+[[dependencies.jerotes_village_golems]]
     modId="l2library"
     mandatory=true
     versionRange="[2.5.3,)"
     ordering="AFTER"
     side="BOTH"
-[[dependencies.jerotes_golems]]
+[[dependencies.jerotes_village_golems]]
     modId="modulargolems"
     mandatory=true
     versionRange="[2.6.27,)"
+    side="BOTH"
+[[dependencies.jerotes_village_golems]]
+    modId="jerotesvillage"
+    mandatory=true
+    versionRange="[0,)"
     side="BOTH"

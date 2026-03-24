@@ -3,8 +3,9 @@
 	"priority": 1000,
 	"package": "dev.xkmc.jerotes_golems.mixin",
 	"compatibilityLevel": "JAVA_17",
-	"refmap": "jerotes_golems.refmap.json",
+	"refmap": "jerotes_village_golems.refmap.json",
 	"mixins": [
+		"GolemMeleeGoalMixin"
 	],
 	"client": [
 	],
