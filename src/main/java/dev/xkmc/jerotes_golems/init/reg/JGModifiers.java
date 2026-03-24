@@ -28,6 +28,7 @@ public class JGModifiers {
 	public static final RegistryEntry<MerorDefenseModifier> MEROR_DEF;
 	public static final RegistryEntry<FireAffinityModifier> FIRE_AFFINITY;
 	public static final RegistryEntry<QoaikuAttackModifier> QOAIKU_ATK;
+	public static final RegistryEntry<AbackModifier> ABACK;
 
 	static {
 		GREEDY = reg("greedy", () -> new VillagerMetalModifier(StatFilterType.HEALTH, 2), "Golem repairs and gets bonus when using emerald block or netherite block on it");
@@ -35,6 +36,8 @@ public class JGModifiers {
 		MEROR_DEF = reg("meror_defense", () -> new MerorDefenseModifier(5), "Reduce Non-Meror damage by %s%%");
 		FIRE_AFFINITY = reg("fire_affinity", () -> new FireAffinityModifier(5), "Absorb fire damage then get +%s natural healing and +%s%% damage bonus");
 		QOAIKU_ATK = reg("qoaiku_attack", () -> new QoaikuAttackModifier(5), "Golem deal Drown damage if possible. Deal %s%% extra damage against mobs sensitive to water.");
+		ABACK = reg("aback", () -> new AbackModifier(StatFilterType.MASS,1), "Golem inflict Aback effect to target");
+
 	}
 
 	public static <T extends GolemModifier> RegistryEntry<T> reg(String id, NonNullSupplier<T> sup, @Nullable String def) {

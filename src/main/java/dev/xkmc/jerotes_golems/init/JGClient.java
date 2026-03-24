@@ -1,5 +1,10 @@
 package dev.xkmc.jerotes_golems.init;
 
+import dev.xkmc.jerotes_golems.content.client.JGModelPaths;
+import dev.xkmc.jerotes_golems.content.client.MerorArmors;
+import dev.xkmc.jerotes_golems.content.client.RefineMerorArmors;
+import dev.xkmc.jerotes_golems.content.client.WonderlandArmors;
+import dev.xkmc.modulargolems.content.client.armor.GolemEquipmentModels;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
@@ -20,6 +25,15 @@ public class JGClient {
 
 	@SubscribeEvent
 	public static void registerArmorLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
+		GolemEquipmentModels.regAndAdd(event, WonderlandArmors.HELMET_LAYER, WonderlandArmors::createHelmet);
+		GolemEquipmentModels.regAndAdd(event, WonderlandArmors.CHESTPLATE_LAYER, WonderlandArmors::createChestplate);
+		GolemEquipmentModels.regAndAdd(event, WonderlandArmors.SHINGUARD_LAYER, WonderlandArmors::createLeggings);
+		GolemEquipmentModels.regAndAdd(event, MerorArmors.HELMET_LAYER, MerorArmors::createHelmet);
+		GolemEquipmentModels.regAndAdd(event, MerorArmors.CHESTPLATE_LAYER, MerorArmors::createChestplate);
+		GolemEquipmentModels.regAndAdd(event, MerorArmors.SHINGUARD_LAYER, MerorArmors::createLeggings);
+		GolemEquipmentModels.regAndAdd(event, RefineMerorArmors.HELMET_LAYER, RefineMerorArmors::createHelmet);
+		GolemEquipmentModels.regAndAdd(event, RefineMerorArmors.CHESTPLATE_LAYER, RefineMerorArmors::createChestplate);
+		GolemEquipmentModels.regAndAdd(event, RefineMerorArmors.SHINGUARD_LAYER, RefineMerorArmors::createLeggings);
 	}
 
 

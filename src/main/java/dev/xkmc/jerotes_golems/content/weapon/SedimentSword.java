@@ -1,4 +1,4 @@
-package dev.xkmc.jerotes_golems.content.equipment;
+package dev.xkmc.jerotes_golems.content.weapon;
 
 import dev.xkmc.jerotes_golems.init.data.JGLang;
 import dev.xkmc.l2damagetracker.contents.attack.AttackCache;

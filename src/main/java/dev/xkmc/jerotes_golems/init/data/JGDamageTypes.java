@@ -1,5 +1,6 @@
 package dev.xkmc.jerotes_golems.init.data;
 
+import dev.xkmc.jerotes_golems.init.JerotesGolems;
 import dev.xkmc.l2damagetracker.init.data.DamageTypeAndTagsGen;
 import dev.xkmc.modulargolems.init.ModularGolems;
 import net.minecraft.core.HolderLookup;
@@ -17,7 +18,7 @@ public class JGDamageTypes extends DamageTypeAndTagsGen {
 	public static final ResourceKey<DamageType> FIRE = createDamage("fire_attack");
 
 	public JGDamageTypes(PackOutput output, CompletableFuture<HolderLookup.Provider> pvd, ExistingFileHelper helper) {
-		super(output, pvd, helper, ModularGolems.MODID);
+		super(output, pvd, helper, JerotesGolems.MODID);
 		new DamageTypeHolder(FIRE, new DamageType("on_fire", 0.1f))
 				.add(DamageTypeTags.BYPASSES_COOLDOWN, DamageTypeTags.BYPASSES_ARMOR, DamageTypeTags.IS_FIRE);
 	}

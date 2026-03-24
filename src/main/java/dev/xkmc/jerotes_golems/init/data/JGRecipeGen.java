@@ -2,7 +2,7 @@ package dev.xkmc.jerotes_golems.init.data;
 
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.DataIngredient;
-import dev.xkmc.jerotes_golems.content.equipment.JGWeaponMaterial;
+import dev.xkmc.jerotes_golems.content.weapon.JGWeaponMaterial;
 import dev.xkmc.jerotes_golems.init.reg.JGItems;
 import dev.xkmc.modulargolems.init.data.RecipeGen;
 import dev.xkmc.modulargolems.init.material.GolemWeaponType;

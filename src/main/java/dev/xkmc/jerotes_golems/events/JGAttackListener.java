@@ -1,6 +1,6 @@
 package dev.xkmc.jerotes_golems.events;
 
-import dev.xkmc.jerotes_golems.content.equipment.IDamageListenerWeapon;
+import dev.xkmc.jerotes_golems.content.weapon.IDamageListenerWeapon;
 import dev.xkmc.l2damagetracker.contents.attack.AttackCache;
 import dev.xkmc.l2damagetracker.contents.attack.AttackListener;
 import dev.xkmc.l2damagetracker.init.data.L2DamageTypes;

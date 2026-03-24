@@ -1,4 +1,4 @@
-package dev.xkmc.jerotes_golems.content.equipment;
+package dev.xkmc.jerotes_golems.content.weapon;
 
 import com.tterrag.registrate.util.entry.ItemEntry;
 import dev.xkmc.jerotes_golems.init.JerotesGolems;
