@@ -13,7 +13,8 @@ public enum JGWeaponMaterial implements IGolemWeaponMaterial {
 	VILLAGER_METAL(6, false, JerotesVillageItems.VILLAGER_METAL_INGOT::get),
 	QOAIKU(8, false, JerotesVillageItems.QOAIKU_METAL_INGOT::get),
 	SERPON(10, true, JerotesVillageItems.SERPON_ALLOY_INGOT::get),
-	MEROR(12, true, JerotesVillageItems.MEROR_METAL_INGOT::get);
+	MEROR(12, true, JerotesVillageItems.MEROR_METAL_INGOT::get),
+	REFINE_MEROR(14, true, JerotesVillageItems.REFINE_MEROR_METAL_INGOT::get);
 
 	private final int damage;
 	private final boolean fireResistant;
