@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_qoaiku_metal_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "jerotesvillage:qoaiku_metal_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "modulargolems:qoaiku_golem_axe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_qoaiku_metal_ingot",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "modulargolems:qoaiku_golem_axe"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,87 @@
+{
+  "ingredients": {
+    "jerotes_village_golems:meror": {
+      "item": "jerotesvillage:meror_metal_ingot"
+    },
+    "jerotes_village_golems:qoaiku": {
+      "item": "jerotesvillage:qoaiku_metal_ingot"
+    },
+    "jerotes_village_golems:refine_meror": {
+      "item": "jerotesvillage:refine_meror_metal_ingot"
+    },
+    "jerotes_village_golems:serpon_alloy": {
+      "item": "jerotesvillage:serpon_alloy_ingot"
+    },
+    "jerotes_village_golems:villager_metal": {
+      "item": "jerotesvillage:villager_metal_ingot"
+    }
+  },
+  "modifiers": {
+    "jerotes_village_golems:meror": {
+      "jerotes_village_golems:fire_affinity": 1,
+      "jerotes_village_golems:meror_attack": 1,
+      "jerotes_village_golems:meror_defense": 1
+    },
+    "jerotes_village_golems:qoaiku": {
+      "jerotes_village_golems:qoaiku_attack": 1,
+      "modulargolems:swim": 1
+    },
+    "jerotes_village_golems:refine_meror": {
+      "jerotes_village_golems:fire_affinity": 1,
+      "jerotes_village_golems:meror_attack": 1,
+      "jerotes_village_golems:meror_defense": 2,
+      "modulargolems:add_slot": 1,
+      "modulargolems:armor_penetration": 2,
+      "modulargolems:magic_immune": 1
+    },
+    "jerotes_village_golems:serpon_alloy": {
+      "jerotes_village_golems:fire_affinity": 1
+    },
+    "jerotes_village_golems:villager_metal": {
+      "jerotes_village_golems:greedy": 1,
+      "modulargolems:emerald": 2
+    }
+  },
+  "repairIngredients": {
+    "jerotes_village_golems:meror": {
+      "item": "jerotesvillage:meror_metal_ingot"
+    },
+    "jerotes_village_golems:qoaiku": {
+      "item": "jerotesvillage:qoaiku_metal_ingot"
+    },
+    "jerotes_village_golems:refine_meror": {
+      "item": "jerotesvillage:refine_meror_metal_ingot"
+    },
+    "jerotes_village_golems:serpon_alloy": {
+      "item": "jerotesvillage:serpon_alloy_ingot"
+    },
+    "jerotes_village_golems:villager_metal": {
+      "item": "jerotesvillage:villager_metal_ingot"
+    }
+  },
+  "stats": {
+    "jerotes_village_golems:meror": {
+      "modulargolems:attack": 30.0,
+      "modulargolems:max_health": 400.0,
+      "modulargolems:sweep": 1.0
+    },
+    "jerotes_village_golems:qoaiku": {
+      "modulargolems:attack": 20.0,
+      "modulargolems:max_health": 250.0
+    },
+    "jerotes_village_golems:refine_meror": {
+      "modulargolems:attack": 30.0,
+      "modulargolems:max_health": 400.0,
+      "modulargolems:sweep": 1.0
+    },
+    "jerotes_village_golems:serpon_alloy": {
+      "modulargolems:attack": 25.0,
+      "modulargolems:max_health": 300.0,
+      "modulargolems:sweep": 1.0
+    },
+    "jerotes_village_golems:villager_metal": {
+      "modulargolems:attack": 15.0,
+      "modulargolems:max_health": 200.0
+    }
+  }
+}
