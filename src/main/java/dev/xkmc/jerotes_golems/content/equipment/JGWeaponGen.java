@@ -28,8 +28,8 @@ public enum JGWeaponGen {
 		return "golem_" + name().toLowerCase(Locale.ROOT);
 	}
 
-	public ItemEntry<MetalGolemWeaponItem> buildItem(IGolemWeaponMaterial material) {
-		return JerotesGolems.REGISTRATE.item(material.getName() + "_" + this.getName(), (p) ->
+	public ItemEntry<MetalGolemWeaponItem> buildItem(IGolemWeaponMaterial material, String name) {
+		return JerotesGolems.REGISTRATE.item(name, (p) ->
 						this.factory.create(material.modify(p.stacksTo(1)), material.getDamage(), material.factory()))
 				.model((ctx, pvd) -> material.model(pvd.getBuilder(ctx.getName()))
 						.parent(new ModelFile.UncheckedModelFile(ModularGolems.loc(this.model)))
@@ -43,10 +43,20 @@ public enum JGWeaponGen {
 			var type = values()[i];
 			for (int j = 0; j < values.length; ++j) {
 				IGolemWeaponMaterial mat = values[j];
-				ans[i][j] = type.buildItem(mat);
+				ans[i][j] = type.buildItem(mat,mat.getName() + "_" + type.getName());
 			}
 		}
 
+		return ans;
+	}
+
+
+	public static ItemEntry<MetalGolemWeaponItem>[] buildSpecial(JGSpecialMaterial[] values) {
+		ItemEntry<MetalGolemWeaponItem>[] ans = new ItemEntry[values.length];
+		for (int i = 0; i < values.length; ++i) {
+			JGSpecialMaterial mat = values[i];
+			ans[i] = mat.buildItem();
+		}
 		return ans;
 	}
 

@@ -13,7 +13,10 @@ import javax.annotation.Nullable;
 import java.util.Locale;
 
 public enum JGLang {
-
+	BITTER_COLD_AXE_DESC("tooltip.bitter_cold_axe", "Inflict Frozen and Corrosion effect", 0, null),
+	SEDIMENT_SWORD_DESC("tooltip.sediment_sword", "Inflict Slowness", 0, null),
+	WONDERLAND_BLADE_DESC("tooltip.wonderland_blade", "Inflict Aback and Quake effect, then gain Rampant effect", 0, null),
+	SERPON_CHAIN_BLADE_DESC("tooltip.serpon_chain_blade", "Deal 3 follow up fire damage at %s%% of original damage", 1, null)
 	;
 
 	private final String key, def;
@@ -21,7 +24,7 @@ public enum JGLang {
 	private final ChatFormatting format;
 
 	JGLang(String key, String def, int arg, @Nullable ChatFormatting format) {
-		this.key = ModularGolems.MODID + "." + key;
+		this.key = JerotesGolems.MODID + "." + key;
 		this.def = def;
 		this.arg = arg;
 		this.format = format;

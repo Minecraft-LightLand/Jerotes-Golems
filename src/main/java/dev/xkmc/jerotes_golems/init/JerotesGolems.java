@@ -64,6 +64,7 @@ public class JerotesGolems {
 		var helper = event.getExistingFileHelper();
 		var server = event.includeServer();
 		gen.addProvider(server, new JGConfigGen(gen));
+		new JGDamageTypes(output, pvd, helper).generate(server, gen);
 	}
 
 

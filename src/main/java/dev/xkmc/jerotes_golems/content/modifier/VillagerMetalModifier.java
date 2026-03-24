@@ -1,5 +1,6 @@
 package dev.xkmc.jerotes_golems.content.modifier;
 
+import dev.xkmc.jerotes_golems.init.data.JGConfig;
 import dev.xkmc.jerotes_golems.init.reg.JGEffects;
 import dev.xkmc.l2library.init.events.GeneralEventHandler;
 import dev.xkmc.modulargolems.content.core.StatFilterType;
@@ -22,19 +23,20 @@ public class VillagerMetalModifier extends GolemModifier {
 	@Override
 	public InteractionResult interact(Player player, AbstractGolemEntity<?, ?> golem, InteractionHand hand, int level) {
 		ItemStack stack = player.getItemInHand(hand);
+		int time = JGConfig.COMMON.villagerBonusDuration.get() * level;
 		if (stack.is(Items.EMERALD_BLOCK)) {
 			golem.repairWithItem();
-			golem.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 6000 * level, 1));
-			golem.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 6000 * level, 0));
-			golem.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 320 * level, 1));
+			golem.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, time, 1));
+			golem.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, time, 0));
+			golem.addEffect(new MobEffectInstance(MobEffects.REGENERATION, time / 4, 1));
 			if (!player.isCreative()) stack.shrink(1);
 			return InteractionResult.SUCCESS;
 		} else if (stack.is(Items.NETHERITE_BLOCK)) {
 			golem.repairWithItem();
-			golem.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 6000 * level, 4));
-			golem.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 6000 * level, 2));
-			golem.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 6000 * level, 1));
-			golem.addEffect(new MobEffectInstance(JGEffects.NETHERITE_BOOST.get(), 6000 * level, 0));
+			golem.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, time, 4));
+			golem.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, time, 2));
+			golem.addEffect(new MobEffectInstance(MobEffects.REGENERATION, time, 1));
+			golem.addEffect(new MobEffectInstance(JGEffects.NETHERITE_BOOST.get(), time, 0));
 			int[] states = new int[]{0, golem.tickCount + 10};
 			GeneralEventHandler.schedulePersistent(() -> {
 				if (golem.isRemoved() || !golem.isAlive())

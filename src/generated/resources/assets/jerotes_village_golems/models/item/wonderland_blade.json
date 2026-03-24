@@ -1,0 +1,6 @@
+{
+  "parent": "modulargolems:item/sword",
+  "textures": {
+    "layer0": "jerotes_village_golems:item/equipments/wonderland_blade"
+  }
+}

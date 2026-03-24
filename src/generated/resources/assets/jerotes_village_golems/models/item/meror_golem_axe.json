@@ -1,0 +1,6 @@
+{
+  "parent": "modulargolems:item/battle_axe",
+  "textures": {
+    "layer0": "jerotes_village_golems:item/equipments/meror_golem_axe"
+  }
+}

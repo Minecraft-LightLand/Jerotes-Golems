@@ -1,0 +1,6 @@
+{
+  "parent": "modulargolems:item/long_weapon",
+  "textures": {
+    "layer0": "jerotes_village_golems:item/equipments/refine_meror_golem_spear"
+  }
+}

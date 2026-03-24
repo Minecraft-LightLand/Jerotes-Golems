@@ -17,12 +17,17 @@ public class JGConfig {
 
 	public static class Common {
 
+		public final ForgeConfigSpec.IntValue villagerBonusDuration;
 		public final ForgeConfigSpec.DoubleValue merorDefenseDamageReduction;
 		public final ForgeConfigSpec.DoubleValue fireAffinityHeal;
 		public final ForgeConfigSpec.DoubleValue fireAffinityDamageBonus;
 		public final ForgeConfigSpec.DoubleValue qoaikuAttackDamageBonus;
+		public final ForgeConfigSpec.DoubleValue serponChainBladeDamageFactor;
 
 		Common(ForgeConfigSpec.Builder builder) {
+			builder.push("modifiers");
+			villagerBonusDuration = builder.comment("VillagerMetal: bonus effect duration per level")
+					.defineInRange("villagerBonusDuration", 1200, 200, 6000);
 			merorDefenseDamageReduction = builder.comment("MerorDefense: Damage reduction per level")
 					.defineInRange("merorDefenseDamageReduction", 0.2, 0, 1);
 			fireAffinityHeal = builder.comment("FireAffinity: Healing bonus per level")
@@ -31,7 +36,11 @@ public class JGConfig {
 					.defineInRange("fireAffinityDamageBonus", 0.1, 0, 10);
 			qoaikuAttackDamageBonus = builder.comment("QoaikuAttack: Damage bonus per level")
 					.defineInRange("qoaikuAttackDamageBonus", 0.1, 0, 1);
-
+			builder.pop();
+			builder.push("weapons");
+			serponChainBladeDamageFactor = builder.comment("Serpon Chain Blade: follow up damage factor")
+					.defineInRange("serponChainBladeDamageFactor", 0.2, 0, 1);
+			builder.pop();
 
 		}
 
