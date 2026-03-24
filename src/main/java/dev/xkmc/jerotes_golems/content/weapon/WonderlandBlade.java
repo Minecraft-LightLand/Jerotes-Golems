@@ -25,18 +25,12 @@ public class WonderlandBlade extends MetalGolemWeaponItem implements IDamageList
 	}
 
 	@Override
-	public boolean canDisableShield(ItemStack stack, ItemStack shield, LivingEntity entity, LivingEntity attacker) {
-		return true;
-	}
-
-	@Override
 	public void onHurt(AttackCache cache, DamageSource source, MetalGolemEntity e, ItemStack stack) {
 		var target = cache.getAttackTarget();
 		target.addEffect(new MobEffectInstance(JerotesMobEffects.ABACK.get(), 60, 1), e);
 		target.addEffect(new MobEffectInstance(JerotesMobEffects.QUAKE.get(), 20, 0), e);
 		e.addEffect(new MobEffectInstance(JerotesVillageMobEffects.RAMPANT.get(), 60, 0), e);
 	}
-
 
 	public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
 		list.add(JGLang.WONDERLAND_BLADE_DESC.get().withStyle(ChatFormatting.GRAY));

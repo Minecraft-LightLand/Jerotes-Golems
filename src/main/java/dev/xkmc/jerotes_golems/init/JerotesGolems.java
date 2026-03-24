@@ -1,10 +1,12 @@
 package dev.xkmc.jerotes_golems.init;
 
 import com.tterrag.registrate.providers.ProviderType;
+import dev.xkmc.jerotes_golems.events.JGAttackListener;
 import dev.xkmc.jerotes_golems.init.data.*;
 import dev.xkmc.jerotes_golems.init.reg.JGEffects;
 import dev.xkmc.jerotes_golems.init.reg.JGItems;
 import dev.xkmc.jerotes_golems.init.reg.JGModifiers;
+import dev.xkmc.l2damagetracker.contents.attack.AttackEventHandler;
 import dev.xkmc.l2library.base.L2Registrate;
 import dev.xkmc.l2library.serial.config.PacketHandlerWithConfig;
 import net.minecraft.resources.ResourceLocation;
@@ -38,7 +40,7 @@ public class JerotesGolems {
 		JGModifiers.register();
 		JGEffects.register();
 		JGConfig.init();
-
+		AttackEventHandler.register(7901, new JGAttackListener());
 	}
 
 	@SubscribeEvent

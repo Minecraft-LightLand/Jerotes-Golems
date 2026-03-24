@@ -53,9 +53,4 @@ public class SerponChainBlade extends MetalGolemWeaponItem implements ExtraAttac
 		super.appendHoverText(itemStack, level, list, tooltipFlag);
 	}
 
-	@Override
-	public boolean canDisableShield(ItemStack stack, ItemStack shield, LivingEntity entity, LivingEntity attacker) {
-		return true;
-	}
-
 }
