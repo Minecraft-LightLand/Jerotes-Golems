@@ -1,6 +1,7 @@
 package dev.xkmc.jerotes_golems.init;
 
 import dev.xkmc.jerotes_golems.content.client.*;
+import dev.xkmc.jerotes_golems.content.entity.TrialBannerModelData;
 import dev.xkmc.modulargolems.content.client.armor.GolemEquipmentModels;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -22,6 +23,8 @@ public class JGClient {
 
 	@SubscribeEvent
 	public static void registerArmorLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
+		event.registerLayerDefinition(TrialBannerModelData.LAYER_LOCATION, TrialBannerModelData::createBodyLayer);
+
 		GolemEquipmentModels.regAndAdd(event, WonderlandArmors.HELMET_LAYER, WonderlandArmors::createHelmet);
 		GolemEquipmentModels.regAndAdd(event, WonderlandArmors.CHESTPLATE_LAYER, WonderlandArmors::createChestplate);
 		GolemEquipmentModels.regAndAdd(event, WonderlandArmors.SHINGUARD_LAYER, WonderlandArmors::createLeggings);

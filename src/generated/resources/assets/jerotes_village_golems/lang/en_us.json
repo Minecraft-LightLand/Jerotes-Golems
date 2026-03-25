@@ -1,6 +1,7 @@
 {
   "effect.jerotes_village_golems.netherite_boost": "Netherite Boost",
   "effect.jerotes_village_golems.netherite_boost.description": "Increase golem attack speed",
+  "entity.jerotes_village_golems.trial_banner": "Trial Banner",
   "golem_material.jerotes_village_golems.meror": "Meror Metal",
   "golem_material.jerotes_village_golems.qoaiku": "Qoaiku Metal",
   "golem_material.jerotes_village_golems.refine_meror": "Refined Meror Metal",

@@ -4,6 +4,7 @@ import com.tterrag.registrate.providers.ProviderType;
 import dev.xkmc.jerotes_golems.events.JGAttackListener;
 import dev.xkmc.jerotes_golems.init.data.*;
 import dev.xkmc.jerotes_golems.init.reg.JGEffects;
+import dev.xkmc.jerotes_golems.init.reg.JGEntities;
 import dev.xkmc.jerotes_golems.init.reg.JGItems;
 import dev.xkmc.jerotes_golems.init.reg.JGModifiers;
 import dev.xkmc.l2damagetracker.contents.attack.AttackEventHandler;
@@ -39,6 +40,7 @@ public class JerotesGolems {
 		JGItems.register();
 		JGModifiers.register();
 		JGEffects.register();
+		JGEntities.register();
 		JGConfig.init();
 		AttackEventHandler.register(7901, new JGAttackListener());
 	}
