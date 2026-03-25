@@ -12,27 +12,28 @@ import net.minecraft.world.item.Items;
 import java.util.Locale;
 
 public enum JGSpecialMaterial implements IGolemWeaponMaterial {
-	WONDERLAND_BLADE(JGWeaponGen.SWORD, WonderlandBlade::new, 10, true),
-	SERPON_CHAIN_BLADE(JGWeaponGen.SWORD, SerponChainBlade::new, 10, true),
-	SEDIMENT_SWORD(JGWeaponGen.SWORD, SedimentSword::new, 8, false),
-	BITTER_COLD_AXE(JGWeaponGen.AXE, BitterColdAxe::new, 6, false),
-	ANESTHETIC_SPEAR(JGWeaponGen.SPEAR, AnestheticSpear::new, 0, false),
-	BRIGHT_LAND_BLADE(JGWeaponGen.SPEAR, BrightLandBlade::new, 0, false);
+	WONDERLAND_BLADE(JGWeaponGen.SWORD, WonderlandBlade::new, 10, true, true),
+	SERPON_CHAIN_BLADE(JGWeaponGen.SWORD, SerponChainBlade::new, 10, true, true),
+	SEDIMENT_SWORD(JGWeaponGen.SWORD, SedimentSword::new, 8, false, false),
+	BITTER_COLD_AXE(JGWeaponGen.AXE, BitterColdAxe::new, 6, false, true),
+	ANESTHETIC_SPEAR(JGWeaponGen.SPEAR, AnestheticSpear::new, 0, false, false),
+	BRIGHT_LAND_BLADE(JGWeaponGen.SPEAR, BrightLandBlade::new, 0, false, false);
 
 	private final JGWeaponGen type;
 	private final IGolemWeaponFactory factory;
 	private final int damage;
-	private final boolean fireResistant;
+	private final boolean fireResistant, shieldBreaker;
 
-	JGSpecialMaterial(JGWeaponGen type, IGolemWeaponFactory factory, int damage, boolean fireResistant) {
+	JGSpecialMaterial(JGWeaponGen type, IGolemWeaponFactory factory, int damage, boolean fireResistant, boolean shieldBreaker) {
 		this.type = type;
 		this.factory = factory;
 		this.damage = damage;
 		this.fireResistant = fireResistant;
+		this.shieldBreaker = shieldBreaker;
 	}
 
 	public ItemEntry<MetalGolemWeaponItem> buildItem() {
-		return type.buildItem(this, getName());
+		return type.buildItem(this, getName(), shieldBreaker);
 	}
 
 	public int getDamage() {

@@ -6,11 +6,14 @@ import dev.xkmc.jerotes_golems.content.armor.MerorArmorItem;
 import dev.xkmc.jerotes_golems.content.armor.RefineMerorArmorItem;
 import dev.xkmc.jerotes_golems.content.armor.WonderlandArmorItem;
 import dev.xkmc.jerotes_golems.content.client.JGModelPaths;
+import dev.xkmc.jerotes_golems.content.ranged.MerorFlameThrowerItem;
+import dev.xkmc.jerotes_golems.content.ranged.MerorMachineGunItem;
 import dev.xkmc.jerotes_golems.content.weapon.JGSpecialMaterial;
 import dev.xkmc.jerotes_golems.content.weapon.JGWeaponGen;
 import dev.xkmc.jerotes_golems.content.weapon.JGWeaponMaterial;
 import dev.xkmc.jerotes_golems.init.JerotesGolems;
 import dev.xkmc.modulargolems.content.item.equipments.MetalGolemWeaponItem;
+import dev.xkmc.modulargolems.init.data.MGTagGen;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.CreativeModeTab;
 
@@ -24,6 +27,9 @@ public class JGItems {
 
 	public static final ItemEntry<MetalGolemWeaponItem>[][] WEAPONS;
 	public static final ItemEntry<MetalGolemWeaponItem>[] SPECIAL_WEAPONS;
+
+	public static final ItemEntry<MerorFlameThrowerItem> MEROR_FLAME_THROWER;
+	public static final ItemEntry<MerorMachineGunItem> MEROR_MACHINE_GUN;
 
 
 	static {
@@ -72,6 +78,13 @@ public class JGItems {
 
 		SPECIAL_WEAPONS = JGWeaponGen.buildSpecial(JGSpecialMaterial.values());
 		WEAPONS = JGWeaponGen.build(JGWeaponMaterial.values());
+
+		MEROR_FLAME_THROWER = JerotesGolems.REGISTRATE.item("meror_flame_thrower", p -> new MerorFlameThrowerItem(p.stacksTo(1)))
+				.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/equipments/" + ctx.getName())))
+				.tag(MGTagGen.TOUGH_ITEM).register();
+		MEROR_MACHINE_GUN = JerotesGolems.REGISTRATE.item("meror_machine_gun", p -> new MerorMachineGunItem(p.stacksTo(1)))
+				.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/equipments/" + ctx.getName())))
+				.tag(MGTagGen.TOUGH_ITEM).register();
 	}
 
 	public static void register() {

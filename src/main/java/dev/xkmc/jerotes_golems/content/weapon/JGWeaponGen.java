@@ -4,6 +4,7 @@ import com.tterrag.registrate.util.entry.ItemEntry;
 import dev.xkmc.jerotes_golems.init.JerotesGolems;
 import dev.xkmc.modulargolems.content.item.equipments.MetalGolemWeaponItem;
 import dev.xkmc.modulargolems.init.ModularGolems;
+import dev.xkmc.modulargolems.init.data.MGTagGen;
 import dev.xkmc.modulargolems.init.material.IGolemWeaponFactory;
 import dev.xkmc.modulargolems.init.material.IGolemWeaponMaterial;
 import net.minecraft.world.item.Item;
@@ -28,13 +29,15 @@ public enum JGWeaponGen {
 		return "golem_" + name().toLowerCase(Locale.ROOT);
 	}
 
-	public ItemEntry<MetalGolemWeaponItem> buildItem(IGolemWeaponMaterial material, String name) {
-		return JerotesGolems.REGISTRATE.item(name, (p) ->
+	public ItemEntry<MetalGolemWeaponItem> buildItem(IGolemWeaponMaterial material, String name, boolean shieldBreaker) {
+		var ans = JerotesGolems.REGISTRATE.item(name, (p) ->
 						this.factory.create(material.modify(p.stacksTo(1)), material.getDamage(), material.factory()))
 				.model((ctx, pvd) -> material.model(pvd.getBuilder(ctx.getName()))
 						.parent(new ModelFile.UncheckedModelFile(ModularGolems.loc(this.model)))
-						.texture("layer0", material.modLoc("item/equipments/" + ctx.getName())))
-				.defaultLang().register();
+						.texture("layer0", material.modLoc("item/equipments/" + ctx.getName())));
+		if (shieldBreaker)
+			ans.tag(MGTagGen.SHIELD_BREAKER_WEAPONS);
+		return ans.defaultLang().register();
 	}
 
 	public static ItemEntry<MetalGolemWeaponItem>[][] build(IGolemWeaponMaterial[] values) {
@@ -43,7 +46,7 @@ public enum JGWeaponGen {
 			var type = values()[i];
 			for (int j = 0; j < values.length; ++j) {
 				IGolemWeaponMaterial mat = values[j];
-				ans[i][j] = type.buildItem(mat,mat.getName() + "_" + type.getName());
+				ans[i][j] = type.buildItem(mat, mat.getName() + "_" + type.getName(), type == AXE);
 			}
 		}
 

@@ -38,7 +38,7 @@ public class SerponChainBlade extends MetalGolemWeaponItem implements ExtraAttac
 				if (diff > 0 && diff % 3 == 0) {
 					var source = e.level().registryAccess().registryOrThrow(Registries.DAMAGE_TYPE)
 							.getHolderOrThrow(JGDamageTypes.FIRE);
-					e.hurt(new DamageSource(source, e), damage);
+					target.hurt(new DamageSource(source, e), damage);
 					return diff >= 9;
 				}
 				return false;

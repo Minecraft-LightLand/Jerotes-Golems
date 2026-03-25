@@ -1,9 +1,6 @@
 package dev.xkmc.jerotes_golems.init;
 
-import dev.xkmc.jerotes_golems.content.client.JGModelPaths;
-import dev.xkmc.jerotes_golems.content.client.MerorArmors;
-import dev.xkmc.jerotes_golems.content.client.RefineMerorArmors;
-import dev.xkmc.jerotes_golems.content.client.WonderlandArmors;
+import dev.xkmc.jerotes_golems.content.client.*;
 import dev.xkmc.modulargolems.content.client.armor.GolemEquipmentModels;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -34,6 +31,11 @@ public class JGClient {
 		GolemEquipmentModels.regAndAdd(event, RefineMerorArmors.HELMET_LAYER, RefineMerorArmors::createHelmet);
 		GolemEquipmentModels.regAndAdd(event, RefineMerorArmors.CHESTPLATE_LAYER, RefineMerorArmors::createChestplate);
 		GolemEquipmentModels.regAndAdd(event, RefineMerorArmors.SHINGUARD_LAYER, RefineMerorArmors::createLeggings);
+
+		GolemEquipmentModels.regAndAdd(event, MerorFlameThrowerModel.FLAME_RIGHT, MerorFlameThrowerModel::rightLayer);
+		GolemEquipmentModels.regAndAdd(event, MerorFlameThrowerModel.FLAME_LEFT, MerorFlameThrowerModel::leftLayer);
+		GolemEquipmentModels.regAndAdd(event, MerorMachineGunModel.FLAME_RIGHT, MerorMachineGunModel::rightLayer);
+		GolemEquipmentModels.regAndAdd(event, MerorMachineGunModel.FLAME_LEFT, MerorMachineGunModel::leftLayer);
 	}
 
 
