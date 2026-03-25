@@ -38,3 +38,8 @@ description='''
     mandatory=true
     versionRange="[0,)"
     side="BOTH"
+[[dependencies.jerotes_village_golems]]
+    modId="golemdungeons"
+    mandatory=true
+    versionRange="[0,)"
+    side="BOTH"
