@@ -1,6 +1,8 @@
 package dev.xkmc.jerotes_golems.content.entity;
 
 import com.mojang.blaze3d.vertex.PoseStack;
+import dev.xkmc.jerotes_golems.init.JerotesGolems;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -31,7 +33,11 @@ public class TrialBannerRenderer extends EntityRenderer<TrialBannerEntity> {
 
 	@Override
 	public ResourceLocation getTextureLocation(TrialBannerEntity e) {
-		return e.getTexture();
+		var tex = e.getTexture();
+		if (tex == null || Minecraft.getInstance().getResourceManager().getResource(tex).isEmpty()) {
+			tex = JerotesGolems.loc("textures/entity/trial_banner/villager_metal.png");
+		}
+		return tex;
 	}
 
 }

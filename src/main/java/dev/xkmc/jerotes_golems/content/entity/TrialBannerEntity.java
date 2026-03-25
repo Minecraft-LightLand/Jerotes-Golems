@@ -12,6 +12,9 @@ import dev.xkmc.l2serial.serialization.SerialClass;
 import dev.xkmc.modulargolems.content.entity.common.AbstractGolemEntity;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.bossevents.CustomBossEvent;
 import net.minecraft.server.level.ServerLevel;
@@ -29,9 +32,12 @@ import net.minecraft.world.phys.AABB;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.UUID;
 
 @SerialClass
 public class TrialBannerEntity extends BaseEntity implements TrialTicker {
+
+	private static final EntityDataAccessor<String> TRIAL = SynchedEntityData.defineId(TrialBannerEntity.class, EntityDataSerializers.STRING);
 
 	@SerialClass.SerialField
 	private final TrialData data = new TrialData();
@@ -40,6 +46,9 @@ public class TrialBannerEntity extends BaseEntity implements TrialTicker {
 	private ResourceLocation trial;
 
 	private final CustomBossEvent bar = new CustomBossEvent(JerotesGolems.loc("banner"), Component.empty());
+
+	@SerialClass.SerialField
+	public final UUID bannerId = bar.getId();
 
 	AnimationState idle = new AnimationState();
 	AnimationState death = new AnimationState();
@@ -54,7 +63,7 @@ public class TrialBannerEntity extends BaseEntity implements TrialTicker {
 
 	@Override
 	protected void defineSynchedData() {
-
+		entityData.define(TRIAL, "");
 	}
 
 	@Override
@@ -62,9 +71,20 @@ public class TrialBannerEntity extends BaseEntity implements TrialTicker {
 		return true;
 	}
 
+	@Nullable
 	public ResourceLocation getTexture() {
-		return trial == null ? JerotesGolems.loc("textures/entity/trial_banner/villager_metal.png") :
-				trial.withPath(e -> "textures/entity/trial_banner/" + e + ".png");
+		var id = entityData.get(TRIAL);
+		if (id.isEmpty()) return null;
+		var trial = new ResourceLocation(id);
+		return trial.withPath(e -> "textures/entity/trial_banner/" + e + ".png");
+	}
+
+	@Nullable
+	public ResourceLocation getBannerTexture() {
+		var id = entityData.get(TRIAL);
+		if (id.isEmpty()) return null;
+		var trial = new ResourceLocation(id);
+		return trial.withPrefix("textures/gui/sprites/boss_bar/");
 	}
 
 	@Override
@@ -82,6 +102,7 @@ public class TrialBannerEntity extends BaseEntity implements TrialTicker {
 							trial = entry.targetTrial;
 							data.start(this, sl.getGameTime(), trial, config);
 							bar.setVisible(true);
+							entityData.set(TRIAL, trial.toString());
 						}
 						return InteractionResult.SUCCESS;
 					}
@@ -98,6 +119,8 @@ public class TrialBannerEntity extends BaseEntity implements TrialTicker {
 			long time = sl.getGameTime();
 			data.tickTrial(this, sl, time);
 			data.updateBar(bar, sl, time);
+		} else {
+			BannerIds.update(this);
 		}
 	}
 
@@ -183,6 +206,7 @@ public class TrialBannerEntity extends BaseEntity implements TrialTicker {
 	protected void readAdditionalSaveData(CompoundTag tag) {
 		super.readAdditionalSaveData(tag);
 		bar.setVisible(trial != null);
+		entityData.set(TRIAL, trial == null ? "" : trial.toString());
 	}
 
 	public void startSeenByPlayer(ServerPlayer p_31483_) {
