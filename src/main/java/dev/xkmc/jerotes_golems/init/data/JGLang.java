@@ -1,6 +1,7 @@
 package dev.xkmc.jerotes_golems.init.data;
 
 import com.tterrag.registrate.providers.RegistrateLangProvider;
+import dev.xkmc.golemdungeons.init.data.spawn.FactoryGolemSpawn;
 import dev.xkmc.jerotes_golems.init.JerotesGolems;
 import dev.xkmc.modulargolems.init.ModularGolems;
 import net.minecraft.ChatFormatting;
@@ -60,6 +61,8 @@ public enum JGLang {
 		pvd.add("golem_material." + JerotesGolems.MODID + ".serpon_alloy", "Serpon Alloy");
 		pvd.add("golem_material." + JerotesGolems.MODID + ".meror", "Meror Metal");
 		pvd.add("golem_material." + JerotesGolems.MODID + ".refine_meror", "Refined Meror Metal");
+
+		pvd.add(Util.makeDescriptionId("trial", CarvedGolemSpawn.CARVED_ALL), "Carved Assembly");
 	}
 
 }

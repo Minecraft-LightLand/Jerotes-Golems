@@ -1,0 +1,25 @@
+{
+  "items": {
+    "MAINHAND": [
+      {
+        "dropChance": 0.085,
+        "enchantLevel": 30,
+        "stack": {
+          "item": "jerotesvillage:villager_metal_bow",
+          "nbt": "{Damage:0}"
+        },
+        "weight": 100
+      }
+    ],
+    "OFFHAND": [
+      {
+        "dropChance": 0.085,
+        "enchantLevel": 0,
+        "stack": {
+          "item": "jerotesvillage:carved_villager_spectral_arrow"
+        },
+        "weight": 100
+      }
+    ]
+  }
+}

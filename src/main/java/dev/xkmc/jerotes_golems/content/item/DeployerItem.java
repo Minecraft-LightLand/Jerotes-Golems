@@ -34,6 +34,7 @@ public class DeployerItem extends Item {
 		VoxelShape box = Shapes.create(AABB.ofSize(center, 2, 2, 2));
 		level.findFreePosition(e, box, center, dim.width, dim.height, dim.width)
 				.ifPresent(x -> e.setPos(x.add(0, -dim.height / 2, 0)));
+		level.addFreshEntity(e);
 		var pl = use.getPlayer();
 		if (pl != null && pl.isCreative())
 			use.getItemInHand().shrink(1);

@@ -1,7 +1,7 @@
 @ParametersAreNonnullByDefault
 @MethodsReturnNonnullByDefault
 
-package dev.xkmc.golemdungeons.compat.jerotes_village_golems;
+package dev.xkmc.jerotes_golems.content.fraction;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
 

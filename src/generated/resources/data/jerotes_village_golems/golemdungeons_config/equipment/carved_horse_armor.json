@@ -1,0 +1,38 @@
+{
+  "items": {
+    "CHEST": [
+      {
+        "dropChance": 0.085,
+        "enchantLevel": 0,
+        "stack": {
+          "item": "minecraft:leather_horse_armor"
+        },
+        "weight": 30
+      },
+      {
+        "dropChance": 0.085,
+        "enchantLevel": 0,
+        "stack": {
+          "item": "jerotesvillage:villager_metal_war_beast_armor"
+        },
+        "weight": 40
+      },
+      {
+        "dropChance": 0.085,
+        "enchantLevel": 0,
+        "stack": {
+          "item": "minecraft:golden_horse_armor"
+        },
+        "weight": 30
+      },
+      {
+        "dropChance": 0.085,
+        "enchantLevel": 0,
+        "stack": {
+          "item": "minecraft:diamond_horse_armor"
+        },
+        "weight": 20
+      }
+    ]
+  }
+}

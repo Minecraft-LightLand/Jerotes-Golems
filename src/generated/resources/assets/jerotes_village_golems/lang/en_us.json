@@ -54,5 +54,6 @@
   "modifier.jerotes_village_golems.meror_defense": "Meror Defense",
   "modifier.jerotes_village_golems.meror_defense.desc": "Reduce Non-Meror damage by %s%%",
   "modifier.jerotes_village_golems.qoaiku_attack": "Qoaiku Attack",
-  "modifier.jerotes_village_golems.qoaiku_attack.desc": "Golem deal Drown damage if possible. Deal %s%% extra damage against mobs sensitive to water."
+  "modifier.jerotes_village_golems.qoaiku_attack.desc": "Golem deal Drown damage if possible. Deal %s%% extra damage against mobs sensitive to water.",
+  "trial.jerotes_village_golems.villager_metal": "Carved Assembly"
 }

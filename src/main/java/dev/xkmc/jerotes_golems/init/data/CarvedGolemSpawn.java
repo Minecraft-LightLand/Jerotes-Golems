@@ -1,5 +1,6 @@
-package dev.xkmc.golemdungeons.compat.jerotes_village_golems.data;
+package dev.xkmc.jerotes_golems.init.data;
 
+import com.jerotes.jerotesvillage.init.JerotesVillageItems;
 import dev.xkmc.golemdungeons.content.config.EquipmentConfig;
 import dev.xkmc.golemdungeons.content.config.SpawnConfig;
 import dev.xkmc.golemdungeons.content.config.TrialConfig;
@@ -7,7 +8,8 @@ import dev.xkmc.golemdungeons.content.faction.DungeonFactionRegistry;
 import dev.xkmc.golemdungeons.init.GolemDungeons;
 import dev.xkmc.golemdungeons.init.data.loot.GDLootGen;
 import dev.xkmc.golemdungeons.init.data.spawn.AbstractGolemSpawn;
-import dev.xkmc.golemdungeons.init.reg.GDItems;
+import dev.xkmc.jerotes_golems.content.fraction.JGFactionRegistry;
+import dev.xkmc.jerotes_golems.init.JerotesGolems;
 import dev.xkmc.l2library.serial.config.ConfigDataProvider;
 import dev.xkmc.modulargolems.init.ModularGolems;
 import dev.xkmc.modulargolems.init.material.GolemWeaponType;
@@ -20,34 +22,32 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
 
-import static dev.xkmc.golemdungeons.init.data.spawn.FactoryGolemSpawn.FACTORY_ALL;
-
 public class CarvedGolemSpawn extends AbstractGolemSpawn {
 
-	public static final ResourceLocation ITEM_LARGE_ARMOR = GolemDungeons.loc("carved_large_armor");
-	public static final ResourceLocation ITEM_LARGE_ARMOR_BETTER = GolemDungeons.loc("carved_large_armor_better");
-	public static final ResourceLocation ITEM_LARGE_WEAPON = GolemDungeons.loc("carved_large_weapon");
-	public static final ResourceLocation ITEM_LARGE_WEAPON_BETTER = GolemDungeons.loc("carved_large_weapon_better");
-	public static final ResourceLocation ITEM_HUMANOID_ARMOR_MISC = GolemDungeons.loc("carved_humanoid_armor_misc");
-	public static final ResourceLocation ITEM_HUMANOID_ARMOR_CHAIN = GolemDungeons.loc("carved_humanoid_armor_chain");
-	public static final ResourceLocation ITEM_HUMANOID_ARMOR_GOLD = GolemDungeons.loc("carved_humanoid_armor_gold");
-	public static final ResourceLocation ITEM_HUMANOID_MELEE = GolemDungeons.loc("carved_humanoid_weapon_melee");
-	public static final ResourceLocation ITEM_HUMANOID_BOW = GolemDungeons.loc("carved_humanoid_weapon_bow");
-	public static final ResourceLocation ITEM_HUMANOID_TIPPED = GolemDungeons.loc("carved_humanoid_weapon_tipped_arrow");
-	public static final ResourceLocation ITEM_HUMANOID_ROCKET = GolemDungeons.loc("carved_humanoid_weapon_rocket_crossbow");
-	public static final ResourceLocation ITEM_HORSE_ARMOR = GolemDungeons.loc("carved_horse_armor");
+	public static final ResourceLocation ITEM_LARGE_ARMOR = JerotesGolems.loc("carved_large_armor");
+	public static final ResourceLocation ITEM_LARGE_ARMOR_BETTER = JerotesGolems.loc("carved_large_armor_better");
+	public static final ResourceLocation ITEM_LARGE_WEAPON = JerotesGolems.loc("carved_large_weapon");
+	public static final ResourceLocation ITEM_LARGE_WEAPON_BETTER = JerotesGolems.loc("carved_large_weapon_better");
+	public static final ResourceLocation ITEM_HUMANOID_ARMOR_MISC = JerotesGolems.loc("carved_humanoid_armor_misc");
+	public static final ResourceLocation ITEM_HUMANOID_ARMOR_CHAIN = JerotesGolems.loc("carved_humanoid_armor_chain");
+	public static final ResourceLocation ITEM_HUMANOID_ARMOR_GOLD = JerotesGolems.loc("carved_humanoid_armor_gold");
+	public static final ResourceLocation ITEM_HUMANOID_MELEE = JerotesGolems.loc("carved_humanoid_weapon_melee");
+	public static final ResourceLocation ITEM_HUMANOID_BOW = JerotesGolems.loc("carved_humanoid_weapon_bow");
+	public static final ResourceLocation ITEM_HUMANOID_TIPPED = JerotesGolems.loc("carved_humanoid_weapon_tipped_arrow");
+	public static final ResourceLocation ITEM_HUMANOID_ROCKET = JerotesGolems.loc("carved_humanoid_weapon_rocket_crossbow");
+	public static final ResourceLocation ITEM_HORSE_ARMOR = JerotesGolems.loc("carved_horse_armor");
 
-	public static final ResourceLocation CARVED_ALL = GolemDungeons.loc("carved_remnant");
+	public static final ResourceLocation CARVED_ALL = JerotesGolems.loc("villager_metal");
 
-	public static final ResourceLocation LARGE_1 = GolemDungeons.loc("carved_large_1");
-	public static final ResourceLocation LARGE_2 = GolemDungeons.loc("carved_large_2");
-	public static final ResourceLocation LARGE_3 = GolemDungeons.loc("carved_large_3");
+	public static final ResourceLocation LARGE_1 = JerotesGolems.loc("carved_large_1");
+	public static final ResourceLocation LARGE_2 = JerotesGolems.loc("carved_large_2");
+	public static final ResourceLocation LARGE_3 = JerotesGolems.loc("carved_large_3");
 
-	public static final ResourceLocation HUMANOID_BASIC = GolemDungeons.loc("carved_humanoid_basic");
-	public static final ResourceLocation HUMANOID_MELEE = GolemDungeons.loc("carved_humanoid_melee");
-	public static final ResourceLocation HUMANOID_RANGED = GolemDungeons.loc("carved_humanoid_ranged");
-	public static final ResourceLocation HUMANOID_TIPPED = GolemDungeons.loc("carved_humanoid_tipped");
-	public static final ResourceLocation HUMANOID_ROCKET = GolemDungeons.loc("carved_humanoid_rocket");
+	public static final ResourceLocation HUMANOID_BASIC = JerotesGolems.loc("carved_humanoid_basic");
+	public static final ResourceLocation HUMANOID_MELEE = JerotesGolems.loc("carved_humanoid_melee");
+	public static final ResourceLocation HUMANOID_RANGED = JerotesGolems.loc("carved_humanoid_ranged");
+	public static final ResourceLocation HUMANOID_TIPPED = JerotesGolems.loc("carved_humanoid_tipped");
+	public static final ResourceLocation HUMANOID_ROCKET = JerotesGolems.loc("carved_humanoid_rocket");
 
 	public static void add(ConfigDataProvider.Collector map) {
 
@@ -88,14 +88,14 @@ public class CarvedGolemSpawn extends AbstractGolemSpawn {
 		// humanoid armors
 		{
 			map.add(GolemDungeons.ITEMS, ITEM_HUMANOID_ARMOR_MISC, new EquipmentConfig()
-					.add(EquipmentSlot.HEAD, 20, JerotesVillageItems.CARVED_LEADER_HELMET, 10)
-					.add(EquipmentSlot.CHEST, 20, JerotesVillageItems.CARVED_LEADER_CHESTPLATE, 10)
-					.add(EquipmentSlot.LEGS, 20, JerotesVillageItems.CARVED_LEADER_LEGGINGS, 10)
-					.add(EquipmentSlot.FEET, 20, JerotesVillageItems.CARVED_LEADER_BOOTS, 10)
-					.add(EquipmentSlot.HEAD, 50, JerotesVillageItems.VILLAGER_METAL_HELMET, 15)
-					.add(EquipmentSlot.CHEST, 50, JerotesVillageItems.VILLAGER_METAL_CHESTPLATE, 15)
-					.add(EquipmentSlot.LEGS, 50, JerotesVillageItems.VILLAGER_METAL_LEGGINGS, 15)
-					.add(EquipmentSlot.FEET, 50, JerotesVillageItems.VILLAGER_METAL_BOOTS, 15)
+					.add(EquipmentSlot.HEAD, 20, JerotesVillageItems.CARVED_LEADER_HELMET.get(), 10)
+					.add(EquipmentSlot.CHEST, 20, JerotesVillageItems.CARVED_LEADER_CHESTPLATE.get(), 10)
+					.add(EquipmentSlot.LEGS, 20, JerotesVillageItems.CARVED_LEADER_LEGGINGS.get(), 10)
+					.add(EquipmentSlot.FEET, 20, JerotesVillageItems.CARVED_LEADER_BOOTS.get(), 10)
+					.add(EquipmentSlot.HEAD, 50, JerotesVillageItems.VILLAGER_METAL_HELMET.get(), 15)
+					.add(EquipmentSlot.CHEST, 50, JerotesVillageItems.VILLAGER_METAL_CHESTPLATE.get(), 15)
+					.add(EquipmentSlot.LEGS, 50, JerotesVillageItems.VILLAGER_METAL_LEGGINGS.get(), 15)
+					.add(EquipmentSlot.FEET, 50, JerotesVillageItems.VILLAGER_METAL_BOOTS.get(), 15)
 					.add(EquipmentSlot.HEAD, 50, Items.CHAINMAIL_HELMET, 20)
 					.add(EquipmentSlot.CHEST, 50, Items.CHAINMAIL_CHESTPLATE, 20)
 					.add(EquipmentSlot.LEGS, 50, Items.CHAINMAIL_LEGGINGS, 20)
@@ -122,7 +122,7 @@ public class CarvedGolemSpawn extends AbstractGolemSpawn {
 
 			map.add(GolemDungeons.ITEMS, ITEM_HORSE_ARMOR, new EquipmentConfig()
 					.add(EquipmentSlot.CHEST, 30, Items.LEATHER_HORSE_ARMOR)
-					.add(EquipmentSlot.CHEST, 40, JerotesVillageItems.VILLAGER_METAL_WAR_BEAST_ARMOR)
+					.add(EquipmentSlot.CHEST, 40, JerotesVillageItems.VILLAGER_METAL_WAR_BEAST_ARMOR.get())
 					.add(EquipmentSlot.CHEST, 30, Items.GOLDEN_HORSE_ARMOR)
 					.add(EquipmentSlot.CHEST, 20, Items.DIAMOND_HORSE_ARMOR)
 			);
@@ -133,19 +133,19 @@ public class CarvedGolemSpawn extends AbstractGolemSpawn {
 		{
 			map.add(GolemDungeons.ITEMS, ITEM_HUMANOID_MELEE, new EquipmentConfig()
 					.add(EquipmentSlot.MAINHAND, 200, Items.STONE_AXE, 10)
-					.add(EquipmentSlot.MAINHAND, 200, JerotesVillageItems.VILLAGER_METAL_DAGGER, 20)
-					.add(EquipmentSlot.MAINHAND, 100, JerotesVillageItems.VILLAGER_METAL_HAMMER, 10)
-					.add(EquipmentSlot.MAINHAND, 100, JerotesVillageItems.VILLAGER_METAL_AXE, 10)
-					.add(EquipmentSlot.MAINHAND, 100, JerotesVillageItems.VILLAGER_METAL_SWORD, 20)
-					.add(EquipmentSlot.MAINHAND, 50, JerotesVillageItems.VILLAGER_METAL_PICKAXE, 10)
-					.add(EquipmentSlot.MAINHAND, 150, JerotesVillageItems.VILLAGER_METAL_JAVELIN, 10)
-					.add(EquipmentSlot.OFFHAND, 100, JerotesVillageItems.VILLAGER_METAL_SHIELD, 20)
+					.add(EquipmentSlot.MAINHAND, 200, JerotesVillageItems.VILLAGER_METAL_DAGGER.get(), 20)
+					.add(EquipmentSlot.MAINHAND, 100, JerotesVillageItems.VILLAGER_METAL_HAMMER.get(), 10)
+					.add(EquipmentSlot.MAINHAND, 100, JerotesVillageItems.VILLAGER_METAL_AXE.get(), 10)
+					.add(EquipmentSlot.MAINHAND, 100, JerotesVillageItems.VILLAGER_METAL_SWORD.get(), 20)
+					.add(EquipmentSlot.MAINHAND, 50, JerotesVillageItems.VILLAGER_METAL_PICKAXE.get(), 10)
+					.add(EquipmentSlot.MAINHAND, 150, JerotesVillageItems.VILLAGER_METAL_JAVELIN.get(), 10)
+					.add(EquipmentSlot.OFFHAND, 100, Items.SHIELD, 20)
 					.add(EquipmentSlot.OFFHAND, 100, Items.AIR)
 			);
 
 			map.add(GolemDungeons.ITEMS, ITEM_HUMANOID_BOW, new EquipmentConfig()
-					.add(EquipmentSlot.MAINHAND, 100, JerotesVillageItems.VILLAGER_METAL_BOW, 30)
-					.add(EquipmentSlot.OFFHAND, 100, JerotesVillageItems.CARVED_VILLAGER_SPECTRAL_ARROW)
+					.add(EquipmentSlot.MAINHAND, 100, JerotesVillageItems.VILLAGER_METAL_BOW.get(), 30)
+					.add(EquipmentSlot.OFFHAND, 100, JerotesVillageItems.CARVED_VILLAGER_SPECTRAL_ARROW.get())
 			);
 
 			map.add(GolemDungeons.ITEMS, ITEM_HUMANOID_TIPPED, new EquipmentConfig()
@@ -153,12 +153,12 @@ public class CarvedGolemSpawn extends AbstractGolemSpawn {
 					.add(EquipmentSlot.OFFHAND, 100, tipped(Potions.SLOWNESS))
 					.add(EquipmentSlot.OFFHAND, 100, tipped(Potions.WEAKNESS))
 					.add(EquipmentSlot.OFFHAND, 100, tipped(Potions.HARMING))
-					.add(EquipmentSlot.MAINHAND, 100, JerotesVillageItems.VILLAGER_METAL_BOW, 10)
-					.add(EquipmentSlot.MAINHAND, 100, JerotesVillageItems.VILLAGER_METAL_CROSSBOW, 10)
+					.add(EquipmentSlot.MAINHAND, 100, JerotesVillageItems.VILLAGER_METAL_BOW.get(), 10)
+					.add(EquipmentSlot.MAINHAND, 100, JerotesVillageItems.VILLAGER_METAL_CROSSBOW.get(), 10)
 			);
 
 			map.add(GolemDungeons.ITEMS, ITEM_HUMANOID_ROCKET, new EquipmentConfig()
-					.add(EquipmentSlot.MAINHAND, 100, JerotesVillageItems.VILLAGER_METAL_CROSSBOW, 30)
+					.add(EquipmentSlot.MAINHAND, 100, JerotesVillageItems.VILLAGER_METAL_CROSSBOW.get(), 30)
 					.add(EquipmentSlot.OFFHAND, 100, Items.FIREWORK_ROCKET, 7, 0)
 			);
 		}
@@ -167,18 +167,13 @@ public class CarvedGolemSpawn extends AbstractGolemSpawn {
 		{
 			map.add(GolemDungeons.SPAWN, LARGE_1, new SpawnConfig(DungeonFactionRegistry.REMNANT)
 					.type(GolemTypes.TYPE_GOLEM.get(), new SpawnConfig.GolemTypeEntry(30, 0))
-					.mat(ModularGolems.loc("copper"), 60)
-					.mat(ModularGolems.loc("iron"), 20)
-					.mat(ModularGolems.loc("gold"), noArm(20))
+					.mat(JerotesGolems.loc("villager_metal"), 100)
 			);
 
 
 			map.add(GolemDungeons.SPAWN, LARGE_2, new SpawnConfig(DungeonFactionRegistry.REMNANT)
 					.type(GolemTypes.TYPE_GOLEM.get(), new SpawnConfig.GolemTypeEntry(30, 0))
-					.mat(ModularGolems.loc("copper"), 50)
-					.mat(ModularGolems.loc("iron"), 40)
-					.mat(ModularGolems.loc("gold"), noArm(10)
-							.add(GolemItems.SPEED.get(), 1))
+					.mat(JerotesGolems.loc("villager_metal"), 100)
 					.equipments(new SpawnConfig.EquipmentGroup(GolemTypes.ENTITY_GOLEM.get())
 							.add(100, ITEM_LARGE_ARMOR))
 					.equipments(new SpawnConfig.EquipmentGroup(GolemTypes.ENTITY_GOLEM.get())
@@ -199,9 +194,9 @@ public class CarvedGolemSpawn extends AbstractGolemSpawn {
 
 		// humanoid wave
 		{
-			map.add(GolemDungeons.SPAWN, HUMANOID_BASIC, new SpawnConfig(DungeonFactionRegistry.CARVED)
+			map.add(GolemDungeons.SPAWN, HUMANOID_BASIC, new SpawnConfig(JGFactionRegistry.CARVED)
 					.type(GolemTypes.TYPE_HUMANOID.get(), new SpawnConfig.GolemTypeEntry(40, 0))
-					.mat(ModularGolems.loc("villager_metal"), 100)
+					.mat(JerotesGolems.loc("villager_metal"), 100)
 			);
 
 			map.add(GolemDungeons.SPAWN, HUMANOID_MELEE, createBaseHumanoid()
@@ -236,7 +231,7 @@ public class CarvedGolemSpawn extends AbstractGolemSpawn {
 
 		// generic wave
 		{
-			map.add(GolemDungeons.SPAWN, FACTORY_ALL, createBaseHumanoid().asTrialKey(FACTORY_ALL)
+			map.add(GolemDungeons.SPAWN, CARVED_ALL, createBaseHumanoid().asTrialKey(CARVED_ALL)
 					.type(GolemTypes.TYPE_GOLEM.get(), new SpawnConfig.GolemTypeEntry(30, 0)
 							.add(GolemItems.SPEED.get(), 0.5f)
 					)
@@ -258,7 +253,7 @@ public class CarvedGolemSpawn extends AbstractGolemSpawn {
 
 		// trial
 		{
-			map.add(GolemDungeons.TRIAL, FACTORY_ALL, new TrialConfig().setReward(GDLootGen.FACTORY)
+			map.add(GolemDungeons.TRIAL, CARVED_ALL, new TrialConfig().setReward(GDLootGen.FACTORY)
 					.setCost(200).setTriggerRange(22, -5, 16)
 					.add(of(LARGE_1, 1))
 					.add(of(LARGE_1, 1),
@@ -281,21 +276,21 @@ public class CarvedGolemSpawn extends AbstractGolemSpawn {
 							of(HUMANOID_RANGED, 1),
 							of(HUMANOID_TIPPED, 2),
 							of(HUMANOID_ROCKET, 1),
-							of(FACTORY_ALL, 3))
+							of(CARVED_ALL, 3))
 					.add(of(LARGE_3, 3),
 							of(HUMANOID_MELEE, 2),
 							of(HUMANOID_RANGED, 1),
 							of(HUMANOID_TIPPED, 2),
 							of(HUMANOID_ROCKET, 2),
-							of(FACTORY_ALL, 5))
+							of(CARVED_ALL, 5))
 			);
 		}
 	}
 
 	private static SpawnConfig createBase() {
-		return new SpawnConfig(DungeonFactionRegistry.CARVED)
-				.mat(ModularGolems.loc("villager_metal"), 100)
-						.add(GolemItems.SPEED.get(), 1))
+		return new SpawnConfig(JGFactionRegistry.CARVED)
+				.mat(JerotesGolems.loc("villager_metal"), 100)
+				.upgrade(GolemItems.SPEED.get(), 1)
 				.upgrade(GolemItems.QUARTZ.asItem(), 100)
 				.upgrade(GolemItems.GOLD.asItem(), 100)
 				.upgrade(GolemItems.SPEED.asItem(), 100)

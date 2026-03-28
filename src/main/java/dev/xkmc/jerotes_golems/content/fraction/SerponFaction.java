@@ -1,4 +1,4 @@
-package dev.xkmc.golemdungeons.compat.jerotes_village_golems;
+package dev.xkmc.jerotes_golems.content.fraction;
 
 import dev.xkmc.golemdungeons.content.faction.DungeonFaction;
 import dev.xkmc.modulargolems.content.entity.common.AbstractGolemEntity;

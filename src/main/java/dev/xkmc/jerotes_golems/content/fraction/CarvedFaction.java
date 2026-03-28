@@ -1,4 +1,4 @@
-package dev.xkmc.golemdungeons.compat.jerotes_village_golems;
+package dev.xkmc.jerotes_golems.content.fraction;
 
 import dev.xkmc.golemdungeons.content.faction.DungeonFaction;
 import dev.xkmc.modulargolems.content.entity.common.AbstractGolemEntity;
@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.entity.BannerPatterns;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.common.util.Lazy;
 
-public class QoaikuFaction extends DungeonFaction {
+public class CarvedFaction extends DungeonFaction {
 
 	private static final Lazy<ItemStack> BANNER = Lazy.of(() -> {
 		ItemStack stack = new ItemStack(Items.WHITE_BANNER);
@@ -30,7 +30,7 @@ public class QoaikuFaction extends DungeonFaction {
 		return stack;
 	});
 
-	public QoaikuFaction(ResourceLocation id) {
+	public CarvedFaction(ResourceLocation id) {
 		super(id);
 	}
 

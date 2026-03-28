@@ -67,10 +67,8 @@ public class JGConfigGen extends ConfigDataProvider {
 		}
 
 		// trials
-		{
 
-		}
-
+		CarvedGolemSpawn.add(map);
 
 	}
 
