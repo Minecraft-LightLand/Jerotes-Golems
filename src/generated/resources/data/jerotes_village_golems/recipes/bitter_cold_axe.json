@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "jerotesvillage:ice_rock"
+  },
+  "base": {
+    "item": "modulargolems:iron_golem_axe"
+  },
+  "result": {
+    "item": "jerotes_village_golems:bitter_cold_axe"
+  },
+  "template": {
+    "item": "jerotesvillage:bitter_cold_firm_ice"
+  }
+}

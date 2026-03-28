@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_iron_golem_axe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "modulargolems:iron_golem_axe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "jerotes_village_golems:bitter_cold_axe"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_iron_golem_axe",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "jerotes_village_golems:bitter_cold_axe"
+    ]
+  },
+  "sends_telemetry_event": false
+}

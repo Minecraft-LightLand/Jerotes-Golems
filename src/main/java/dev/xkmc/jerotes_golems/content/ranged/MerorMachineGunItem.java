@@ -4,10 +4,11 @@ import com.jerotes.jerotesvillage.entity.Shoot.Other.MerorBulletEntity;
 import com.jerotes.jerotesvillage.init.JerotesVillageEntityType;
 import com.jerotes.jerotesvillage.init.JerotesVillageItems;
 import dev.xkmc.jerotes_golems.content.client.JGModelPaths;
+import dev.xkmc.jerotes_golems.init.data.JGLang;
 import dev.xkmc.modulargolems.content.client.armor.GolemModelPaths;
 import dev.xkmc.modulargolems.content.client.weapon.ShoulderAnimData;
 import dev.xkmc.modulargolems.content.entity.metalgolem.MetalGolemEntity;
-import dev.xkmc.modulargolems.content.item.ranged.ConnonPoseUtil;
+import dev.xkmc.modulargolems.content.item.ranged.CannonPoseUtil;
 import dev.xkmc.modulargolems.content.item.ranged.IShoulderCannonAnimated;
 import dev.xkmc.modulargolems.init.data.MGLangData;
 import dev.xkmc.modulargolems.init.registrate.GolemTypes;
@@ -40,15 +41,13 @@ public class MerorMachineGunItem extends ProjectileWeaponItem implements IShould
 	@Override
 	public void onTick(MetalGolemEntity e, ItemStack stack, InteractionHand hand) {
 		if (e.tickCount % 4 != (hand == InteractionHand.MAIN_HAND ? 1 : 3)) return;
-		var rot = ConnonPoseUtil.BEACON.getAngle(e, hand);
-		var diff = Mth.wrapDegrees(rot[0] * Mth.RAD_TO_DEG + e.yBodyRot);
-		if (Math.abs(diff) > 30) return;
+		if (CannonPoseUtil.BEACON.isOutOfRange(e, hand)) return;
 		var target = e.getTarget();
 		if (target == null || !target.isAlive()) return;
 		var ammo = e.getProjectile(stack);
-		var inf = stack.getEnchantmentLevel(Enchantments.INFINITY_ARROWS) > 0;
+		var inf = e.isHostile() || stack.getEnchantmentLevel(Enchantments.INFINITY_ARROWS) > 0;
 		if (!inf && ammo.isEmpty()) return;
-		var pos = ConnonPoseUtil.BEACON.getOrigin(e, hand);
+		var pos = CannonPoseUtil.BEACON.getOrigin(e, hand);
 		var dst = target.position().add(0, target.getBbHeight() / 2, 0);
 		var dir = dst.subtract(pos).normalize();
 		Projectile proj = new MerorBulletEntity(JerotesVillageEntityType.MEROR_BULLET.get(), e.level());
@@ -64,7 +63,7 @@ public class MerorMachineGunItem extends ProjectileWeaponItem implements IShould
 
 	@Override
 	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> list, TooltipFlag flag) {
-		//TODO desc
+		list.add(JGLang.MACHINE_GUN_DESC.get());
 		list.add(MGLangData.GOLEM_EQUIPMENT.get(GolemTypes.ENTITY_GOLEM.get().getDescription().copy().withStyle(ChatFormatting.GOLD))
 				.withStyle(ChatFormatting.UNDERLINE));
 		list.add(MGLangData.SHOULDER_WEAPON.get());

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mountain_realm_leggings": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "jerotesvillage:mountain_realm_leggings"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "jerotes_village_golems:wonderland_shinguard"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_mountain_realm_leggings",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "jerotes_village_golems:wonderland_shinguard"
+    ]
+  },
+  "sends_telemetry_event": false
+}

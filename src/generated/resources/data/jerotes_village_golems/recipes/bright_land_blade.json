@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "jerotesvillage:bright_land_beast_horn"
+    },
+    "B": {
+      "item": "modulargolems:metal_golem_template"
+    },
+    "I": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "  A",
+    "BI ",
+    "IB "
+  ],
+  "result": {
+    "item": "jerotes_village_golems:bright_land_blade"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:obsidian"
+  },
+  "base": {
+    "item": "jerotes_village_golems:serpon_golem_sword"
+  },
+  "result": {
+    "item": "jerotes_village_golems:serpon_chain_blade"
+  },
+  "template": {
+    "item": "jerotesvillage:the_grace_of_serpenperth"
+  }
+}

@@ -24,6 +24,9 @@ public class MerorFlameThrowerModel {
 
 		GolemModelPath.register(JGModelPaths.FLAME_LEFT,
 				new GolemModelPath(FLAME_LEFT, List.of(List.of("body", "flamethrower2"))));
+
+		GolemShoulderPose.register(JGModelPaths.GUN_RIGHT, new BeaconConnonPose("flamethrower", -1, 0, 0));
+		GolemShoulderPose.register(JGModelPaths.GUN_LEFT, new BeaconConnonPose("flamethrower2", 1, 0, 0));
 	}
 
 

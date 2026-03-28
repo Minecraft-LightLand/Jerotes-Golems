@@ -17,7 +17,7 @@ public class AbackModifier extends GolemModifier {
 		if (golem.tickCount % 5 == 0) {
 			var target = golem.getTarget();
 			if (target == null) return;
-			target.addEffect(new MobEffectInstance(JerotesMobEffects.ABACK.get(), 0, 60), golem);
+			target.addEffect(new MobEffectInstance(JerotesMobEffects.ABACK.get(), 60, 0), golem);
 		}
 	}
 

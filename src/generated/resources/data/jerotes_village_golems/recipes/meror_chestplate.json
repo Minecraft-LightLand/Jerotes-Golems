@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "modulargolems:metal_golem_template"
+    },
+    "B": {
+      "item": "jerotesvillage:meror_metal_nugget"
+    },
+    "I": {
+      "item": "jerotesvillage:meror_metal_chestplate"
+    }
+  },
+  "pattern": [
+    "IAI",
+    "III",
+    "BIB"
+  ],
+  "result": {
+    "item": "jerotes_village_golems:meror_chestplate"
+  },
+  "show_notification": true
+}

@@ -6,6 +6,7 @@ import dev.xkmc.jerotes_golems.content.armor.MerorArmorItem;
 import dev.xkmc.jerotes_golems.content.armor.RefineMerorArmorItem;
 import dev.xkmc.jerotes_golems.content.armor.WonderlandArmorItem;
 import dev.xkmc.jerotes_golems.content.client.JGModelPaths;
+import dev.xkmc.jerotes_golems.content.item.DeployerItem;
 import dev.xkmc.jerotes_golems.content.ranged.MerorFlameThrowerItem;
 import dev.xkmc.jerotes_golems.content.ranged.MerorMachineGunItem;
 import dev.xkmc.jerotes_golems.content.weapon.JGSpecialMaterial;
@@ -20,6 +21,8 @@ import net.minecraft.world.item.CreativeModeTab;
 public class JGItems {
 
 	public static final RegistryEntry<CreativeModeTab> TAB;
+
+	public static final ItemEntry<DeployerItem> VILLAGER_METAL_DEPLOYER, QOAIKU_DEPLOYER, MEROR_DEPLOYER;
 
 	public static final ItemEntry<WonderlandArmorItem> WONDERLAND_HELMET, WONDERLAND_CHESTPLATE, WONDERLAND_SHINGUARD;
 	public static final ItemEntry<MerorArmorItem> MEROR_HELMET, MEROR_CHESTPLATE, MEROR_SHINGUARD;
@@ -36,6 +39,17 @@ public class JGItems {
 		TAB = JerotesGolems.REGISTRATE.buildL2CreativeTab("main", "Jerotes Village Golems", b ->
 				b.icon(() -> JGItems.SPECIAL_WEAPONS[0].asStack()));
 
+		VILLAGER_METAL_DEPLOYER = JerotesGolems.REGISTRATE.item("villager_metal_deployer",
+						p -> new DeployerItem(p, JerotesGolems.loc("villager_metal")))
+				.register();
+
+		QOAIKU_DEPLOYER = JerotesGolems.REGISTRATE.item("qoaiku_deployer",
+						p -> new DeployerItem(p, JerotesGolems.loc("qoaiku")))
+				.register();
+
+		MEROR_DEPLOYER = JerotesGolems.REGISTRATE.item("meror_deployer",
+						p -> new DeployerItem(p, JerotesGolems.loc("meror")))
+				.register();
 
 		WONDERLAND_HELMET = JerotesGolems.REGISTRATE.item("wonderland_helmet", p -> new WonderlandArmorItem(p.stacksTo(1),
 						ArmorItem.Type.HELMET, 11, 6, JGModelPaths.WONDERLAND_HELMETS))

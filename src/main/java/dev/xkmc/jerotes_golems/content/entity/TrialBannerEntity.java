@@ -87,26 +87,32 @@ public class TrialBannerEntity extends BaseEntity implements TrialTicker {
 		return trial.withPrefix("textures/gui/sprites/boss_bar/");
 	}
 
+	public boolean setTrial(ResourceLocation id) {
+		var entry = GolemDungeons.SPAWN.getEntry(id);
+		if (entry.targetTrial != null) {
+			var config = GolemDungeons.TRIAL.getEntry(entry.targetTrial);
+			if (config != null) {
+				if (level() instanceof ServerLevel sl) {
+					data.stop(sl, this);
+					trial = entry.targetTrial;
+					data.start(this, sl.getGameTime(), trial, config);
+					bar.setVisible(true);
+					entityData.set(TRIAL, trial.toString());
+				}
+				return true;
+			}
+		}
+		return false;
+	}
+
 	@Override
 	public InteractionResult interact(Player player, InteractionHand hand) {
 		ItemStack stack = player.getItemInHand(hand);
 		if (player.isCreative()) {
 			if (stack.is(GDItems.SUMMON.get())) {
 				var id = HostileSummonWand.getId(stack);
-				var entry = GolemDungeons.SPAWN.getEntry(id);
-				if (entry.targetTrial != null) {
-					var config = GolemDungeons.TRIAL.getEntry(entry.targetTrial);
-					if (config != null) {
-						if (level() instanceof ServerLevel sl) {
-							data.stop(sl, this);
-							trial = entry.targetTrial;
-							data.start(this, sl.getGameTime(), trial, config);
-							bar.setVisible(true);
-							entityData.set(TRIAL, trial.toString());
-						}
-						return InteractionResult.SUCCESS;
-					}
-				}
+				if (setTrial(id))
+					return InteractionResult.SUCCESS;
 			}
 		}
 		return super.interact(player, hand);

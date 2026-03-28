@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:lapis_block"
+  },
+  "base": {
+    "item": "modulargolems:diamond_golem_sword"
+  },
+  "result": {
+    "item": "jerotes_village_golems:sediment_sword"
+  },
+  "template": {
+    "item": "jerotesvillage:ancient_second_rounder_noble_upgrade_smithing_template"
+  }
+}

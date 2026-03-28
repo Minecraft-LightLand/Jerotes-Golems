@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "modulargolems:diamond_golem_spear"
+    },
+    "I": [
+      {
+        "item": "minecraft:poisonous_potato"
+      },
+      {
+        "item": "jerotesvillage:green_humanoid_cane_stems"
+      },
+      {
+        "item": "jerotesvillage:green_humanoid_cane"
+      }
+    ]
+  },
+  "pattern": [
+    "III",
+    "IAI",
+    "III"
+  ],
+  "result": {
+    "item": "jerotes_village_golems:anesthetic_spear"
+  },
+  "show_notification": true
+}

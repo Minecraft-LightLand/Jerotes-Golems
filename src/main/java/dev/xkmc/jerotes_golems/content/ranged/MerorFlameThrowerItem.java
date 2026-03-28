@@ -3,16 +3,16 @@ package dev.xkmc.jerotes_golems.content.ranged;
 import com.jerotes.jerotesvillage.entity.Shoot.Other.MerorFireEntity;
 import com.jerotes.jerotesvillage.init.JerotesVillageEntityType;
 import dev.xkmc.jerotes_golems.content.client.JGModelPaths;
+import dev.xkmc.jerotes_golems.init.data.JGLang;
 import dev.xkmc.modulargolems.content.client.armor.GolemModelPaths;
 import dev.xkmc.modulargolems.content.entity.metalgolem.MetalGolemEntity;
-import dev.xkmc.modulargolems.content.item.ranged.ConnonPoseUtil;
+import dev.xkmc.modulargolems.content.item.ranged.CannonPoseUtil;
 import dev.xkmc.modulargolems.content.item.ranged.IShoulderCannonAnimated;
 import dev.xkmc.modulargolems.content.item.ranged.ShouldWeaponItem;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
@@ -32,12 +32,10 @@ public class MerorFlameThrowerItem extends ShouldWeaponItem implements IShoulder
 	@Override
 	public void onTick(MetalGolemEntity e, ItemStack stack, InteractionHand hand) {
 		if (e.tickCount % 4 != (hand == InteractionHand.MAIN_HAND ? 1 : 3)) return;
-		var rot = ConnonPoseUtil.BEACON.getAngle(e, hand);
-		var diff = Mth.wrapDegrees(rot[0] * Mth.RAD_TO_DEG + e.yBodyRot);
-		if (Math.abs(diff) > 30) return;
+		if (CannonPoseUtil.BEACON.isOutOfRange(e, hand)) return;
 		var target = e.getTarget();
 		if (target == null || !target.isAlive()) return;
-		var pos = ConnonPoseUtil.BEACON.getOrigin(e, hand);
+		var pos = CannonPoseUtil.BEACON.getOrigin(e, hand);
 		var dst = target.position().add(0, target.getBbHeight() / 2, 0);
 		var dir = dst.subtract(pos).normalize();
 		Projectile proj = new MerorFireEntity(JerotesVillageEntityType.MEROR_FIRE.get(), e.level());
@@ -50,7 +48,7 @@ public class MerorFlameThrowerItem extends ShouldWeaponItem implements IShoulder
 
 	@Override
 	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> list, TooltipFlag flag) {
-		//TODO desc
+		list.add(JGLang.FLAME_THROWER_DESC.get());
 		super.appendHoverText(stack, level, list, flag);
 	}
 

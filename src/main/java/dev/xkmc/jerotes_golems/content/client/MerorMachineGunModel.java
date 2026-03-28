@@ -3,6 +3,9 @@ package dev.xkmc.jerotes_golems.content.client;
 import dev.xkmc.jerotes_golems.init.JerotesGolems;
 import dev.xkmc.modulargolems.content.client.armor.GolemEquipmentModels;
 import dev.xkmc.modulargolems.content.client.armor.GolemModelPath;
+import dev.xkmc.modulargolems.content.client.armor.GolemModelPaths;
+import dev.xkmc.modulargolems.content.client.pose.BeaconConnonPose;
+import dev.xkmc.modulargolems.content.client.pose.GolemShoulderPose;
 import dev.xkmc.modulargolems.content.client.weapon.GolemModelAnimations;
 import net.minecraft.client.animation.AnimationChannel;
 import net.minecraft.client.animation.AnimationDefinition;
@@ -45,6 +48,9 @@ public class MerorMachineGunModel {
 
 		GolemModelAnimations.register(JGModelPaths.GUN_RIGHT, ANIM);
 		GolemModelAnimations.register(JGModelPaths.GUN_LEFT, ANIM);
+
+		GolemShoulderPose.register(JGModelPaths.GUN_RIGHT, new BeaconConnonPose("flamethrower", -1, 0, 0));
+		GolemShoulderPose.register(JGModelPaths.GUN_LEFT, new BeaconConnonPose("flamethrower2", 1, 0, 0));
 
 	}
 
