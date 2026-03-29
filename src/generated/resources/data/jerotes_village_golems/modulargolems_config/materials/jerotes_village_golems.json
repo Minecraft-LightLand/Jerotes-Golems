@@ -28,6 +28,7 @@
     },
     "jerotes_village_golems:refine_meror": {
       "jerotes_village_golems:fire_affinity": 1,
+      "jerotes_village_golems:legendary": 1,
       "jerotes_village_golems:meror_attack": 1,
       "jerotes_village_golems:meror_defense": 2,
       "modulargolems:add_slot": 1,

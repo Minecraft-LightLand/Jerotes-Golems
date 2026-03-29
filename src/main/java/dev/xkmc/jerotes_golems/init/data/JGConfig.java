@@ -23,6 +23,7 @@ public class JGConfig {
 		public final ForgeConfigSpec.DoubleValue fireAffinityDamageBonus;
 		public final ForgeConfigSpec.DoubleValue qoaikuAttackDamageBonus;
 		public final ForgeConfigSpec.DoubleValue serponChainBladeDamageFactor;
+		public final ForgeConfigSpec.IntValue legendaryChargeDuration;
 
 		Common(ForgeConfigSpec.Builder builder) {
 			builder.push("modifiers");
@@ -36,6 +37,8 @@ public class JGConfig {
 					.defineInRange("fireAffinityDamageBonus", 0.1, 0, 10);
 			qoaikuAttackDamageBonus = builder.comment("QoaikuAttack: Damage bonus per level")
 					.defineInRange("qoaikuAttackDamageBonus", 0.1, 0, 1);
+			legendaryChargeDuration = builder.comment("Legendary: Charge duration")
+					.defineInRange("legendaryChargeDuration", 1200, 100, 24000);
 			builder.pop();
 			builder.push("weapons");
 			serponChainBladeDamageFactor = builder.comment("Serpon Chain Blade: follow up damage factor")

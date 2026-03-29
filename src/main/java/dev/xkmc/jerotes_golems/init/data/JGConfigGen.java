@@ -56,6 +56,7 @@ public class JGConfigGen extends ConfigDataProvider {
 					.addStat(GolemTypes.STAT_HEALTH.get(), 400)
 					.addStat(GolemTypes.STAT_ATTACK.get(), 30)
 					.addStat(GolemTypes.STAT_SWEEP.get(), 1)
+					.addModifier(JGModifiers.LEGENDARY.get(), 1)
 					.addModifier(JGModifiers.FIRE_AFFINITY.get(), 1)
 					.addModifier(JGModifiers.MEROR_ATK.get(), 1)
 					.addModifier(JGModifiers.MEROR_DEF.get(), 2)

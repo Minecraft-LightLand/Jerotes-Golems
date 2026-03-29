@@ -1,4 +1,6 @@
 {
+  "effect.jerotes_village_golems.meror_energy": "ʎbɹǝuƎ ɹoɹǝW",
+  "effect.jerotes_village_golems.meror_energy.description": "snʇɐʇS ʎɹɐpuǝbǝꞀ",
   "effect.jerotes_village_golems.netherite_boost": "ʇsooᗺ ǝʇıɹǝɥʇǝN",
   "effect.jerotes_village_golems.netherite_boost.description": "pǝǝds ʞɔɐʇʇɐ ɯǝןob ǝsɐǝɹɔuI",
   "entity.jerotes_village_golems.trial_banner": "ɹǝuuɐᗺ ןɐıɹ⟘",
@@ -49,6 +51,8 @@
   "modifier.jerotes_village_golems.fire_affinity.desc": "snuoq ǝbɐɯɐp %s%%+ puɐ buıןɐǝɥ ןɐɹnʇɐu %s+ ʇǝb uǝɥʇ ǝbɐɯɐp ǝɹıɟ qɹosqⱯ",
   "modifier.jerotes_village_golems.greedy": "ʎpǝǝɹ⅁",
   "modifier.jerotes_village_golems.greedy.desc": "ʇı uo ʞɔoןq ǝʇıɹǝɥʇǝu ɹo ʞɔoןq pןɐɹǝɯǝ buısn uǝɥʍ snuoq sʇǝb puɐ sɹıɐdǝɹ ɯǝןo⅁",
+  "modifier.jerotes_village_golems.legendary": "ʎɹɐpuǝbǝꞀ",
+  "modifier.jerotes_village_golems.legendary.desc": "snʇɐʇs ʎɹɐpuǝbǝן ɟo %s uıɐb oʇ ]%s[ ǝɯnsuoƆ",
   "modifier.jerotes_village_golems.meror_attack": "ʞɔɐʇʇⱯ ɹoɹǝW",
   "modifier.jerotes_village_golems.meror_attack.desc": "ǝbɐɯɐp ɹoɹǝW ןɐǝp ɯǝןo⅁",
   "modifier.jerotes_village_golems.meror_defense": "ǝsuǝɟǝᗡ ɹoɹǝW",

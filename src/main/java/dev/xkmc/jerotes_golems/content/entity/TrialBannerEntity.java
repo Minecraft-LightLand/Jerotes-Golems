@@ -29,6 +29,9 @@ import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -156,7 +159,17 @@ public class TrialBannerEntity extends BaseEntity implements TrialTicker {
 
 	@Override
 	public void configureEntity(LivingEntity e, int i) {
-		e.setPos(position());
+		var pos = position().add(
+				random.nextFloat() * 6 - 3,
+				random.nextFloat() * 3,
+				random.nextFloat() * 6 - 3
+		);
+		e.setPos(pos);
+		var dim = e.getDimensions(Pose.STANDING);
+		Vec3 center = pos.add(0, dim.height / 2, 0);
+		VoxelShape box = Shapes.create(AABB.ofSize(center, 2, 2, 2));
+		level().findFreePosition(e, box, center, dim.width, dim.height, dim.width)
+				.ifPresent(x -> e.setPos(x.add(0, -dim.height / 2, 0)));
 	}
 
 	@Override

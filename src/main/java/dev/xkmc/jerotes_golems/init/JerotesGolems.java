@@ -10,6 +10,7 @@ import dev.xkmc.jerotes_golems.init.reg.JGItems;
 import dev.xkmc.jerotes_golems.init.reg.JGModifiers;
 import dev.xkmc.l2damagetracker.contents.attack.AttackEventHandler;
 import dev.xkmc.l2library.base.L2Registrate;
+import dev.xkmc.l2library.init.data.L2TagGen;
 import dev.xkmc.l2library.serial.config.PacketHandlerWithConfig;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -62,6 +63,7 @@ public class JerotesGolems {
 		REGISTRATE.addDataGenerator(ProviderType.LANG, JGLang::genLang);
 		REGISTRATE.addDataGenerator(ProviderType.RECIPE, JGRecipeGen::genRecipe);
 		REGISTRATE.addDataGenerator(ProviderType.ITEM_TAGS, JGTagGen::genItemTag);
+		REGISTRATE.addDataGenerator(L2TagGen.EFF_TAGS, JGTagGen::genEffectTag);
 
 		var gen = event.getGenerator();
 		var output = gen.getPackOutput();

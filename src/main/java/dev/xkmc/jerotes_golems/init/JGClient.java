@@ -1,8 +1,11 @@
 package dev.xkmc.jerotes_golems.init;
 
+import com.jerotes.jerotes.util.EntityAndItemFind;
 import dev.xkmc.jerotes_golems.content.client.*;
 import dev.xkmc.jerotes_golems.content.entity.TrialBannerModelData;
 import dev.xkmc.modulargolems.content.client.armor.GolemEquipmentModels;
+import dev.xkmc.modulargolems.content.client.override.ModelOverride;
+import dev.xkmc.modulargolems.content.client.override.ModelOverrides;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
@@ -15,6 +18,8 @@ public class JGClient {
 
 	@SubscribeEvent
 	public static void clientSetup(FMLClientSetupEvent event) {
+		ModelOverrides.registerOverride(JerotesGolems.loc("refine_meror"), ModelOverride.texturePredicate(e ->
+				EntityAndItemFind.isLegendary(e) ? "_charged" : ""));
 	}
 
 	@SubscribeEvent
