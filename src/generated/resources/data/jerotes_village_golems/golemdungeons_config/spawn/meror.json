@@ -4,7 +4,11 @@
       "type": "modulargolems:metal_golem",
       "sets": [
         {
-          "target": "jerotes_village_golems:meror_large_armor_better",
+          "target": "jerotes_village_golems:meror_large_armor",
+          "weight": 100
+        },
+        {
+          "target": "jerotes_village_golems:meror_large_armor_refine",
           "weight": 100
         }
       ]
@@ -13,7 +17,11 @@
       "type": "modulargolems:metal_golem",
       "sets": [
         {
-          "target": "jerotes_village_golems:meror_large_weapon_better",
+          "target": "jerotes_village_golems:meror_large_weapon",
+          "weight": 100
+        },
+        {
+          "target": "jerotes_village_golems:meror_large_weapon_refine",
           "weight": 100
         }
       ]
@@ -22,16 +30,12 @@
       "type": "modulargolems:humanoid_golem",
       "sets": [
         {
-          "target": "jerotes_village_golems:meror_humanoid_armor_misc",
+          "target": "jerotes_village_golems:meror_humanoid_armor",
           "weight": 100
         },
         {
-          "target": "jerotes_village_golems:meror_humanoid_armor_chain",
-          "weight": 20
-        },
-        {
-          "target": "jerotes_village_golems:meror_humanoid_armor_gold",
-          "weight": 20
+          "target": "jerotes_village_golems:meror_humanoid_armor_refine",
+          "weight": 100
         }
       ]
     },
@@ -44,15 +48,7 @@
         },
         {
           "target": "jerotes_village_golems:meror_humanoid_weapon_bow",
-          "weight": 30
-        },
-        {
-          "target": "jerotes_village_golems:meror_humanoid_weapon_tipped_arrow",
-          "weight": 50
-        },
-        {
-          "target": "jerotes_village_golems:meror_humanoid_weapon_rocket_crossbow",
-          "weight": 20
+          "weight": 100
         }
       ]
     }
@@ -60,6 +56,11 @@
   "faction": "jerotes_village_golems:meror",
   "materials": {
     "jerotes_village_golems:meror": {
+      "bonus": [],
+      "forbid": [],
+      "weight": 100
+    },
+    "jerotes_village_golems:refine_meror": {
       "bonus": [],
       "forbid": [],
       "weight": 100
@@ -74,7 +75,7 @@
           "upgrade": "modulargolems:diamond"
         },
         {
-          "chance": 0.5,
+          "chance": 1.0,
           "upgrade": "modulargolems:size_upgrade"
         }
       ],
@@ -108,7 +109,7 @@
   "upgrades": [
     {
       "upgrade": "modulargolems:speed",
-      "weight": 1
+      "weight": 100
     },
     {
       "upgrade": "modulargolems:quartz",

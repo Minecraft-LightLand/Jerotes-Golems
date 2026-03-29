@@ -1,31 +1,27 @@
 {
   "items": {
-    "CHEST": [
+    "MAINHAND": [
       {
         "dropChance": 0.085,
         "enchantLevel": 30,
         "stack": {
-          "item": "jerotes_village_golems:meror_chestplate"
+          "item": "jerotes_village_golems:refine_meror_golem_axe"
         },
         "weight": 100
-      }
-    ],
-    "HEAD": [
+      },
       {
         "dropChance": 0.085,
         "enchantLevel": 30,
         "stack": {
-          "item": "jerotes_village_golems:meror_helmet"
+          "item": "jerotes_village_golems:refine_meror_golem_sword"
         },
         "weight": 100
-      }
-    ],
-    "LEGS": [
+      },
       {
         "dropChance": 0.085,
         "enchantLevel": 30,
         "stack": {
-          "item": "jerotes_village_golems:meror_shinguard"
+          "item": "jerotes_village_golems:refine_meror_golem_spear"
         },
         "weight": 100
       }

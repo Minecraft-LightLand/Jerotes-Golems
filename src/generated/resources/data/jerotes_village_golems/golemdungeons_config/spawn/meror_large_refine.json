@@ -4,7 +4,7 @@
       "type": "modulargolems:metal_golem",
       "sets": [
         {
-          "target": "jerotes_village_golems:meror_large_armor_better",
+          "target": "jerotes_village_golems:meror_large_armor_refine",
           "weight": 100
         }
       ]
@@ -13,7 +13,7 @@
       "type": "modulargolems:metal_golem",
       "sets": [
         {
-          "target": "jerotes_village_golems:meror_large_weapon_better",
+          "target": "jerotes_village_golems:meror_large_weapon_refine",
           "weight": 100
         }
       ]
@@ -21,7 +21,7 @@
   ],
   "faction": "jerotes_village_golems:meror",
   "materials": {
-    "jerotes_village_golems:meror": {
+    "jerotes_village_golems:refine_meror": {
       "bonus": [],
       "forbid": [],
       "weight": 100
@@ -29,12 +29,7 @@
   },
   "types": {
     "modulargolems:metal_golem": {
-      "bonus": [
-        {
-          "chance": 0.5,
-          "upgrade": "modulargolems:speed"
-        }
-      ],
+      "bonus": [],
       "mountChance": 0.0,
       "mounts": [],
       "weight": 30

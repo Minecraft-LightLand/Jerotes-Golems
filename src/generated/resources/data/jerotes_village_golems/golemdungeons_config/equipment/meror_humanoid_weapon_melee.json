@@ -3,83 +3,21 @@
     "MAINHAND": [
       {
         "dropChance": 0.085,
-        "enchantLevel": 10,
+        "enchantLevel": 30,
         "stack": {
-          "item": "minecraft:stone_axe",
-          "nbt": "{Damage:0}"
-        },
-        "weight": 200
-      },
-      {
-        "dropChance": 0.085,
-        "enchantLevel": 20,
-        "stack": {
-          "item": "jerotesvillage:villager_metal_dagger",
-          "nbt": "{Damage:0}"
-        },
-        "weight": 200
-      },
-      {
-        "dropChance": 0.085,
-        "enchantLevel": 10,
-        "stack": {
-          "item": "jerotesvillage:villager_metal_hammer",
+          "item": "jerotesvillage:meror_metal_sword",
           "nbt": "{Damage:0}"
         },
         "weight": 100
-      },
-      {
-        "dropChance": 0.085,
-        "enchantLevel": 10,
-        "stack": {
-          "item": "jerotesvillage:villager_metal_axe",
-          "nbt": "{Damage:0}"
-        },
-        "weight": 100
-      },
-      {
-        "dropChance": 0.085,
-        "enchantLevel": 20,
-        "stack": {
-          "item": "jerotesvillage:villager_metal_sword",
-          "nbt": "{Damage:0}"
-        },
-        "weight": 100
-      },
-      {
-        "dropChance": 0.085,
-        "enchantLevel": 10,
-        "stack": {
-          "item": "jerotesvillage:villager_metal_pickaxe",
-          "nbt": "{Damage:0}"
-        },
-        "weight": 50
-      },
-      {
-        "dropChance": 0.085,
-        "enchantLevel": 10,
-        "stack": {
-          "item": "jerotesvillage:villager_metal_javelin",
-          "nbt": "{Damage:0}"
-        },
-        "weight": 150
       }
     ],
     "OFFHAND": [
       {
         "dropChance": 0.085,
-        "enchantLevel": 20,
+        "enchantLevel": 30,
         "stack": {
-          "item": "minecraft:shield",
+          "item": "jerotesvillage:meror_metal_shield",
           "nbt": "{Damage:0}"
-        },
-        "weight": 100
-      },
-      {
-        "dropChance": 0.085,
-        "enchantLevel": 0,
-        "stack": {
-          "item": "minecraft:air"
         },
         "weight": 100
       }

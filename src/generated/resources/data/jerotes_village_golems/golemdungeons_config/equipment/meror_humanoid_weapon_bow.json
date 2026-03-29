@@ -5,7 +5,7 @@
         "dropChance": 0.085,
         "enchantLevel": 30,
         "stack": {
-          "item": "jerotesvillage:villager_metal_bow",
+          "item": "jerotesvillage:meror_metal_bow",
           "nbt": "{Damage:0}"
         },
         "weight": 100
@@ -16,7 +16,7 @@
         "dropChance": 0.085,
         "enchantLevel": 0,
         "stack": {
-          "item": "jerotesvillage:carved_villager_spectral_arrow"
+          "item": "jerotesvillage:meror_metal_arrow"
         },
         "weight": 100
       }

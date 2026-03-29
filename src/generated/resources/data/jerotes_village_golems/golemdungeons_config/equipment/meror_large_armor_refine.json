@@ -5,7 +5,7 @@
         "dropChance": 0.085,
         "enchantLevel": 30,
         "stack": {
-          "item": "jerotes_village_golems:meror_chestplate"
+          "item": "jerotes_village_golems:refine_meror_chestplate"
         },
         "weight": 100
       }
@@ -15,7 +15,7 @@
         "dropChance": 0.085,
         "enchantLevel": 30,
         "stack": {
-          "item": "jerotes_village_golems:meror_helmet"
+          "item": "jerotes_village_golems:refine_meror_helmet"
         },
         "weight": 100
       }
@@ -25,7 +25,7 @@
         "dropChance": 0.085,
         "enchantLevel": 30,
         "stack": {
-          "item": "jerotes_village_golems:meror_shinguard"
+          "item": "jerotes_village_golems:refine_meror_shinguard"
         },
         "weight": 100
       }

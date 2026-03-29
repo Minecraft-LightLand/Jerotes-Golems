@@ -3,33 +3,25 @@
     "MAINHAND": [
       {
         "dropChance": 0.085,
-        "enchantLevel": 0,
+        "enchantLevel": 30,
         "stack": {
-          "item": "minecraft:air"
-        },
-        "weight": 100
-      },
-      {
-        "dropChance": 0.085,
-        "enchantLevel": 20,
-        "stack": {
-          "item": "modulargolems:iron_golem_axe"
+          "item": "jerotes_village_golems:meror_golem_axe"
         },
         "weight": 50
       },
       {
         "dropChance": 0.085,
-        "enchantLevel": 20,
+        "enchantLevel": 30,
         "stack": {
-          "item": "modulargolems:iron_golem_sword"
+          "item": "jerotes_village_golems:meror_golem_sword"
         },
         "weight": 50
       },
       {
         "dropChance": 0.085,
-        "enchantLevel": 20,
+        "enchantLevel": 30,
         "stack": {
-          "item": "modulargolems:iron_golem_spear"
+          "item": "jerotes_village_golems:meror_golem_spear"
         },
         "weight": 50
       }

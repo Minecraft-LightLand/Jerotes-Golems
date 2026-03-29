@@ -5,7 +5,7 @@
       "sets": [
         {
           "target": "jerotes_village_golems:meror_large_armor",
-          "weight": 100
+          "weight": 300
         }
       ]
     },
@@ -14,7 +14,7 @@
       "sets": [
         {
           "target": "jerotes_village_golems:meror_large_weapon",
-          "weight": 100
+          "weight": 300
         }
       ]
     }
@@ -35,5 +35,26 @@
       "weight": 30
     }
   },
-  "upgrades": []
+  "upgrades": [
+    {
+      "upgrade": "modulargolems:speed",
+      "weight": 1
+    },
+    {
+      "upgrade": "modulargolems:quartz",
+      "weight": 100
+    },
+    {
+      "upgrade": "modulargolems:gold",
+      "weight": 100
+    },
+    {
+      "upgrade": "modulargolems:speed",
+      "weight": 100
+    },
+    {
+      "upgrade": "modulargolems:diamond",
+      "weight": 30
+    }
+  ]
 }

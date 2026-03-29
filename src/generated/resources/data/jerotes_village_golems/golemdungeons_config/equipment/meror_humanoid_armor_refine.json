@@ -3,45 +3,45 @@
     "CHEST": [
       {
         "dropChance": 0.085,
-        "enchantLevel": 20,
+        "enchantLevel": 30,
         "stack": {
-          "item": "minecraft:chainmail_chestplate",
+          "item": "jerotesvillage:meror_standard_chestplate",
           "nbt": "{Damage:0}"
         },
-        "weight": 50
+        "weight": 100
       }
     ],
     "FEET": [
       {
         "dropChance": 0.085,
-        "enchantLevel": 20,
+        "enchantLevel": 30,
         "stack": {
-          "item": "minecraft:chainmail_boots",
+          "item": "jerotesvillage:meror_standard_boots",
           "nbt": "{Damage:0}"
         },
-        "weight": 50
+        "weight": 100
       }
     ],
     "HEAD": [
       {
         "dropChance": 0.085,
-        "enchantLevel": 20,
+        "enchantLevel": 30,
         "stack": {
-          "item": "minecraft:chainmail_helmet",
+          "item": "jerotesvillage:meror_standard_helmet",
           "nbt": "{Damage:0}"
         },
-        "weight": 50
+        "weight": 100
       }
     ],
     "LEGS": [
       {
         "dropChance": 0.085,
-        "enchantLevel": 20,
+        "enchantLevel": 30,
         "stack": {
-          "item": "minecraft:chainmail_leggings",
+          "item": "jerotesvillage:meror_standard_leggings",
           "nbt": "{Damage:0}"
         },
-        "weight": 50
+        "weight": 100
       }
     ]
   }
