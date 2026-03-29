@@ -31,7 +31,7 @@ description='''
 [[dependencies.jerotes_village_golems]]
     modId="modulargolems"
     mandatory=true
-    versionRange="[2.6.32+2,)"
+    versionRange="[2.6.33+2,)"
     side="BOTH"
 [[dependencies.jerotes_village_golems]]
     modId="jerotesvillage"

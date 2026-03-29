@@ -1,5 +1,6 @@
 package dev.xkmc.jerotes_golems.content.fraction;
 
+import com.jerotes.jerotesvillage.init.JerotesVillageTabs;
 import dev.xkmc.golemdungeons.content.faction.DungeonFaction;
 import dev.xkmc.modulargolems.content.entity.common.AbstractGolemEntity;
 import net.minecraft.nbt.CompoundTag;
@@ -16,19 +17,8 @@ import net.minecraftforge.common.util.Lazy;
 
 public class SerponFaction extends DungeonFaction {
 
-	private static final Lazy<ItemStack> BANNER = Lazy.of(() -> {
-		ItemStack stack = new ItemStack(Items.WHITE_BANNER);
-		CompoundTag comp = new CompoundTag();
-		ListTag list = new BannerPattern.Builder()
-				.addPattern(BannerPatterns.TRIANGLE_BOTTOM, DyeColor.ORANGE)
-				.addPattern(BannerPatterns.STRIPE_TOP, DyeColor.YELLOW)
-				.addPattern(BannerPatterns.STRIPE_MIDDLE, DyeColor.GRAY)
-				.toListTag();
-		comp.put("Patterns", list);
-		BlockItem.setBlockEntityData(stack, BlockEntityType.BANNER, comp);
-		stack.hideTooltipPart(ItemStack.TooltipPart.ADDITIONAL);
-		return stack;
-	});
+
+	private static final Lazy<ItemStack> BANNER = Lazy.of(JerotesVillageTabs::SerponCombatTeamBanner);
 
 	public SerponFaction(ResourceLocation id) {
 		super(id);

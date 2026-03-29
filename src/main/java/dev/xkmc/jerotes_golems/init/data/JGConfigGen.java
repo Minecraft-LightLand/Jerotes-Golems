@@ -69,6 +69,8 @@ public class JGConfigGen extends ConfigDataProvider {
 		// trials
 
 		CarvedGolemSpawn.add(map);
+		QoaikuGolemSpawn.add(map);
+		MerorGolemSpawn.add(map);
 
 	}
 

@@ -1,0 +1,39 @@
+{
+  "equipments": [
+    {
+      "type": "modulargolems:metal_golem",
+      "sets": [
+        {
+          "target": "jerotes_village_golems:meror_large_armor",
+          "weight": 100
+        }
+      ]
+    },
+    {
+      "type": "modulargolems:metal_golem",
+      "sets": [
+        {
+          "target": "jerotes_village_golems:meror_large_weapon",
+          "weight": 100
+        }
+      ]
+    }
+  ],
+  "faction": "golemdungeons:factory_remnant",
+  "materials": {
+    "jerotes_village_golems:meror": {
+      "bonus": [],
+      "forbid": [],
+      "weight": 100
+    }
+  },
+  "types": {
+    "modulargolems:metal_golem": {
+      "bonus": [],
+      "mountChance": 0.0,
+      "mounts": [],
+      "weight": 30
+    }
+  },
+  "upgrades": []
+}

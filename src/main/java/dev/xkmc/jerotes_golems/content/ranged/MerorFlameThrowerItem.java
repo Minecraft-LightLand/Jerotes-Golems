@@ -32,7 +32,7 @@ public class MerorFlameThrowerItem extends ShouldWeaponItem implements IShoulder
 	@Override
 	public void onTick(MetalGolemEntity e, ItemStack stack, InteractionHand hand) {
 		if (e.tickCount % 4 != (hand == InteractionHand.MAIN_HAND ? 1 : 3)) return;
-		if (CannonPoseUtil.BEACON.isOutOfRange(e, hand)) return;
+		if (CannonPoseUtil.BEACON.isOutOfRange(e, hand, 15)) return;
 		var target = e.getTarget();
 		if (target == null || !target.isAlive()) return;
 		var pos = CannonPoseUtil.BEACON.getOrigin(e, hand);

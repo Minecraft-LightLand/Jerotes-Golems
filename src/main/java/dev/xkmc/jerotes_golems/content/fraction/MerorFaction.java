@@ -17,15 +17,22 @@ import net.minecraftforge.common.util.Lazy;
 public class MerorFaction extends DungeonFaction {
 
 	private static final Lazy<ItemStack> BANNER = Lazy.of(() -> {
-		ItemStack stack = new ItemStack(Items.WHITE_BANNER);
-		CompoundTag comp = new CompoundTag();
+		ItemStack stack = new ItemStack(Items.PINK_BANNER);
+		CompoundTag tag = new CompoundTag();
 		ListTag list = new BannerPattern.Builder()
-				.addPattern(BannerPatterns.TRIANGLE_BOTTOM, DyeColor.ORANGE)
-				.addPattern(BannerPatterns.STRIPE_TOP, DyeColor.YELLOW)
-				.addPattern(BannerPatterns.STRIPE_MIDDLE, DyeColor.GRAY)
+				.addPattern(BannerPatterns.RHOMBUS_MIDDLE, DyeColor.GREEN)
+				.addPattern(BannerPatterns.STRIPE_BOTTOM, DyeColor.RED)
+				.addPattern(BannerPatterns.HALF_HORIZONTAL, DyeColor.BROWN)
+				.addPattern(BannerPatterns.STRAIGHT_CROSS, DyeColor.PINK)
+				.addPattern(BannerPatterns.STRIPE_CENTER, DyeColor.BROWN)
+				.addPattern(BannerPatterns.BORDER, DyeColor.WHITE)
+				.addPattern(BannerPatterns.STRIPE_MIDDLE, DyeColor.BLACK)
+				.addPattern(BannerPatterns.HALF_HORIZONTAL, DyeColor.RED)
+				.addPattern(BannerPatterns.BORDER, DyeColor.WHITE)
+				.addPattern(BannerPatterns.TRIANGLES_TOP, DyeColor.PINK)
 				.toListTag();
-		comp.put("Patterns", list);
-		BlockItem.setBlockEntityData(stack, BlockEntityType.BANNER, comp);
+		tag.put("Patterns", list);
+		BlockItem.setBlockEntityData(stack, BlockEntityType.BANNER, tag);
 		stack.hideTooltipPart(ItemStack.TooltipPart.ADDITIONAL);
 		return stack;
 	});

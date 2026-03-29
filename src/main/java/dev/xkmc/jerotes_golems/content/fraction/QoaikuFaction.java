@@ -17,16 +17,21 @@ import net.minecraftforge.common.util.Lazy;
 public class QoaikuFaction extends DungeonFaction {
 
 	private static final Lazy<ItemStack> BANNER = Lazy.of(() -> {
-		ItemStack stack = new ItemStack(Items.WHITE_BANNER);
-		CompoundTag comp = new CompoundTag();
+		ItemStack stack = new ItemStack(Items.LIGHT_BLUE_BANNER);
+		CompoundTag tag = new CompoundTag();
 		ListTag list = new BannerPattern.Builder()
-				.addPattern(BannerPatterns.TRIANGLE_BOTTOM, DyeColor.ORANGE)
-				.addPattern(BannerPatterns.STRIPE_TOP, DyeColor.YELLOW)
-				.addPattern(BannerPatterns.STRIPE_MIDDLE, DyeColor.GRAY)
+				.addPattern(BannerPatterns.CURLY_BORDER, DyeColor.BLUE)
+				.addPattern(BannerPatterns.STRIPE_SMALL, DyeColor.CYAN)
+				.addPattern(BannerPatterns.TRIANGLES_BOTTOM, DyeColor.WHITE)
+				.addPattern(BannerPatterns.TRIANGLES_TOP, DyeColor.WHITE)
+				.addPattern(BannerPatterns.STRIPE_CENTER, DyeColor.LIGHT_BLUE)
+				.addPattern(BannerPatterns.FLOWER, DyeColor.BLUE)
+				.addPattern(BannerPatterns.STRAIGHT_CROSS, DyeColor.LIGHT_BLUE)
 				.toListTag();
-		comp.put("Patterns", list);
-		BlockItem.setBlockEntityData(stack, BlockEntityType.BANNER, comp);
+		tag.put("Patterns", list);
+		BlockItem.setBlockEntityData(stack, BlockEntityType.BANNER, tag);
 		stack.hideTooltipPart(ItemStack.TooltipPart.ADDITIONAL);
+
 		return stack;
 	});
 

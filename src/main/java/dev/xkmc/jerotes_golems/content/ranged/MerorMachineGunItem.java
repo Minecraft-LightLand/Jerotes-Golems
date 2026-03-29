@@ -16,7 +16,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
@@ -41,7 +40,7 @@ public class MerorMachineGunItem extends ProjectileWeaponItem implements IShould
 	@Override
 	public void onTick(MetalGolemEntity e, ItemStack stack, InteractionHand hand) {
 		if (e.tickCount % 4 != (hand == InteractionHand.MAIN_HAND ? 1 : 3)) return;
-		if (CannonPoseUtil.BEACON.isOutOfRange(e, hand)) return;
+		if (CannonPoseUtil.BEACON.isOutOfRange(e, hand, 15)) return;
 		var target = e.getTarget();
 		if (target == null || !target.isAlive()) return;
 		var ammo = e.getProjectile(stack);

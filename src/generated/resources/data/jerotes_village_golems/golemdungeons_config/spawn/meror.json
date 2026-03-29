@@ -1,0 +1,130 @@
+{
+  "equipments": [
+    {
+      "type": "modulargolems:metal_golem",
+      "sets": [
+        {
+          "target": "jerotes_village_golems:meror_large_armor_better",
+          "weight": 100
+        }
+      ]
+    },
+    {
+      "type": "modulargolems:metal_golem",
+      "sets": [
+        {
+          "target": "jerotes_village_golems:meror_large_weapon_better",
+          "weight": 100
+        }
+      ]
+    },
+    {
+      "type": "modulargolems:humanoid_golem",
+      "sets": [
+        {
+          "target": "jerotes_village_golems:meror_humanoid_armor_misc",
+          "weight": 100
+        },
+        {
+          "target": "jerotes_village_golems:meror_humanoid_armor_chain",
+          "weight": 20
+        },
+        {
+          "target": "jerotes_village_golems:meror_humanoid_armor_gold",
+          "weight": 20
+        }
+      ]
+    },
+    {
+      "type": "modulargolems:humanoid_golem",
+      "sets": [
+        {
+          "target": "jerotes_village_golems:meror_humanoid_weapon_melee",
+          "weight": 100
+        },
+        {
+          "target": "jerotes_village_golems:meror_humanoid_weapon_bow",
+          "weight": 30
+        },
+        {
+          "target": "jerotes_village_golems:meror_humanoid_weapon_tipped_arrow",
+          "weight": 50
+        },
+        {
+          "target": "jerotes_village_golems:meror_humanoid_weapon_rocket_crossbow",
+          "weight": 20
+        }
+      ]
+    }
+  ],
+  "faction": "jerotes_village_golems:meror",
+  "materials": {
+    "jerotes_village_golems:meror": {
+      "bonus": [],
+      "forbid": [],
+      "weight": 100
+    }
+  },
+  "targetTrial": "jerotes_village_golems:meror",
+  "types": {
+    "modulargolems:dog_golem": {
+      "bonus": [
+        {
+          "chance": 0.75,
+          "upgrade": "modulargolems:diamond"
+        },
+        {
+          "chance": 0.5,
+          "upgrade": "modulargolems:size_upgrade"
+        }
+      ],
+      "mountChance": 0.0,
+      "mounts": [],
+      "weight": 0
+    },
+    "modulargolems:humanoid_golem": {
+      "bonus": [],
+      "mountChance": 0.5,
+      "mounts": [
+        {
+          "mount": "modulargolems:dog_golem",
+          "weight": 100
+        }
+      ],
+      "weight": 40
+    },
+    "modulargolems:metal_golem": {
+      "bonus": [
+        {
+          "chance": 0.5,
+          "upgrade": "modulargolems:speed"
+        }
+      ],
+      "mountChance": 0.0,
+      "mounts": [],
+      "weight": 30
+    }
+  },
+  "upgrades": [
+    {
+      "upgrade": "modulargolems:speed",
+      "weight": 1
+    },
+    {
+      "upgrade": "modulargolems:quartz",
+      "weight": 100
+    },
+    {
+      "upgrade": "modulargolems:gold",
+      "weight": 100
+    },
+    {
+      "upgrade": "modulargolems:speed",
+      "weight": 100
+    },
+    {
+      "upgrade": "modulargolems:diamond",
+      "weight": 30
+    }
+  ]
+}

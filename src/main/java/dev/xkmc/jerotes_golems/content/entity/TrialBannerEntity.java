@@ -89,7 +89,7 @@ public class TrialBannerEntity extends BaseEntity implements TrialTicker {
 
 	public boolean setTrial(ResourceLocation id) {
 		var entry = GolemDungeons.SPAWN.getEntry(id);
-		if (entry.targetTrial != null) {
+		if (entry != null && entry.targetTrial != null) {
 			var config = GolemDungeons.TRIAL.getEntry(entry.targetTrial);
 			if (config != null) {
 				if (level() instanceof ServerLevel sl) {

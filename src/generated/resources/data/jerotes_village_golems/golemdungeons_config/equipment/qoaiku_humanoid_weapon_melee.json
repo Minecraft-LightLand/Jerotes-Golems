@@ -1,0 +1,88 @@
+{
+  "items": {
+    "MAINHAND": [
+      {
+        "dropChance": 0.085,
+        "enchantLevel": 10,
+        "stack": {
+          "item": "minecraft:stone_axe",
+          "nbt": "{Damage:0}"
+        },
+        "weight": 200
+      },
+      {
+        "dropChance": 0.085,
+        "enchantLevel": 20,
+        "stack": {
+          "item": "jerotesvillage:villager_metal_dagger",
+          "nbt": "{Damage:0}"
+        },
+        "weight": 200
+      },
+      {
+        "dropChance": 0.085,
+        "enchantLevel": 10,
+        "stack": {
+          "item": "jerotesvillage:villager_metal_hammer",
+          "nbt": "{Damage:0}"
+        },
+        "weight": 100
+      },
+      {
+        "dropChance": 0.085,
+        "enchantLevel": 10,
+        "stack": {
+          "item": "jerotesvillage:villager_metal_axe",
+          "nbt": "{Damage:0}"
+        },
+        "weight": 100
+      },
+      {
+        "dropChance": 0.085,
+        "enchantLevel": 20,
+        "stack": {
+          "item": "jerotesvillage:villager_metal_sword",
+          "nbt": "{Damage:0}"
+        },
+        "weight": 100
+      },
+      {
+        "dropChance": 0.085,
+        "enchantLevel": 10,
+        "stack": {
+          "item": "jerotesvillage:villager_metal_pickaxe",
+          "nbt": "{Damage:0}"
+        },
+        "weight": 50
+      },
+      {
+        "dropChance": 0.085,
+        "enchantLevel": 10,
+        "stack": {
+          "item": "jerotesvillage:villager_metal_javelin",
+          "nbt": "{Damage:0}"
+        },
+        "weight": 150
+      }
+    ],
+    "OFFHAND": [
+      {
+        "dropChance": 0.085,
+        "enchantLevel": 20,
+        "stack": {
+          "item": "minecraft:shield",
+          "nbt": "{Damage:0}"
+        },
+        "weight": 100
+      },
+      {
+        "dropChance": 0.085,
+        "enchantLevel": 0,
+        "stack": {
+          "item": "minecraft:air"
+        },
+        "weight": 100
+      }
+    ]
+  }
+}
