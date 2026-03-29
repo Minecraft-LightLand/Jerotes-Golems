@@ -2,6 +2,7 @@ package dev.xkmc.jerotes_golems.content.weapon;
 
 import com.jerotes.jerotesvillage.init.JerotesVillageItems;
 import dev.xkmc.jerotes_golems.init.JerotesGolems;
+import dev.xkmc.modulargolems.init.material.IGolemWeaponFactory;
 import dev.xkmc.modulargolems.init.material.IGolemWeaponMaterial;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -45,5 +46,13 @@ public enum JGWeaponMaterial implements IGolemWeaponMaterial {
 	public ResourceLocation modLoc(String s) {
 		return JerotesGolems.loc(s);
 	}
+
+	@Override
+	public IGolemWeaponFactory factory() {
+		if (this==REFINE_MEROR)
+			return RefineMerorWeaponItem::new;
+		return IGolemWeaponMaterial.super.factory();
+	}
+
 
 }

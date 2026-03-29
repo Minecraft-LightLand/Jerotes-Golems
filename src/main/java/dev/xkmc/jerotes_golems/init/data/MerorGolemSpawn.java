@@ -163,13 +163,13 @@ public class MerorGolemSpawn extends AbstractGolemSpawn {
 
 		// metal golem wave
 		{
-			map.add(GolemDungeons.SPAWN, LARGE_1, new SpawnConfig(DungeonFactionRegistry.REMNANT)
+			map.add(GolemDungeons.SPAWN, LARGE_1, new SpawnConfig(JGFactionRegistry.MEROR)
 					.type(GolemTypes.TYPE_GOLEM.get(), new SpawnConfig.GolemTypeEntry(30, 0))
 					.mat(JerotesGolems.loc("meror"), 100)
 			);
 
 
-			map.add(GolemDungeons.SPAWN, LARGE_2, new SpawnConfig(DungeonFactionRegistry.REMNANT)
+			map.add(GolemDungeons.SPAWN, LARGE_2, new SpawnConfig(JGFactionRegistry.MEROR)
 					.type(GolemTypes.TYPE_GOLEM.get(), new SpawnConfig.GolemTypeEntry(30, 0))
 					.mat(JerotesGolems.loc("meror"), 100)
 					.equipments(new SpawnConfig.EquipmentGroup(GolemTypes.ENTITY_GOLEM.get())

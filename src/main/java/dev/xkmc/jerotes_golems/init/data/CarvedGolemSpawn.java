@@ -11,7 +11,6 @@ import dev.xkmc.golemdungeons.init.data.spawn.AbstractGolemSpawn;
 import dev.xkmc.jerotes_golems.content.fraction.JGFactionRegistry;
 import dev.xkmc.jerotes_golems.init.JerotesGolems;
 import dev.xkmc.l2library.serial.config.ConfigDataProvider;
-import dev.xkmc.modulargolems.init.ModularGolems;
 import dev.xkmc.modulargolems.init.material.GolemWeaponType;
 import dev.xkmc.modulargolems.init.material.VanillaGolemWeaponMaterial;
 import dev.xkmc.modulargolems.init.registrate.GolemItems;
@@ -165,13 +164,13 @@ public class CarvedGolemSpawn extends AbstractGolemSpawn {
 
 		// metal golem wave
 		{
-			map.add(GolemDungeons.SPAWN, LARGE_1, new SpawnConfig(DungeonFactionRegistry.REMNANT)
+			map.add(GolemDungeons.SPAWN, LARGE_1, new SpawnConfig(JGFactionRegistry.CARVED)
 					.type(GolemTypes.TYPE_GOLEM.get(), new SpawnConfig.GolemTypeEntry(30, 0))
 					.mat(JerotesGolems.loc("villager_metal"), 100)
 			);
 
 
-			map.add(GolemDungeons.SPAWN, LARGE_2, new SpawnConfig(DungeonFactionRegistry.REMNANT)
+			map.add(GolemDungeons.SPAWN, LARGE_2, new SpawnConfig(JGFactionRegistry.CARVED)
 					.type(GolemTypes.TYPE_GOLEM.get(), new SpawnConfig.GolemTypeEntry(30, 0))
 					.mat(JerotesGolems.loc("villager_metal"), 100)
 					.equipments(new SpawnConfig.EquipmentGroup(GolemTypes.ENTITY_GOLEM.get())
