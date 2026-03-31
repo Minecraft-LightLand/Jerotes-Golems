@@ -2,6 +2,7 @@ package dev.xkmc.jerotes_golems.init.data;
 
 import com.jerotes.jerotesvillage.init.JerotesVillageItems;
 import dev.xkmc.golemdungeons.content.config.EquipmentConfig;
+import dev.xkmc.golemdungeons.content.config.ExtraEquipmentSlot;
 import dev.xkmc.golemdungeons.content.config.SpawnConfig;
 import dev.xkmc.golemdungeons.content.config.TrialConfig;
 import dev.xkmc.golemdungeons.init.GolemDungeons;
@@ -13,13 +14,11 @@ import dev.xkmc.jerotes_golems.init.JerotesGolems;
 import dev.xkmc.jerotes_golems.init.reg.JGItems;
 import dev.xkmc.l2library.serial.config.ConfigDataProvider;
 import dev.xkmc.modulargolems.init.material.GolemWeaponType;
-import dev.xkmc.modulargolems.init.material.VanillaGolemWeaponMaterial;
 import dev.xkmc.modulargolems.init.registrate.GolemItems;
 import dev.xkmc.modulargolems.init.registrate.GolemTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 
 public class MerorGolemSpawn extends AbstractGolemSpawn {
 
@@ -31,15 +30,20 @@ public class MerorGolemSpawn extends AbstractGolemSpawn {
 	public static final ResourceLocation ITEM_HUMANOID_ARMOR_REFINE = JerotesGolems.loc("meror_humanoid_armor_refine");
 	public static final ResourceLocation ITEM_HUMANOID_MELEE = JerotesGolems.loc("meror_humanoid_weapon_melee");
 	public static final ResourceLocation ITEM_HUMANOID_BOW = JerotesGolems.loc("meror_humanoid_weapon_bow");
+	public static final ResourceLocation ITEM_CHARGE = JerotesGolems.loc("meror_charge");
 
 	public static final ResourceLocation MEROR_ALL = JerotesGolems.loc("meror");
+	public static final ResourceLocation REFINE_MEROR_ALL = JerotesGolems.loc("refine_meror");
 
 	public static final ResourceLocation LARGE_MEROR = JerotesGolems.loc("meror_large");
 	public static final ResourceLocation LARGE_REFINE = JerotesGolems.loc("meror_large_refine");
+	public static final ResourceLocation LARGE_CHARGED = JerotesGolems.loc("meror_large_refine_charged");
 
 	public static final ResourceLocation HUMANOID_BASIC = JerotesGolems.loc("meror_humanoid_basic");
 	public static final ResourceLocation HUMANOID_MELEE = JerotesGolems.loc("meror_humanoid_refine_melee");
 	public static final ResourceLocation HUMANOID_RANGED = JerotesGolems.loc("meror_humanoid_refine_ranged");
+	public static final ResourceLocation HUMANOID_MELEE_CHARGED = JerotesGolems.loc("meror_humanoid_refine_melee_charged");
+	public static final ResourceLocation HUMANOID_RANGED_CHARGED = JerotesGolems.loc("meror_humanoid_refine_ranged_charged");
 
 	public static void add(ConfigDataProvider.Collector map) {
 
@@ -102,6 +106,9 @@ public class MerorGolemSpawn extends AbstractGolemSpawn {
 
 		}
 
+		map.add(GolemDungeons.ITEMS, ITEM_CHARGE, new EquipmentConfig().add(ExtraEquipmentSlot.ARROW,
+				new EquipmentConfig.EquipmentEntry(100, JerotesVillageItems.MEROR_ENERGY_REGIME.get())));
+
 		// metal golem wave
 		{
 			map.add(GolemDungeons.SPAWN, LARGE_MEROR, createMeror()
@@ -118,6 +125,16 @@ public class MerorGolemSpawn extends AbstractGolemSpawn {
 							.add(100, ITEM_LARGE_ARMOR_REFINE))
 					.equipments(new SpawnConfig.EquipmentGroup(GolemTypes.ENTITY_GOLEM.get())
 							.add(100, ITEM_LARGE_WEAPON_REFINE))
+			);
+
+			map.add(GolemDungeons.SPAWN, LARGE_CHARGED, createRefine()
+					.type(GolemTypes.TYPE_GOLEM.get(), new SpawnConfig.GolemTypeEntry(30, 0))
+					.equipments(new SpawnConfig.EquipmentGroup(GolemTypes.ENTITY_GOLEM.get())
+							.add(100, ITEM_LARGE_ARMOR_REFINE))
+					.equipments(new SpawnConfig.EquipmentGroup(GolemTypes.ENTITY_GOLEM.get())
+							.add(100, ITEM_LARGE_WEAPON_REFINE))
+					.equipments(new SpawnConfig.EquipmentGroup(GolemTypes.ENTITY_GOLEM.get())
+							.add(100, ITEM_CHARGE))
 			);
 		}
 
@@ -143,6 +160,24 @@ public class MerorGolemSpawn extends AbstractGolemSpawn {
 							.add(100, ITEM_HUMANOID_ARMOR_REFINE))
 					.equipments(new SpawnConfig.EquipmentGroup(GolemTypes.ENTITY_HUMANOID.get())
 							.add(100, ITEM_HUMANOID_BOW))
+			);
+
+			map.add(GolemDungeons.SPAWN, HUMANOID_MELEE_CHARGED, createHumanoid(createRefine())
+					.equipments(new SpawnConfig.EquipmentGroup(GolemTypes.ENTITY_HUMANOID.get())
+							.add(100, ITEM_HUMANOID_ARMOR_REFINE))
+					.equipments(new SpawnConfig.EquipmentGroup(GolemTypes.ENTITY_HUMANOID.get())
+							.add(100, ITEM_HUMANOID_MELEE))
+					.equipments(new SpawnConfig.EquipmentGroup(GolemTypes.ENTITY_HUMANOID.get())
+							.add(100, ITEM_CHARGE))
+			);
+
+			map.add(GolemDungeons.SPAWN, HUMANOID_RANGED_CHARGED, createHumanoid(createRefine())
+					.equipments(new SpawnConfig.EquipmentGroup(GolemTypes.ENTITY_HUMANOID.get())
+							.add(100, ITEM_HUMANOID_ARMOR_REFINE))
+					.equipments(new SpawnConfig.EquipmentGroup(GolemTypes.ENTITY_HUMANOID.get())
+							.add(100, ITEM_HUMANOID_BOW))
+					.equipments(new SpawnConfig.EquipmentGroup(GolemTypes.ENTITY_HUMANOID.get())
+							.add(100, ITEM_CHARGE))
 			);
 
 		}
@@ -177,6 +212,30 @@ public class MerorGolemSpawn extends AbstractGolemSpawn {
 							.add(100, ITEM_HUMANOID_MELEE)
 							.add(100, ITEM_HUMANOID_BOW))
 			);
+
+			map.add(GolemDungeons.SPAWN, REFINE_MEROR_ALL, createRefine().asTrialKey(REFINE_MEROR_ALL)
+					.mat(JerotesGolems.loc("refine_meror"), 100)
+					.type(GolemTypes.TYPE_GOLEM.get(), new SpawnConfig.GolemTypeEntry(30, 0)
+							.add(GolemItems.SPEED.get(), 0.5f))
+					.type(GolemTypes.TYPE_HUMANOID.get(), new SpawnConfig.GolemTypeEntry(40, 0.5)
+							.addMount(GolemTypes.ENTITY_DOG.get(), 100))
+					.type(GolemTypes.TYPE_DOG.get(), new SpawnConfig.GolemTypeEntry(0, 0)
+							.add(GolemItems.DIAMOND.get(), 0.75f)
+							.add(GolemItems.SIZE_UPGRADE.get(), 1))
+					.equipments(new SpawnConfig.EquipmentGroup(GolemTypes.ENTITY_GOLEM.get())
+							.add(100, ITEM_LARGE_ARMOR_REFINE))
+					.equipments(new SpawnConfig.EquipmentGroup(GolemTypes.ENTITY_GOLEM.get())
+							.add(100, ITEM_LARGE_WEAPON_REFINE))
+					.equipments(new SpawnConfig.EquipmentGroup(GolemTypes.ENTITY_GOLEM.get())
+							.add(100, ITEM_CHARGE))
+					.equipments(new SpawnConfig.EquipmentGroup(GolemTypes.ENTITY_HUMANOID.get())
+							.add(100, ITEM_HUMANOID_ARMOR_REFINE))
+					.equipments(new SpawnConfig.EquipmentGroup(GolemTypes.ENTITY_HUMANOID.get())
+							.add(100, ITEM_HUMANOID_MELEE)
+							.add(100, ITEM_HUMANOID_BOW))
+					.equipments(new SpawnConfig.EquipmentGroup(GolemTypes.ENTITY_HUMANOID.get())
+							.add(100, ITEM_CHARGE))
+			);
 		}
 
 		// trial
@@ -199,6 +258,24 @@ public class MerorGolemSpawn extends AbstractGolemSpawn {
 					.add(of(LARGE_REFINE, 4),
 							of(HUMANOID_MELEE, 4),
 							of(HUMANOID_RANGED, 4))
+			);
+
+			map.add(GolemDungeons.TRIAL, REFINE_MEROR_ALL, new TrialConfig().setReward(GDLootGen.FACTORY)
+					.setCost(200).setTriggerRange(22, -5, 16)
+					.add(of(LARGE_REFINE, 1))
+					.add(of(LARGE_REFINE, 1),
+							of(HUMANOID_MELEE, 1),
+							of(HUMANOID_RANGED, 2))
+					.add(of(LARGE_REFINE, 3),
+							of(HUMANOID_MELEE, 2),
+							of(HUMANOID_RANGED, 2))
+					.add(of(LARGE_CHARGED, 1))
+					.add(of(LARGE_CHARGED, 1),
+							of(HUMANOID_MELEE_CHARGED, 1),
+							of(HUMANOID_RANGED_CHARGED, 2))
+					.add(of(LARGE_CHARGED, 3),
+							of(HUMANOID_MELEE_CHARGED, 2),
+							of(HUMANOID_RANGED_CHARGED, 2))
 			);
 		}
 	}

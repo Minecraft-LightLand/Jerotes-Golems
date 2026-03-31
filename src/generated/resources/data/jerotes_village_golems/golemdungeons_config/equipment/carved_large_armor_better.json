@@ -1,14 +1,7 @@
 {
+  "additional": {},
   "items": {
     "CHEST": [
-      {
-        "dropChance": 0.085,
-        "enchantLevel": 0,
-        "stack": {
-          "item": "minecraft:air"
-        },
-        "weight": 50
-      },
       {
         "dropChance": 0.085,
         "enchantLevel": 20,
@@ -21,14 +14,6 @@
     "HEAD": [
       {
         "dropChance": 0.085,
-        "enchantLevel": 0,
-        "stack": {
-          "item": "minecraft:air"
-        },
-        "weight": 50
-      },
-      {
-        "dropChance": 0.085,
         "enchantLevel": 20,
         "stack": {
           "item": "modulargolems:roman_guard_helmet"
@@ -37,14 +22,6 @@
       }
     ],
     "LEGS": [
-      {
-        "dropChance": 0.085,
-        "enchantLevel": 0,
-        "stack": {
-          "item": "minecraft:air"
-        },
-        "weight": 50
-      },
       {
         "dropChance": 0.085,
         "enchantLevel": 20,

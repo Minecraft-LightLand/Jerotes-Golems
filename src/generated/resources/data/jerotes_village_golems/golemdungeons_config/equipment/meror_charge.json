@@ -1,0 +1,15 @@
+{
+  "additional": {
+    "ARROW": [
+      {
+        "dropChance": 0.085,
+        "enchantLevel": 0,
+        "stack": {
+          "item": "jerotesvillage:meror_energy_regime"
+        },
+        "weight": 100
+      }
+    ]
+  },
+  "items": {}
+}

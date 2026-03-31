@@ -35,23 +35,23 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @SerialClass
 public class TrialBannerEntity extends BaseEntity implements TrialTicker {
 
 	private static final EntityDataAccessor<String> TRIAL = SynchedEntityData.defineId(TrialBannerEntity.class, EntityDataSerializers.STRING);
+	private static final EntityDataAccessor<Optional<UUID>> BAR = SynchedEntityData.defineId(TrialBannerEntity.class, EntityDataSerializers.OPTIONAL_UUID);
 
 	@SerialClass.SerialField
 	private final TrialData data = new TrialData();
 
+	@SerialClass.SerialField
 	@Nullable
 	private ResourceLocation trial;
 
 	private final CustomBossEvent bar = new CustomBossEvent(JerotesGolems.loc("banner"), Component.empty());
-
-	@SerialClass.SerialField
-	public final UUID bannerId = bar.getId();
 
 	AnimationState idle = new AnimationState();
 	AnimationState death = new AnimationState();
@@ -62,11 +62,13 @@ public class TrialBannerEntity extends BaseEntity implements TrialTicker {
 	public TrialBannerEntity(EntityType<?> type, Level world) {
 		super(type, world);
 		bar.setVisible(false);
+		entityData.set(BAR, Optional.of(bar.getId()));
 	}
 
 	@Override
 	protected void defineSynchedData() {
 		entityData.define(TRIAL, "");
+		entityData.define(BAR, Optional.empty());
 	}
 
 	@Override
@@ -129,7 +131,7 @@ public class TrialBannerEntity extends BaseEntity implements TrialTicker {
 			data.tickTrial(this, sl, time);
 			data.updateBar(bar, sl, time);
 		} else {
-			BannerIds.update(this);
+			entityData.get(BAR).ifPresent(id -> BannerIds.update(id, getId()));
 		}
 	}
 
@@ -226,6 +228,7 @@ public class TrialBannerEntity extends BaseEntity implements TrialTicker {
 		super.readAdditionalSaveData(tag);
 		bar.setVisible(trial != null);
 		entityData.set(TRIAL, trial == null ? "" : trial.toString());
+		entityData.set(BAR, Optional.of(bar.getId()));
 	}
 
 	public void startSeenByPlayer(ServerPlayer p_31483_) {

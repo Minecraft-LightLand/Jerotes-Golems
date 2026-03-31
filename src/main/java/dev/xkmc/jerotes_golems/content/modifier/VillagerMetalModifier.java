@@ -21,22 +21,30 @@ public class VillagerMetalModifier extends GolemModifier {
 	}
 
 	@Override
+	public void onAiStep(AbstractGolemEntity<?, ?> golem, int level) {
+		if (golem.tickCount % 20 == 0 && !golem.level().isClientSide() && golem.isHostile()) {
+			int time = JGConfig.COMMON.villagerBonusDuration.get() * level;
+			if (HasItemUtil.hasItem(golem, Items.EMERALD_BLOCK)) {
+				emeraldBoost(golem, time);
+			}
+			if (HasItemUtil.hasItem(golem, Items.NETHERITE_BLOCK)) {
+				netheriteBoost(golem, time);
+			}
+		}
+	}
+
+	@Override
 	public InteractionResult interact(Player player, AbstractGolemEntity<?, ?> golem, InteractionHand hand, int level) {
 		ItemStack stack = player.getItemInHand(hand);
 		int time = JGConfig.COMMON.villagerBonusDuration.get() * level;
 		if (stack.is(Items.EMERALD_BLOCK)) {
 			golem.repairWithItem();
-			golem.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, time, 1));
-			golem.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, time, 0));
-			golem.addEffect(new MobEffectInstance(MobEffects.REGENERATION, time / 4, 1));
+			emeraldBoost(golem, time);
 			if (!player.isCreative()) stack.shrink(1);
 			return InteractionResult.SUCCESS;
 		} else if (stack.is(Items.NETHERITE_BLOCK)) {
 			golem.repairWithItem();
-			golem.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, time, 4));
-			golem.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, time, 2));
-			golem.addEffect(new MobEffectInstance(MobEffects.REGENERATION, time, 1));
-			golem.addEffect(new MobEffectInstance(JGEffects.NETHERITE_BOOST.get(), time, 0));
+			netheriteBoost(golem, time);
 			int[] states = new int[]{0, golem.tickCount + 10};
 			GeneralEventHandler.schedulePersistent(() -> {
 				if (golem.isRemoved() || !golem.isAlive())
@@ -53,4 +61,19 @@ public class VillagerMetalModifier extends GolemModifier {
 		}
 		return InteractionResult.PASS;
 	}
+
+
+	private void emeraldBoost(AbstractGolemEntity<?, ?> golem, int time) {
+		golem.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, time, 1));
+		golem.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, time, 0));
+		golem.addEffect(new MobEffectInstance(MobEffects.REGENERATION, time / 4, 1));
+	}
+
+	private void netheriteBoost(AbstractGolemEntity<?, ?> golem, int time) {
+		golem.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, time, 4));
+		golem.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, time, 2));
+		golem.addEffect(new MobEffectInstance(MobEffects.REGENERATION, time, 1));
+		golem.addEffect(new MobEffectInstance(JGEffects.NETHERITE_BOOST.get(), time, 0));
+	}
+
 }

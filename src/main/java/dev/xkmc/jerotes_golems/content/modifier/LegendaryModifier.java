@@ -25,6 +25,15 @@ public class LegendaryModifier extends GolemModifier {
 	}
 
 	@Override
+	public void onAiStep(AbstractGolemEntity<?, ?> golem, int level) {
+		if (golem.tickCount % 20 == 0 && !golem.level().isClientSide() && golem.isHostile()) {
+			if (HasItemUtil.hasItem(golem, JerotesVillageItems.MEROR_ENERGY_REGIME.get())) {
+				golem.addEffect(new MobEffectInstance(JGEffects.LEGENDARY.get(), 600, 0, false, false), golem);
+			}
+		}
+	}
+
+	@Override
 	public InteractionResult interact(Player player, AbstractGolemEntity<?, ?> golem, InteractionHand hand, int level) {
 		ItemStack stack = player.getItemInHand(hand);
 		if (stack.is(JerotesVillageItems.MEROR_ENERGY_REGIME.get())) {

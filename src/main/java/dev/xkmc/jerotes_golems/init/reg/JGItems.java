@@ -22,7 +22,8 @@ public class JGItems {
 
 	public static final RegistryEntry<CreativeModeTab> TAB;
 
-	public static final ItemEntry<DeployerItem> VILLAGER_METAL_DEPLOYER, QOAIKU_DEPLOYER, MEROR_DEPLOYER;
+	public static final ItemEntry<DeployerItem> VILLAGER_METAL_DEPLOYER, QOAIKU_DEPLOYER, MEROR_DEPLOYER,
+			ENHANCED_VILLAGER_METAL_DEPLOYER, REFINE_MEROR_DEPLOYER;
 
 	public static final ItemEntry<WonderlandArmorItem> WONDERLAND_HELMET, WONDERLAND_CHESTPLATE, WONDERLAND_SHINGUARD;
 	public static final ItemEntry<MerorArmorItem> MEROR_HELMET, MEROR_CHESTPLATE, MEROR_SHINGUARD;
@@ -49,6 +50,14 @@ public class JGItems {
 
 		MEROR_DEPLOYER = JerotesGolems.REGISTRATE.item("meror_deployer",
 						p -> new DeployerItem(p, JerotesGolems.loc("meror")))
+				.register();
+
+		ENHANCED_VILLAGER_METAL_DEPLOYER = JerotesGolems.REGISTRATE.item("enhanced_villager_metal_deployer",
+						p -> new DeployerItem(p, JerotesGolems.loc("enhanced_villager_metal")))
+				.register();
+
+		REFINE_MEROR_DEPLOYER = JerotesGolems.REGISTRATE.item("refine_meror_deployer",
+						p -> new DeployerItem(p, JerotesGolems.loc("refine_meror")))
 				.register();
 
 		WONDERLAND_HELMET = JerotesGolems.REGISTRATE.item("wonderland_helmet", p -> new WonderlandArmorItem(p.stacksTo(1),

@@ -1,0 +1,35 @@
+{
+  "additional": {},
+  "items": {
+    "MAINHAND": [
+      {
+        "dropChance": 0.085,
+        "enchantLevel": 0,
+        "stack": {
+          "item": "modulargolems:iron_mecha_bow",
+          "nbt": "{Enchantments:[{id:\"minecraft:power\",lvl:5s},{id:\"minecraft:piercing\",lvl:3s}]}"
+        },
+        "weight": 100
+      },
+      {
+        "dropChance": 0.085,
+        "enchantLevel": 0,
+        "stack": {
+          "item": "modulargolems:netherite_mecha_bow",
+          "nbt": "{Enchantments:[{id:\"minecraft:power\",lvl:5s},{id:\"minecraft:multishot\",lvl:1s}]}"
+        },
+        "weight": 50
+      }
+    ],
+    "OFFHAND": [
+      {
+        "dropChance": 0.085,
+        "enchantLevel": 0,
+        "stack": {
+          "item": "jerotesvillage:carved_villager_spectral_arrow"
+        },
+        "weight": 100
+      }
+    ]
+  }
+}

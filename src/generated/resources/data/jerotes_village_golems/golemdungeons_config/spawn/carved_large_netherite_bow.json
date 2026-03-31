@@ -1,0 +1,74 @@
+{
+  "equipments": [
+    {
+      "type": "modulargolems:metal_golem",
+      "sets": [
+        {
+          "target": "jerotes_village_golems:carved_large_armor_better",
+          "weight": 100
+        }
+      ]
+    },
+    {
+      "type": "modulargolems:metal_golem",
+      "sets": [
+        {
+          "target": "jerotes_village_golems:carved_large_weapon_bow",
+          "weight": 100
+        }
+      ]
+    },
+    {
+      "type": "modulargolems:metal_golem",
+      "sets": [
+        {
+          "target": "jerotes_village_golems:carved_netherite_boost",
+          "weight": 100
+        }
+      ]
+    }
+  ],
+  "faction": "jerotes_village_golems:villager_metal",
+  "materials": {
+    "jerotes_village_golems:villager_metal": {
+      "bonus": [],
+      "forbid": [],
+      "weight": 100
+    }
+  },
+  "types": {
+    "modulargolems:metal_golem": {
+      "bonus": [
+        {
+          "chance": 0.5,
+          "upgrade": "modulargolems:speed"
+        }
+      ],
+      "mountChance": 0.0,
+      "mounts": [],
+      "weight": 30
+    }
+  },
+  "upgrades": [
+    {
+      "upgrade": "modulargolems:speed",
+      "weight": 1
+    },
+    {
+      "upgrade": "modulargolems:quartz",
+      "weight": 100
+    },
+    {
+      "upgrade": "modulargolems:gold",
+      "weight": 100
+    },
+    {
+      "upgrade": "modulargolems:speed",
+      "weight": 100
+    },
+    {
+      "upgrade": "modulargolems:diamond",
+      "weight": 30
+    }
+  ]
+}

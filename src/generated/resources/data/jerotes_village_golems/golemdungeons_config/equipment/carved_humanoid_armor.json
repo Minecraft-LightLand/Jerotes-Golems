@@ -1,4 +1,5 @@
 {
+  "additional": {},
   "items": {
     "CHEST": [
       {
@@ -15,24 +16,6 @@
         "enchantLevel": 15,
         "stack": {
           "item": "jerotesvillage:villager_metal_chestplate",
-          "nbt": "{Damage:0}"
-        },
-        "weight": 50
-      },
-      {
-        "dropChance": 0.085,
-        "enchantLevel": 20,
-        "stack": {
-          "item": "minecraft:chainmail_chestplate",
-          "nbt": "{Damage:0}"
-        },
-        "weight": 50
-      },
-      {
-        "dropChance": 0.085,
-        "enchantLevel": 30,
-        "stack": {
-          "item": "minecraft:golden_chestplate",
           "nbt": "{Damage:0}"
         },
         "weight": 50
@@ -56,24 +39,6 @@
           "nbt": "{Damage:0}"
         },
         "weight": 50
-      },
-      {
-        "dropChance": 0.085,
-        "enchantLevel": 20,
-        "stack": {
-          "item": "minecraft:chainmail_boots",
-          "nbt": "{Damage:0}"
-        },
-        "weight": 50
-      },
-      {
-        "dropChance": 0.085,
-        "enchantLevel": 30,
-        "stack": {
-          "item": "minecraft:golden_boots",
-          "nbt": "{Damage:0}"
-        },
-        "weight": 50
       }
     ],
     "HEAD": [
@@ -94,24 +59,6 @@
           "nbt": "{Damage:0}"
         },
         "weight": 50
-      },
-      {
-        "dropChance": 0.085,
-        "enchantLevel": 20,
-        "stack": {
-          "item": "minecraft:chainmail_helmet",
-          "nbt": "{Damage:0}"
-        },
-        "weight": 50
-      },
-      {
-        "dropChance": 0.085,
-        "enchantLevel": 30,
-        "stack": {
-          "item": "minecraft:golden_helmet",
-          "nbt": "{Damage:0}"
-        },
-        "weight": 50
       }
     ],
     "LEGS": [
@@ -129,24 +76,6 @@
         "enchantLevel": 15,
         "stack": {
           "item": "jerotesvillage:villager_metal_leggings",
-          "nbt": "{Damage:0}"
-        },
-        "weight": 50
-      },
-      {
-        "dropChance": 0.085,
-        "enchantLevel": 20,
-        "stack": {
-          "item": "minecraft:chainmail_leggings",
-          "nbt": "{Damage:0}"
-        },
-        "weight": 50
-      },
-      {
-        "dropChance": 0.085,
-        "enchantLevel": 30,
-        "stack": {
-          "item": "minecraft:golden_leggings",
           "nbt": "{Damage:0}"
         },
         "weight": 50

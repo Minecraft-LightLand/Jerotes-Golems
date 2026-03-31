@@ -1,0 +1,72 @@
+{
+  "generateChest": false,
+  "list": [
+    [
+      {
+        "num": 1,
+        "target": "jerotes_village_golems:carved_large_emerald"
+      }
+    ],
+    [
+      {
+        "num": 1,
+        "target": "jerotes_village_golems:carved_large_emerald"
+      },
+      {
+        "num": 1,
+        "target": "jerotes_village_golems:carved_large_emerald_bow"
+      }
+    ],
+    [
+      {
+        "num": 2,
+        "target": "jerotes_village_golems:carved_large_emerald"
+      },
+      {
+        "num": 2,
+        "target": "jerotes_village_golems:carved_large_emerald_bow"
+      }
+    ],
+    [
+      {
+        "num": 1,
+        "target": "jerotes_village_golems:carved_large_netherite"
+      }
+    ],
+    [
+      {
+        "num": 1,
+        "target": "jerotes_village_golems:carved_large_netherite"
+      },
+      {
+        "num": 1,
+        "target": "jerotes_village_golems:carved_large_netherite_bow"
+      }
+    ],
+    [
+      {
+        "num": 2,
+        "target": "jerotes_village_golems:carved_large_netherite"
+      },
+      {
+        "num": 2,
+        "target": "jerotes_village_golems:carved_large_netherite_bow"
+      }
+    ],
+    [
+      {
+        "num": 4,
+        "target": "jerotes_village_golems:carved_large_netherite"
+      },
+      {
+        "num": 4,
+        "target": "jerotes_village_golems:carved_large_netherite_bow"
+      }
+    ]
+  ],
+  "maxY": 16,
+  "minY": -5,
+  "reward": "golemdungeons:trial_reward/factory_remnant",
+  "spawnCost": 200,
+  "triggerRange": 22
+}

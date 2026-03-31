@@ -12,6 +12,7 @@
   "item.jerotes_village_golems.anesthetic_spear": "ɹɐǝdS ɔıʇǝɥʇsǝuⱯ",
   "item.jerotes_village_golems.bitter_cold_axe": "ǝxⱯ pןoƆ ɹǝʇʇıᗺ",
   "item.jerotes_village_golems.bright_land_blade": "ǝpɐןᗺ puɐꞀ ʇɥbıɹᗺ",
+  "item.jerotes_village_golems.enhanced_villager_metal_deployer": "ɹǝʎoןdǝᗡ ןɐʇǝW ɹǝbɐןןıΛ pǝɔuɐɥuƎ",
   "item.jerotes_village_golems.meror_chestplate": "ǝʇɐןdʇsǝɥƆ ɹoɹǝW",
   "item.jerotes_village_golems.meror_deployer": "ɹǝʎoןdǝᗡ ɹoɹǝW",
   "item.jerotes_village_golems.meror_flame_thrower": "ɹǝʍoɹɥ⟘ ǝɯɐןℲ ɹoɹǝW",
@@ -26,6 +27,7 @@
   "item.jerotes_village_golems.qoaiku_golem_spear": "ɹɐǝdS ɯǝןo⅁ nʞıɐoὉ",
   "item.jerotes_village_golems.qoaiku_golem_sword": "pɹoʍS ɯǝןo⅁ nʞıɐoὉ",
   "item.jerotes_village_golems.refine_meror_chestplate": "ǝʇɐןdʇsǝɥƆ ɹoɹǝW ǝuıɟǝᴚ",
+  "item.jerotes_village_golems.refine_meror_deployer": "ɹǝʎoןdǝᗡ ɹoɹǝW ǝuıɟǝᴚ",
   "item.jerotes_village_golems.refine_meror_golem_axe": "ǝxⱯ ɯǝןo⅁ ɹoɹǝW ǝuıɟǝᴚ",
   "item.jerotes_village_golems.refine_meror_golem_spear": "ɹɐǝdS ɯǝןo⅁ ɹoɹǝW ǝuıɟǝᴚ",
   "item.jerotes_village_golems.refine_meror_golem_sword": "pɹoʍS ɯǝןo⅁ ɹoɹǝW ǝuıɟǝᴚ",
@@ -59,5 +61,9 @@
   "modifier.jerotes_village_golems.meror_defense.desc": "%s%% ʎq ǝbɐɯɐp ɹoɹǝW-uoN ǝɔnpǝᴚ",
   "modifier.jerotes_village_golems.qoaiku_attack": "ʞɔɐʇʇⱯ nʞıɐoὉ",
   "modifier.jerotes_village_golems.qoaiku_attack.desc": "˙ɹǝʇɐʍ oʇ ǝʌıʇısuǝs sqoɯ ʇsuıɐbɐ ǝbɐɯɐp ɐɹʇxǝ %s%% ןɐǝᗡ ˙ǝןqıssod ɟı ǝbɐɯɐp uʍoɹᗡ ןɐǝp ɯǝןo⅁",
+  "trial.jerotes_village_golems.enhanced_villager_metal": "ʇuǝɯǝɔɹoɟuıǝᴚ pǝʌɹɐƆ",
+  "trial.jerotes_village_golems.meror": "ʇuɐuɯǝᴚ ɹoɹǝW",
+  "trial.jerotes_village_golems.qoaiku": "ʎɹǝuıɥɔɐW uɐǝɔO dǝǝᗡ",
+  "trial.jerotes_village_golems.refine_meror": "puǝbǝꞀ ɟo ǝpıɹԀ",
   "trial.jerotes_village_golems.villager_metal": "ʎןqɯǝssⱯ pǝʌɹɐƆ"
 }

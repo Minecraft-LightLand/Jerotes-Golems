@@ -12,6 +12,7 @@
   "item.jerotes_village_golems.anesthetic_spear": "Anesthetic Spear",
   "item.jerotes_village_golems.bitter_cold_axe": "Bitter Cold Axe",
   "item.jerotes_village_golems.bright_land_blade": "Bright Land Blade",
+  "item.jerotes_village_golems.enhanced_villager_metal_deployer": "Enhanced Villager Metal Deployer",
   "item.jerotes_village_golems.meror_chestplate": "Meror Chestplate",
   "item.jerotes_village_golems.meror_deployer": "Meror Deployer",
   "item.jerotes_village_golems.meror_flame_thrower": "Meror Flame Thrower",
@@ -26,6 +27,7 @@
   "item.jerotes_village_golems.qoaiku_golem_spear": "Qoaiku Golem Spear",
   "item.jerotes_village_golems.qoaiku_golem_sword": "Qoaiku Golem Sword",
   "item.jerotes_village_golems.refine_meror_chestplate": "Refine Meror Chestplate",
+  "item.jerotes_village_golems.refine_meror_deployer": "Refine Meror Deployer",
   "item.jerotes_village_golems.refine_meror_golem_axe": "Refine Meror Golem Axe",
   "item.jerotes_village_golems.refine_meror_golem_spear": "Refine Meror Golem Spear",
   "item.jerotes_village_golems.refine_meror_golem_sword": "Refine Meror Golem Sword",
@@ -59,5 +61,9 @@
   "modifier.jerotes_village_golems.meror_defense.desc": "Reduce Non-Meror damage by %s%%",
   "modifier.jerotes_village_golems.qoaiku_attack": "Qoaiku Attack",
   "modifier.jerotes_village_golems.qoaiku_attack.desc": "Golem deal Drown damage if possible. Deal %s%% extra damage against mobs sensitive to water.",
+  "trial.jerotes_village_golems.enhanced_villager_metal": "Carved Reinforcement",
+  "trial.jerotes_village_golems.meror": "Meror Remnant",
+  "trial.jerotes_village_golems.qoaiku": "Deep Ocean Machinery",
+  "trial.jerotes_village_golems.refine_meror": "Pride of Legend",
   "trial.jerotes_village_golems.villager_metal": "Carved Assembly"
 }

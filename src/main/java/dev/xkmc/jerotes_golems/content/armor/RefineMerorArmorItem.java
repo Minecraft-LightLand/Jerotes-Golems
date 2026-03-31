@@ -1,10 +1,10 @@
 package dev.xkmc.jerotes_golems.content.armor;
 
 import com.google.common.collect.ImmutableMultimap;
+import com.jerotes.jerotes.util.EntityAndItemFind;
 import dev.xkmc.jerotes_golems.init.JerotesGolems;
 import dev.xkmc.jerotes_golems.init.reg.JGModifiers;
 import dev.xkmc.l2damagetracker.init.L2DamageTracker;
-import dev.xkmc.modulargolems.compat.materials.twilightforest.TFDispatch;
 import dev.xkmc.modulargolems.content.entity.common.AbstractGolemEntity;
 import dev.xkmc.modulargolems.content.item.equipments.IGolemModifierItem;
 import dev.xkmc.modulargolems.content.item.equipments.MetalGolemArmorItem;
@@ -53,6 +53,18 @@ public class RefineMerorArmorItem extends MetalGolemArmorItem implements IGolemM
 	@Override
 	public ResourceLocation getModelTexture(LivingEntity user) {
 		return JerotesGolems.loc("textures/equipments/refine_meror.png");
+	}
+
+	@Override
+	public boolean emissive() {
+		return true;
+	}
+
+	@Override
+	public ResourceLocation getEmissiveModelTexture(LivingEntity user) {
+		if (!EntityAndItemFind.isLegendary(user))
+			return JerotesGolems.loc("textures/equipments/empty.png");
+		return JerotesGolems.loc("textures/equipments/refine_meror_emissive.png");
 	}
 
 }

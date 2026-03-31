@@ -63,6 +63,10 @@ public enum JGLang {
 		pvd.add("golem_material." + JerotesGolems.MODID + ".refine_meror", "Refined Meror Metal");
 
 		pvd.add(Util.makeDescriptionId("trial", CarvedGolemSpawn.CARVED_ALL), "Carved Assembly");
+		pvd.add(Util.makeDescriptionId("trial", CarvedGolemSpawn.ENHANCED_ALL), "Carved Reinforcement");
+		pvd.add(Util.makeDescriptionId("trial", QoaikuGolemSpawn.QOAIKU_ALL), "Deep Ocean Machinery");
+		pvd.add(Util.makeDescriptionId("trial", MerorGolemSpawn.MEROR_ALL), "Meror Remnant");
+		pvd.add(Util.makeDescriptionId("trial", MerorGolemSpawn.REFINE_MEROR_ALL), "Pride of Legend");
 	}
 
 }

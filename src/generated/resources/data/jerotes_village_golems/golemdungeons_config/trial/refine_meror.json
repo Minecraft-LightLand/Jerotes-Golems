@@ -1,0 +1,78 @@
+{
+  "generateChest": false,
+  "list": [
+    [
+      {
+        "num": 1,
+        "target": "jerotes_village_golems:meror_large_refine"
+      }
+    ],
+    [
+      {
+        "num": 1,
+        "target": "jerotes_village_golems:meror_large_refine"
+      },
+      {
+        "num": 1,
+        "target": "jerotes_village_golems:meror_humanoid_refine_melee"
+      },
+      {
+        "num": 2,
+        "target": "jerotes_village_golems:meror_humanoid_refine_ranged"
+      }
+    ],
+    [
+      {
+        "num": 3,
+        "target": "jerotes_village_golems:meror_large_refine"
+      },
+      {
+        "num": 2,
+        "target": "jerotes_village_golems:meror_humanoid_refine_melee"
+      },
+      {
+        "num": 2,
+        "target": "jerotes_village_golems:meror_humanoid_refine_ranged"
+      }
+    ],
+    [
+      {
+        "num": 1,
+        "target": "jerotes_village_golems:meror_large_refine_charged"
+      }
+    ],
+    [
+      {
+        "num": 1,
+        "target": "jerotes_village_golems:meror_large_refine_charged"
+      },
+      {
+        "num": 1,
+        "target": "jerotes_village_golems:meror_humanoid_refine_melee_charged"
+      },
+      {
+        "num": 2,
+        "target": "jerotes_village_golems:meror_humanoid_refine_ranged_charged"
+      }
+    ],
+    [
+      {
+        "num": 3,
+        "target": "jerotes_village_golems:meror_large_refine_charged"
+      },
+      {
+        "num": 2,
+        "target": "jerotes_village_golems:meror_humanoid_refine_melee_charged"
+      },
+      {
+        "num": 2,
+        "target": "jerotes_village_golems:meror_humanoid_refine_ranged_charged"
+      }
+    ]
+  ],
+  "maxY": 16,
+  "minY": -5,
+  "reward": "golemdungeons:trial_reward/factory_remnant",
+  "spawnCost": 200,
+  "triggerRange": 22
+}
