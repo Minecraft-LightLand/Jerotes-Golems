@@ -10,6 +10,21 @@ import net.minecraft.world.item.ItemStack;
 public class JGAttackListener implements AttackListener {
 
 	@Override
+	public void onAttack(AttackCache cache, ItemStack weapon) {
+		var event = cache.getLivingHurtEvent();
+		assert event != null;
+		var source = event.getSource();
+		if (cache.getAttacker() instanceof MetalGolemEntity e) {
+			if (source.is(L2DamageTypes.DIRECT)) {
+				var stack = e.getMainHandItem();
+				if (stack.getItem() instanceof IDamageListenerWeapon item) {
+					item.onAttack(cache, source, e, stack);
+				}
+			}
+		}
+	}
+
+	@Override
 	public void onHurt(AttackCache cache, ItemStack weapon) {
 		var event = cache.getLivingHurtEvent();
 		assert event != null;
@@ -19,6 +34,21 @@ public class JGAttackListener implements AttackListener {
 				var stack = e.getMainHandItem();
 				if (stack.getItem() instanceof IDamageListenerWeapon item) {
 					item.onHurt(cache, source, e, stack);
+				}
+			}
+		}
+	}
+
+	@Override
+	public void onDamage(AttackCache cache, ItemStack weapon) {
+		var event = cache.getLivingHurtEvent();
+		assert event != null;
+		var source = event.getSource();
+		if (cache.getAttacker() instanceof MetalGolemEntity e) {
+			if (source.is(L2DamageTypes.DIRECT)) {
+				var stack = e.getMainHandItem();
+				if (stack.getItem() instanceof IDamageListenerWeapon item) {
+					item.onDamage(cache, source, e, stack);
 				}
 			}
 		}

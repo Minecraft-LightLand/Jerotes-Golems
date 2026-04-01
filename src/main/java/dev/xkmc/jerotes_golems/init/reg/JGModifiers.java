@@ -2,6 +2,7 @@ package dev.xkmc.jerotes_golems.init.reg;
 
 import com.tterrag.registrate.builders.ItemBuilder;
 import com.tterrag.registrate.providers.ProviderType;
+import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
 import dev.xkmc.jerotes_golems.content.modifier.*;
@@ -31,6 +32,8 @@ public class JGModifiers {
 	public static final RegistryEntry<AbackModifier> ABACK;
 	public static final RegistryEntry<LegendaryModifier> LEGENDARY;
 
+	public static final ItemEntry<SimpleUpgradeItem> ITEM_VILLAGE;
+
 	static {
 		GREEDY = reg("greedy", () -> new VillagerMetalModifier(StatFilterType.HEALTH, 2), "Golem repairs and gets bonus when using emerald block or netherite block on it");
 		MEROR_ATK = reg("meror_attack", () -> new MerorAttackModifier(1), "Golem deal Meror damage");
@@ -39,6 +42,9 @@ public class JGModifiers {
 		QOAIKU_ATK = reg("qoaiku_attack", () -> new QoaikuAttackModifier(5), "Golem deal Drown damage if possible. Deal %s%% extra damage against mobs sensitive to water.");
 		ABACK = reg("aback", () -> new AbackModifier(StatFilterType.MASS, 1), "Golem inflict Aback effect to target");
 		LEGENDARY = reg("legendary", () -> new LegendaryModifier(StatFilterType.MASS, 4), "Consume [%s] to gain %s of legendary status");
+
+		ITEM_VILLAGE = regUpgradeImpl("greedy", () -> GREEDY, 1, false, JerotesGolems.MODID).register();
+
 	}
 
 	public static <T extends GolemModifier> RegistryEntry<T> reg(String id, NonNullSupplier<T> sup, @Nullable String def) {

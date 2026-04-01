@@ -7,6 +7,16 @@ import net.minecraft.world.item.ItemStack;
 
 public interface IDamageListenerWeapon {
 
-	void onHurt(AttackCache cache, DamageSource source, MetalGolemEntity e, ItemStack stack);
+	default void onHurt(AttackCache cache, DamageSource source, MetalGolemEntity e, ItemStack stack) {
+
+	}
+
+	default void onAttack(AttackCache cache, DamageSource source, MetalGolemEntity e, ItemStack stack) {
+
+	}
+
+	default void onDamage(AttackCache cache, DamageSource source, MetalGolemEntity e, ItemStack stack) {
+
+	}
 
 }

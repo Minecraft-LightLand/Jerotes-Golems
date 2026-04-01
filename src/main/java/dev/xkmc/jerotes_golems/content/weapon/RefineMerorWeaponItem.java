@@ -1,8 +1,10 @@
 package dev.xkmc.jerotes_golems.content.weapon;
 
 import com.jerotes.jerotes.init.JerotesMobEffects;
+import com.jerotes.jerotes.util.EntityAndItemFind;
 import dev.xkmc.jerotes_golems.init.data.JGLang;
 import dev.xkmc.l2damagetracker.contents.attack.AttackCache;
+import dev.xkmc.l2damagetracker.contents.attack.DamageModifier;
 import dev.xkmc.modulargolems.content.entity.metalgolem.MetalGolemEntity;
 import dev.xkmc.modulargolems.content.item.equipments.MetalGolemWeaponItem;
 import net.minecraft.network.chat.Component;
@@ -19,6 +21,11 @@ public class RefineMerorWeaponItem extends MetalGolemWeaponItem implements IDama
 
 	public RefineMerorWeaponItem(Properties properties, int attackDamage, double percentAttack, float range, float sweep) {
 		super(properties, attackDamage, percentAttack, range, sweep);
+	}
+
+	@Override
+	public void onAttack(AttackCache cache, DamageSource source, MetalGolemEntity e, ItemStack stack) {
+		cache.getAttackTarget().invulnerableTime = 0;
 	}
 
 	@Override
@@ -44,8 +51,18 @@ public class RefineMerorWeaponItem extends MetalGolemWeaponItem implements IDama
 	}
 
 	@Override
+	public void onDamage(AttackCache cache, DamageSource source, MetalGolemEntity e, ItemStack stack) {
+		if (EntityAndItemFind.isLegendary(e)) {
+			cache.addDealtModifier(DamageModifier.nonlinearMiddle(123,
+					x -> Math.max(x, (float) Math.sqrt(cache.getPreDamage()))));
+		}
+	}
+
+	@Override
 	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> list, TooltipFlag flag) {
+		list.add(JGLang.WEAPON_CD_BYPASS.get());
 		list.add(JGLang.REFINE_MEROR_WEAPON.get());
+		list.add(JGLang.WEAPON_TRUE_DAMAGE.get());
 		super.appendHoverText(stack, level, list, flag);
 	}
 

@@ -1,7 +1,6 @@
 package dev.xkmc.jerotes_golems.init.data;
 
 import com.tterrag.registrate.providers.RegistrateLangProvider;
-import dev.xkmc.golemdungeons.init.data.spawn.FactoryGolemSpawn;
 import dev.xkmc.jerotes_golems.init.JerotesGolems;
 import dev.xkmc.modulargolems.init.ModularGolems;
 import net.minecraft.ChatFormatting;
@@ -20,7 +19,9 @@ public enum JGLang {
 	SERPON_CHAIN_BLADE_DESC("tooltip.serpon_chain_blade", "Deal 3 follow up fire damage at %s%% of original damage", 1, ChatFormatting.GRAY),
 	FLAME_THROWER_DESC("tooltip.flame_thrower", "Shoots Meror Flame", 0, ChatFormatting.GRAY),
 	MACHINE_GUN_DESC("tooltip.machine_gun", "Shoots Meror Bullets. Support Infinity Enchantment", 0, ChatFormatting.GRAY),
-	REFINE_MEROR_WEAPON("tooltip.refine_meror", "Stack Bleeding effect on target, up to level VI", 0, ChatFormatting.GRAY);
+	WEAPON_CD_BYPASS("tooltip.cd_bypass", "Bypass invulnerable frame.", 0, ChatFormatting.GOLD),
+	REFINE_MEROR_WEAPON("tooltip.refine_meror", "Stack Bleeding effect on target, up to level VI", 0, ChatFormatting.GRAY),
+	WEAPON_TRUE_DAMAGE("tooltip.true_damage", "When golem has legendary status, part of damage bypass damage reductions", 0, ChatFormatting.GOLD);
 
 	private final String key, def;
 	private final int arg;
