@@ -3,6 +3,7 @@ package dev.xkmc.jerotes_golems.init.data;
 import com.jerotes.jerotesvillage.init.JerotesVillageItems;
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.DataIngredient;
+import dev.xkmc.golemdungeons.init.reg.GDItems;
 import dev.xkmc.jerotes_golems.content.weapon.JGSpecialMaterial;
 import dev.xkmc.jerotes_golems.content.weapon.JGWeaponMaterial;
 import dev.xkmc.jerotes_golems.init.reg.JGItems;
@@ -35,6 +36,87 @@ public class JGRecipeGen {
 			}
 		}
 
+		// deployer
+		{
+
+			unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.MISC, JGItems.VILLAGER_METAL_DEPLOYER.get())::unlockedBy, JerotesVillageItems.CARVED_IRON_GOLEM_CORE.get())
+					.pattern("ACA")
+					.pattern("TIT")
+					.pattern("AMA")
+					.define('M', GDItems.MEDAL_OF_CONQUEROR)
+					.define('T', GolemItems.GOLEM_TEMPLATE)
+					.define('I', JerotesVillageItems.OMINOUS_BANNER_PROJECTION_EMERALD_FRAGMENT.get())
+					.define('C', JerotesVillageItems.CARVED_IRON_GOLEM_CORE.get())
+					.define('A', JerotesVillageItems.VILLAGER_METAL_INGOT.get())
+					.save(pvd);
+
+			unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.MISC, JGItems.QOAIKU_DEPLOYER.get())::unlockedBy, JerotesVillageItems.QOAIKU_METAL_INGOT.get())
+					.pattern("ACA")
+					.pattern("TIT")
+					.pattern("AMA")
+					.define('M', GDItems.MEDAL_OF_CONQUEROR)
+					.define('T', GolemItems.GOLEM_TEMPLATE)
+					.define('I', JerotesVillageItems.OMINOUS_BANNER_PROJECTION_EMERALD_FRAGMENT.get())
+					.define('C', Items.DIAMOND)
+					.define('A', JerotesVillageItems.QOAIKU_METAL_INGOT.get())
+					.save(pvd);
+
+			unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.MISC, JGItems.MEROR_DEPLOYER.get())::unlockedBy, JerotesVillageItems.MEROR_METAL_INGOT.get())
+					.pattern("ACA")
+					.pattern("TIT")
+					.pattern("AMA")
+					.define('M', GDItems.TRIAL_MEDAL)
+					.define('T', GolemItems.GOLEM_TEMPLATE)
+					.define('I', JerotesVillageItems.OMINOUS_BANNER_PROJECTION_EMERALD_FRAGMENT.get())
+					.define('C', JerotesVillageItems.MEROR_ENERGY_REGIME.get())
+					.define('A', JerotesVillageItems.MEROR_METAL_INGOT.get())
+					.save(pvd);
+
+			unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.MISC, JGItems.ENHANCED_VILLAGER_METAL_DEPLOYER.get())::unlockedBy, Items.NETHERITE_INGOT)
+					.pattern("ABA")
+					.pattern("BIB")
+					.pattern("ABA")
+					.define('I', JGItems.VILLAGER_METAL_DEPLOYER.get())
+					.define('A', Items.EMERALD_BLOCK)
+					.define('B', Items.NETHERITE_BLOCK)
+					.save(pvd);
+
+			unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.MISC, JGItems.REFINE_MEROR_DEPLOYER.get())::unlockedBy, JerotesVillageItems.REFINE_MEROR_METAL_INGOT.get())
+					.pattern("ABA")
+					.pattern("BIB")
+					.pattern("ABA")
+					.define('I', JGItems.MEROR_DEPLOYER.get())
+					.define('A', JerotesVillageItems.REFINE_MEROR_METAL_INGOT.get())
+					.define('B', JerotesVillageItems.MEROR_ENERGY_REGIME.get())
+					.save(pvd);
+		}
+
+		// misc
+		{
+
+			unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.MISC, JGItems.MEROR_MACHINE_GUN.get())::unlockedBy, JerotesVillageItems.MEROR_ENERGY_REGIME.get())
+					.pattern("BMR")
+					.pattern("TER")
+					.pattern("BMR")
+					.define('E', JerotesVillageItems.MEROR_ENERGY_REGIME.get())
+					.define('M', JerotesVillageItems.MEROR_METAL_INGOT.get())
+					.define('R', JerotesVillageItems.REFINE_MEROR_METAL_INGOT.get())
+					.define('B', JerotesVillageItems.MEROR_METAL_BLOCK.get())
+					.define('T', JerotesVillageItems.REFINE_MEROR_METAL_BLOCK.get())
+					.save(pvd);
+
+			unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.MISC, JGItems.MEROR_FLAME_THROWER.get())::unlockedBy, JerotesVillageItems.MEROR_ENERGY_REGIME.get())
+					.pattern("BB ")
+					.pattern("IER")
+					.pattern("TMM")
+					.define('E', JerotesVillageItems.MEROR_ENERGY_REGIME.get())
+					.define('M', JerotesVillageItems.MEROR_METAL_INGOT.get())
+					.define('R', JerotesVillageItems.REFINE_MEROR_METAL_INGOT.get())
+					.define('B', JerotesVillageItems.MEROR_METAL_BLOCK.get())
+					.define('T', JerotesVillageItems.REFINE_MEROR_METAL_BLOCK.get())
+					.define('I', Items.BLAZE_ROD)
+					.save(pvd);
+		}
 
 		// armor
 		{
@@ -102,6 +184,7 @@ public class JGRecipeGen {
 					.save(pvd, JGItems.REFINE_MEROR_SHINGUARD.getId());
 
 		}
+
 		//special weapon
 		{
 			unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, JGItems.SPECIAL_WEAPONS[JGSpecialMaterial.ANESTHETIC_SPEAR.ordinal()].get())::unlockedBy, Items.DIAMOND)
@@ -138,18 +221,18 @@ public class JGRecipeGen {
 
 			unlock(pvd, SmithingTransformRecipeBuilder.smithing(
 							Ingredient.of(JerotesVillageItems.BITTER_COLD_FIRM_ICE.get()),
-							Ingredient.of(GolemItems.METALGOLEM_WEAPON[GolemWeaponType.AXE.ordinal()][VanillaGolemWeaponMaterial.IRON.ordinal()].get()),
+							Ingredient.of(GolemItems.METALGOLEM_WEAPON[GolemWeaponType.AXE.ordinal()][VanillaGolemWeaponMaterial.DIAMOND.ordinal()].get()),
 							Ingredient.of(JerotesVillageItems.ICE_ROCK.get()),
 							RecipeCategory.COMBAT, JGItems.SPECIAL_WEAPONS[JGSpecialMaterial.BITTER_COLD_AXE.ordinal()].get())::unlocks,
-					GolemItems.METALGOLEM_WEAPON[GolemWeaponType.AXE.ordinal()][VanillaGolemWeaponMaterial.IRON.ordinal()].get())
+					GolemItems.METALGOLEM_WEAPON[GolemWeaponType.AXE.ordinal()][VanillaGolemWeaponMaterial.DIAMOND.ordinal()].get())
 					.save(pvd, JGItems.SPECIAL_WEAPONS[JGSpecialMaterial.BITTER_COLD_AXE.ordinal()].getId());
 
 			unlock(pvd, SmithingTransformRecipeBuilder.smithing(
 							Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE),
-							Ingredient.of(GolemItems.METALGOLEM_WEAPON[GolemWeaponType.SWORD.ordinal()][VanillaGolemWeaponMaterial.IRON.ordinal()].get()),
+							Ingredient.of(GolemItems.METALGOLEM_WEAPON[GolemWeaponType.SWORD.ordinal()][VanillaGolemWeaponMaterial.DIAMOND.ordinal()].get()),
 							Ingredient.of(JerotesVillageItems.MOUNTAIN_REALM_NINE_RINGED_DAO.get()),
 							RecipeCategory.COMBAT, JGItems.SPECIAL_WEAPONS[JGSpecialMaterial.WONDERLAND_BLADE.ordinal()].get())::unlocks,
-					GolemItems.METALGOLEM_WEAPON[GolemWeaponType.SWORD.ordinal()][VanillaGolemWeaponMaterial.IRON.ordinal()].get())
+					GolemItems.METALGOLEM_WEAPON[GolemWeaponType.SWORD.ordinal()][VanillaGolemWeaponMaterial.DIAMOND.ordinal()].get())
 					.save(pvd, JGItems.SPECIAL_WEAPONS[JGSpecialMaterial.WONDERLAND_BLADE.ordinal()].getId());
 		}
 	}

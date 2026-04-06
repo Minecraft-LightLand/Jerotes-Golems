@@ -6,7 +6,6 @@ import dev.xkmc.golemdungeons.content.config.ExtraEquipmentSlot;
 import dev.xkmc.golemdungeons.content.config.SpawnConfig;
 import dev.xkmc.golemdungeons.content.config.TrialConfig;
 import dev.xkmc.golemdungeons.init.GolemDungeons;
-import dev.xkmc.golemdungeons.init.data.loot.GDLootGen;
 import dev.xkmc.golemdungeons.init.data.spawn.AbstractGolemSpawn;
 import dev.xkmc.jerotes_golems.content.fraction.JGFactionRegistry;
 import dev.xkmc.jerotes_golems.content.weapon.JGWeaponMaterial;
@@ -306,7 +305,7 @@ public class CarvedGolemSpawn extends AbstractGolemSpawn {
 
 		// trial
 		{
-			map.add(GolemDungeons.TRIAL, CARVED_ALL, new TrialConfig().setReward(GDLootGen.FACTORY)
+			map.add(GolemDungeons.TRIAL, CARVED_ALL, new TrialConfig().setReward(JGLootGen.CARVED)
 					.setCost(200).setTriggerRange(22, -5, 16)
 					.add(of(LARGE_1, 1))
 					.add(of(LARGE_1, 1),
@@ -339,7 +338,7 @@ public class CarvedGolemSpawn extends AbstractGolemSpawn {
 			);
 
 
-			map.add(GolemDungeons.TRIAL, ENHANCED_ALL, new TrialConfig().setReward(GDLootGen.FACTORY)
+			map.add(GolemDungeons.TRIAL, ENHANCED_ALL, new TrialConfig().setReward(JGLootGen.ENHANCED_CARVED)
 					.setCost(200).setTriggerRange(22, -5, 16)
 					.add(of(LARGE_EMERALD, 1))
 					.add(of(LARGE_EMERALD, 1), of(LARGE_EMERALD_BOW, 1))

@@ -11,7 +11,7 @@ public class JGAttackListener implements AttackListener {
 
 	@Override
 	public void onAttack(AttackCache cache, ItemStack weapon) {
-		var event = cache.getLivingHurtEvent();
+		var event = cache.getLivingAttackEvent();
 		assert event != null;
 		var source = event.getSource();
 		if (cache.getAttacker() instanceof MetalGolemEntity e) {

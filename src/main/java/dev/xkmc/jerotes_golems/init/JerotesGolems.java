@@ -64,6 +64,7 @@ public class JerotesGolems {
 		REGISTRATE.addDataGenerator(ProviderType.RECIPE, JGRecipeGen::genRecipe);
 		REGISTRATE.addDataGenerator(ProviderType.ITEM_TAGS, JGTagGen::genItemTag);
 		REGISTRATE.addDataGenerator(L2TagGen.EFF_TAGS, JGTagGen::genEffectTag);
+		REGISTRATE.addDataGenerator(ProviderType.LOOT, JGLootGen::genLoot);
 
 		var gen = event.getGenerator();
 		var output = gen.getPackOutput();

@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "jerotesvillage:meror_metal_ingot"
+    },
+    "C": {
+      "item": "jerotesvillage:meror_energy_regime"
+    },
+    "I": {
+      "item": "jerotesvillage:ominous_banner_projection_emerald_fragment"
+    },
+    "M": {
+      "item": "golemdungeons:trial_medal"
+    },
+    "T": {
+      "item": "modulargolems:metal_golem_template"
+    }
+  },
+  "pattern": [
+    "ACA",
+    "TIT",
+    "AMA"
+  ],
+  "result": {
+    "item": "jerotes_village_golems:meror_deployer"
+  },
+  "show_notification": true
+}

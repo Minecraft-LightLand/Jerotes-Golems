@@ -49,11 +49,13 @@ public class MerorMachineGunItem extends ProjectileWeaponItem implements IShould
 		var pos = CannonPoseUtil.BEACON.getOrigin(e, hand);
 		var dst = target.position().add(0, target.getBbHeight() / 2, 0);
 		var dir = dst.subtract(pos).normalize();
-		Projectile proj = new MerorBulletEntity(JerotesVillageEntityType.MEROR_BULLET.get(), e.level());
-		proj.setOwner(e);
-		proj.setPos(pos);
-		proj.setDeltaMovement(dir.scale(4));
-		e.level().addFreshEntity(proj);
+		for (int i = 0; i < 3; i++) {
+			Projectile proj = new MerorBulletEntity(JerotesVillageEntityType.MEROR_BULLET.get(), e.level());
+			proj.setOwner(e);
+			proj.setPos(pos);
+			proj.setDeltaMovement(dir.scale(4));
+			e.level().addFreshEntity(proj);
+		}
 		if (!e.isSilent()) {
 			e.level().playSound(null, e.getX(), e.getY(), e.getZ(), SoundEvents.GENERIC_EXPLODE, e.getSoundSource(), 1.0F, 5.0F);
 		}

@@ -251,7 +251,7 @@ public class QoaikuGolemSpawn extends AbstractGolemSpawn {
 
 		// trial
 		{
-			map.add(GolemDungeons.TRIAL, QOAIKU_ALL, new TrialConfig().setReward(GDLootGen.FACTORY)
+			map.add(GolemDungeons.TRIAL, QOAIKU_ALL, new TrialConfig().setReward(JGLootGen.QOAIKU)
 					.setCost(200).setTriggerRange(22, -5, 16)
 					.add(of(LARGE_1, 1))
 					.add(of(LARGE_1, 1),

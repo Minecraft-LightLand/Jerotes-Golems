@@ -17,6 +17,8 @@ import dev.xkmc.modulargolems.content.item.equipments.MetalGolemWeaponItem;
 import dev.xkmc.modulargolems.init.data.MGTagGen;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
 
 public class JGItems {
 
@@ -24,6 +26,8 @@ public class JGItems {
 
 	public static final ItemEntry<DeployerItem> VILLAGER_METAL_DEPLOYER, QOAIKU_DEPLOYER, MEROR_DEPLOYER,
 			ENHANCED_VILLAGER_METAL_DEPLOYER, REFINE_MEROR_DEPLOYER;
+
+	public static final ItemEntry<Item> ULTIMATE_ENERGY_REGIME;
 
 	public static final ItemEntry<WonderlandArmorItem> WONDERLAND_HELMET, WONDERLAND_CHESTPLATE, WONDERLAND_SHINGUARD;
 	public static final ItemEntry<MerorArmorItem> MEROR_HELMET, MEROR_CHESTPLATE, MEROR_SHINGUARD;
@@ -59,6 +63,9 @@ public class JGItems {
 		REFINE_MEROR_DEPLOYER = JerotesGolems.REGISTRATE.item("refine_meror_deployer",
 						p -> new DeployerItem(p, JerotesGolems.loc("refine_meror")))
 				.register();
+
+		ULTIMATE_ENERGY_REGIME = JerotesGolems.REGISTRATE.item("ultimate_energy_regime", Item::new)
+				.properties(p -> p.rarity(Rarity.EPIC)).register();
 
 		WONDERLAND_HELMET = JerotesGolems.REGISTRATE.item("wonderland_helmet", p -> new WonderlandArmorItem(p.stacksTo(1),
 						ArmorItem.Type.HELMET, 11, 6, JGModelPaths.WONDERLAND_HELMETS))

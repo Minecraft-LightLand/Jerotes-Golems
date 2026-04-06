@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "jerotesvillage:qoaiku_metal_ingot"
+    },
+    "C": {
+      "item": "minecraft:diamond"
+    },
+    "I": {
+      "item": "jerotesvillage:ominous_banner_projection_emerald_fragment"
+    },
+    "M": {
+      "item": "golemdungeons:medal_of_conqueror"
+    },
+    "T": {
+      "item": "modulargolems:metal_golem_template"
+    }
+  },
+  "pattern": [
+    "ACA",
+    "TIT",
+    "AMA"
+  ],
+  "result": {
+    "item": "jerotes_village_golems:qoaiku_deployer"
+  },
+  "show_notification": true
+}

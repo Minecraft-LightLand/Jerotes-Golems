@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "jerotesvillage:meror_metal_block"
+    },
+    "E": {
+      "item": "jerotesvillage:meror_energy_regime"
+    },
+    "M": {
+      "item": "jerotesvillage:meror_metal_ingot"
+    },
+    "R": {
+      "item": "jerotesvillage:refine_meror_metal_ingot"
+    },
+    "T": {
+      "item": "jerotesvillage:refine_meror_metal_block"
+    }
+  },
+  "pattern": [
+    "BMR",
+    "TER",
+    "BMR"
+  ],
+  "result": {
+    "item": "jerotes_village_golems:meror_machine_gun"
+  },
+  "show_notification": true
+}

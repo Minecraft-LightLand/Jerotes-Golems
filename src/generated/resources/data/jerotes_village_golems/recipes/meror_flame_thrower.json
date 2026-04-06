@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "jerotesvillage:meror_metal_block"
+    },
+    "E": {
+      "item": "jerotesvillage:meror_energy_regime"
+    },
+    "I": {
+      "item": "minecraft:blaze_rod"
+    },
+    "M": {
+      "item": "jerotesvillage:meror_metal_ingot"
+    },
+    "R": {
+      "item": "jerotesvillage:refine_meror_metal_ingot"
+    },
+    "T": {
+      "item": "jerotesvillage:refine_meror_metal_block"
+    }
+  },
+  "pattern": [
+    "BB ",
+    "IER",
+    "TMM"
+  ],
+  "result": {
+    "item": "jerotes_village_golems:meror_flame_thrower"
+  },
+  "show_notification": true
+}

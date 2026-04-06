@@ -6,7 +6,6 @@ import dev.xkmc.golemdungeons.content.config.ExtraEquipmentSlot;
 import dev.xkmc.golemdungeons.content.config.SpawnConfig;
 import dev.xkmc.golemdungeons.content.config.TrialConfig;
 import dev.xkmc.golemdungeons.init.GolemDungeons;
-import dev.xkmc.golemdungeons.init.data.loot.GDLootGen;
 import dev.xkmc.golemdungeons.init.data.spawn.AbstractGolemSpawn;
 import dev.xkmc.jerotes_golems.content.fraction.JGFactionRegistry;
 import dev.xkmc.jerotes_golems.content.weapon.JGWeaponMaterial;
@@ -107,7 +106,7 @@ public class MerorGolemSpawn extends AbstractGolemSpawn {
 		}
 
 		map.add(GolemDungeons.ITEMS, ITEM_CHARGE, new EquipmentConfig().add(ExtraEquipmentSlot.ARROW,
-				new EquipmentConfig.EquipmentEntry(100, JerotesVillageItems.MEROR_ENERGY_REGIME.get())));
+				new EquipmentConfig.EquipmentEntry(100, JGItems.ULTIMATE_ENERGY_REGIME.get())));
 
 		// metal golem wave
 		{
@@ -240,7 +239,7 @@ public class MerorGolemSpawn extends AbstractGolemSpawn {
 
 		// trial
 		{
-			map.add(GolemDungeons.TRIAL, MEROR_ALL, new TrialConfig().setReward(GDLootGen.FACTORY)
+			map.add(GolemDungeons.TRIAL, MEROR_ALL, new TrialConfig().setReward(JGLootGen.MEROR)
 					.setCost(200).setTriggerRange(22, -5, 16)
 					.add(of(LARGE_MEROR, 1))
 					.add(of(LARGE_MEROR, 1),
@@ -260,7 +259,7 @@ public class MerorGolemSpawn extends AbstractGolemSpawn {
 							of(HUMANOID_RANGED, 4))
 			);
 
-			map.add(GolemDungeons.TRIAL, REFINE_MEROR_ALL, new TrialConfig().setReward(GDLootGen.FACTORY)
+			map.add(GolemDungeons.TRIAL, REFINE_MEROR_ALL, new TrialConfig().setReward(JGLootGen.REFINE_MEROR)
 					.setCost(200).setTriggerRange(22, -5, 16)
 					.add(of(LARGE_REFINE, 1))
 					.add(of(LARGE_REFINE, 1),

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:emerald_block"
+    },
+    "B": {
+      "item": "minecraft:netherite_block"
+    },
+    "I": {
+      "item": "jerotes_village_golems:villager_metal_deployer"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "BIB",
+    "ABA"
+  ],
+  "result": {
+    "item": "jerotes_village_golems:enhanced_villager_metal_deployer"
+  },
+  "show_notification": true
+}

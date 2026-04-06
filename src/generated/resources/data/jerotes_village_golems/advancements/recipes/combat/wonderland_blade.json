@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_iron_golem_sword": {
+    "has_diamond_golem_sword": {
       "conditions": {
         "items": [
           {
             "items": [
-              "modulargolems:iron_golem_sword"
+              "modulargolems:diamond_golem_sword"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_iron_golem_sword",
+      "has_diamond_golem_sword",
       "has_the_recipe"
     ]
   ],

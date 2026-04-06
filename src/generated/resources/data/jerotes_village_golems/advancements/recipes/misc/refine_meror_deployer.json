@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_diamond_golem_axe": {
+    "has_refine_meror_metal_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "modulargolems:diamond_golem_axe"
+              "jerotesvillage:refine_meror_metal_ingot"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "jerotes_village_golems:bitter_cold_axe"
+        "recipe": "jerotes_village_golems:refine_meror_deployer"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_diamond_golem_axe",
+      "has_refine_meror_metal_ingot",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "jerotes_village_golems:bitter_cold_axe"
+      "jerotes_village_golems:refine_meror_deployer"
     ]
   },
   "sends_telemetry_event": false

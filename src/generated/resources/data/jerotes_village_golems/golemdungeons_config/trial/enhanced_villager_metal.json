@@ -66,7 +66,7 @@
   ],
   "maxY": 16,
   "minY": -5,
-  "reward": "golemdungeons:trial_reward/factory_remnant",
+  "reward": "jerotes_village_golems:trial_reward/enhanced_villager_metal",
   "spawnCost": 200,
   "triggerRange": 22
 }

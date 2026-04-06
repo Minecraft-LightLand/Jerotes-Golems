@@ -1,8 +1,8 @@
 package dev.xkmc.jerotes_golems.content.modifier;
 
-import com.jerotes.jerotesvillage.init.JerotesVillageItems;
 import dev.xkmc.jerotes_golems.init.data.JGConfig;
 import dev.xkmc.jerotes_golems.init.reg.JGEffects;
+import dev.xkmc.jerotes_golems.init.reg.JGItems;
 import dev.xkmc.modulargolems.content.core.StatFilterType;
 import dev.xkmc.modulargolems.content.entity.common.AbstractGolemEntity;
 import dev.xkmc.modulargolems.content.modifier.base.GolemModifier;
@@ -27,7 +27,7 @@ public class LegendaryModifier extends GolemModifier {
 	@Override
 	public void onAiStep(AbstractGolemEntity<?, ?> golem, int level) {
 		if (golem.tickCount % 20 == 0 && !golem.level().isClientSide() && golem.isHostile()) {
-			if (HasItemUtil.hasItem(golem, JerotesVillageItems.MEROR_ENERGY_REGIME.get())) {
+			if (HasItemUtil.hasItem(golem, JGItems.ULTIMATE_ENERGY_REGIME.get())) {
 				golem.addEffect(new MobEffectInstance(JGEffects.LEGENDARY.get(), 600, 0, false, false), golem);
 			}
 		}
@@ -36,7 +36,7 @@ public class LegendaryModifier extends GolemModifier {
 	@Override
 	public InteractionResult interact(Player player, AbstractGolemEntity<?, ?> golem, InteractionHand hand, int level) {
 		ItemStack stack = player.getItemInHand(hand);
-		if (stack.is(JerotesVillageItems.MEROR_ENERGY_REGIME.get())) {
+		if (stack.is(JGItems.ULTIMATE_ENERGY_REGIME.get())) {
 			if (player.level().isClientSide()) return InteractionResult.SUCCESS;
 			var ins = golem.getEffect(JGEffects.LEGENDARY.get());
 			int remain = ins == null ? 0 : ins.getDuration();
@@ -52,7 +52,7 @@ public class LegendaryModifier extends GolemModifier {
 	public List<MutableComponent> getDetail(int v) {
 		int dur = JGConfig.COMMON.legendaryChargeDuration.get() << (v - 1);
 		return List.of(Component.translatable(this.getDescriptionId() + ".desc",
-				JerotesVillageItems.MEROR_ENERGY_REGIME.get().getDescription(),
+				JGItems.ULTIMATE_ENERGY_REGIME.get().getDescription(),
 				StringUtil.formatTickDuration(dur)
 		).withStyle(ChatFormatting.GREEN));
 	}

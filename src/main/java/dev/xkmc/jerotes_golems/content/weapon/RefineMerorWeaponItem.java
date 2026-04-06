@@ -10,6 +10,7 @@ import dev.xkmc.modulargolems.content.item.equipments.MetalGolemWeaponItem;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
@@ -53,8 +54,11 @@ public class RefineMerorWeaponItem extends MetalGolemWeaponItem implements IDama
 	@Override
 	public void onDamage(AttackCache cache, DamageSource source, MetalGolemEntity e, ItemStack stack) {
 		if (EntityAndItemFind.isLegendary(e)) {
-			cache.addDealtModifier(DamageModifier.nonlinearMiddle(123,
-					x -> Math.max(x, (float) Math.sqrt(cache.getPreDamage()))));
+			var dmg = Math.max(
+					e.getAttributeValue(Attributes.ATTACK_DAMAGE),
+					Math.max(cache.getPreDamageOriginal(), cache.getPreDamage()));
+			cache.addDealtModifier(DamageModifier.nonlinearMiddle(81,
+					x -> Math.max(x, (float) Math.sqrt(dmg))));
 		}
 	}
 
