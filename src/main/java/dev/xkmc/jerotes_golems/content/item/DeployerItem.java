@@ -36,7 +36,7 @@ public class DeployerItem extends Item {
 				.ifPresent(x -> e.setPos(x.add(0, -dim.height / 2, 0)));
 		level.addFreshEntity(e);
 		var pl = use.getPlayer();
-		if (pl != null && pl.isCreative())
+		if (pl != null && !pl.isCreative())
 			use.getItemInHand().shrink(1);
 		return InteractionResult.SUCCESS;
 	}
