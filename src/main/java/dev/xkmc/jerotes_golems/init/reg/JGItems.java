@@ -12,13 +12,17 @@ import dev.xkmc.jerotes_golems.content.ranged.MerorMachineGunItem;
 import dev.xkmc.jerotes_golems.content.weapon.JGSpecialMaterial;
 import dev.xkmc.jerotes_golems.content.weapon.JGWeaponGen;
 import dev.xkmc.jerotes_golems.content.weapon.JGWeaponMaterial;
+import dev.xkmc.jerotes_golems.content.weapon.UltimateMerorWeaponItem;
 import dev.xkmc.jerotes_golems.init.JerotesGolems;
 import dev.xkmc.modulargolems.content.item.equipments.MetalGolemWeaponItem;
+import dev.xkmc.modulargolems.init.ModularGolems;
 import dev.xkmc.modulargolems.init.data.MGTagGen;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
+import net.minecraftforge.client.model.generators.ModelFile;
+import net.minecraftforge.client.model.generators.loaders.ItemLayerModelBuilder;
 
 public class JGItems {
 
@@ -35,6 +39,7 @@ public class JGItems {
 
 	public static final ItemEntry<MetalGolemWeaponItem>[][] WEAPONS;
 	public static final ItemEntry<MetalGolemWeaponItem>[] SPECIAL_WEAPONS;
+	public static final ItemEntry<UltimateMerorWeaponItem> ULTIMATE_MEROR_SPEAR;
 
 	public static final ItemEntry<MerorFlameThrowerItem> MEROR_FLAME_THROWER;
 	public static final ItemEntry<MerorMachineGunItem> MEROR_MACHINE_GUN;
@@ -108,6 +113,20 @@ public class JGItems {
 
 		SPECIAL_WEAPONS = JGWeaponGen.buildSpecial(JGSpecialMaterial.values());
 		WEAPONS = JGWeaponGen.build(JGWeaponMaterial.values());
+		ULTIMATE_MEROR_SPEAR = JerotesGolems.REGISTRATE.item("ultimate_meror_spear", (p) ->
+						new UltimateMerorWeaponItem(p.fireResistant().stacksTo(1), 0, 1, 2, 2))
+				.model((ctx, pvd) -> pvd.getBuilder(ctx.getName())
+						.parent(new ModelFile.UncheckedModelFile(ModularGolems.loc("item/long_weapon")))
+						.texture("layer0", JerotesGolems.loc("item/equipments/" + ctx.getName()))
+						.override().predicate(JerotesGolems.loc("charged"), 1)
+						.model(pvd.getBuilder(ctx.getName() + "_charged")
+								.customLoader(ItemLayerModelBuilder::begin)
+								.emissive(15, 15, 0).end()
+								.parent(new ModelFile.UncheckedModelFile(ModularGolems.loc("item/long_weapon")))
+								.texture("layer0", JerotesGolems.loc("item/equipments/" + ctx.getName() + "_charged"))
+						).end())
+				.tag(MGTagGen.SHIELD_BREAKER_WEAPONS, MGTagGen.TOUGH_ITEM)
+				.register();
 
 		MEROR_FLAME_THROWER = JerotesGolems.REGISTRATE.item("meror_flame_thrower", p -> new MerorFlameThrowerItem(p.stacksTo(1)))
 				.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/equipments/" + ctx.getName())))

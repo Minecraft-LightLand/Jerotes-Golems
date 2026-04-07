@@ -35,6 +35,8 @@ public enum JGWeaponGen {
 				.model((ctx, pvd) -> material.model(pvd.getBuilder(ctx.getName()))
 						.parent(new ModelFile.UncheckedModelFile(ModularGolems.loc(this.model)))
 						.texture("layer0", material.modLoc("item/equipments/" + ctx.getName())));
+		if (material.fireResistant())
+			ans.tag(MGTagGen.TOUGH_ITEM);
 		if (shieldBreaker)
 			ans.tag(MGTagGen.SHIELD_BREAKER_WEAPONS);
 		return ans.defaultLang().register();

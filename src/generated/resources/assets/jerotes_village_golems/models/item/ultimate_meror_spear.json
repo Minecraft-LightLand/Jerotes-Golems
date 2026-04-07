@@ -1,0 +1,14 @@
+{
+  "parent": "modulargolems:item/long_weapon",
+  "overrides": [
+    {
+      "model": "jerotes_village_golems:item/ultimate_meror_spear_charged",
+      "predicate": {
+        "jerotes_village_golems:charged": 1.0
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "jerotes_village_golems:item/equipments/ultimate_meror_spear"
+  }
+}

@@ -21,7 +21,8 @@ public enum JGLang {
 	MACHINE_GUN_DESC("tooltip.machine_gun", "Shoots Meror Bullets. Support Infinity Enchantment", 0, ChatFormatting.GRAY),
 	WEAPON_CD_BYPASS("tooltip.cd_bypass", "Bypass invulnerable frame.", 0, ChatFormatting.GOLD),
 	REFINE_MEROR_WEAPON("tooltip.refine_meror", "Stack Bleeding effect on target, up to level VI", 0, ChatFormatting.GRAY),
-	WEAPON_TRUE_DAMAGE("tooltip.true_damage", "When golem has legendary status, part of damage bypass damage reductions", 0, ChatFormatting.GOLD);
+	WEAPON_TRUE_DAMAGE("tooltip.true_damage", "When golem has legendary status, part of damage bypass damage reductions", 0, ChatFormatting.GOLD),
+	ULT_DAMAGE("tooltip.ultimate", "When golem has legendary status, part of damage bypass damage reductions, and scale damage with target max health.", 0, ChatFormatting.GOLD);
 
 	private final String key, def;
 	private final int arg;
@@ -32,18 +33,6 @@ public enum JGLang {
 		this.def = def;
 		this.arg = arg;
 		this.format = format;
-	}
-
-	public static String asId(String name) {
-		return name.toLowerCase(Locale.ROOT);
-	}
-
-	public static MutableComponent getTranslate(String s) {
-		return Component.translatable(ModularGolems.MODID + "." + s);
-	}
-
-	public static MutableComponent fromTrial(ResourceLocation id) {
-		return Component.translatable(Util.makeDescriptionId("trial", id));
 	}
 
 	public MutableComponent get(Object... args) {
@@ -57,6 +46,10 @@ public enum JGLang {
 	}
 
 	public static void genLang(RegistrateLangProvider pvd) {
+		for (var e : values()) {
+			pvd.add(e.key, e.def);
+		}
+
 		pvd.add("golem_material." + JerotesGolems.MODID + ".villager_metal", "Villager Metal");
 		pvd.add("golem_material." + JerotesGolems.MODID + ".qoaiku", "Qoaiku Metal");
 		pvd.add("golem_material." + JerotesGolems.MODID + ".serpon_alloy", "Serpon Alloy");
