@@ -1,5 +1,6 @@
 package dev.xkmc.jerotes_golems.init.reg;
 
+import com.jerotes.jerotesvillage.init.JerotesVillageMobEffects;
 import com.tterrag.registrate.builders.ItemBuilder;
 import com.tterrag.registrate.providers.ProviderType;
 import com.tterrag.registrate.util.entry.ItemEntry;
@@ -11,7 +12,9 @@ import dev.xkmc.l2library.base.L2Registrate;
 import dev.xkmc.modulargolems.content.core.StatFilterType;
 import dev.xkmc.modulargolems.content.item.upgrade.SimpleUpgradeItem;
 import dev.xkmc.modulargolems.content.modifier.base.GolemModifier;
+import dev.xkmc.modulargolems.content.modifier.base.PotionDefenseModifier;
 import dev.xkmc.modulargolems.init.ModularGolems;
+import dev.xkmc.modulargolems.init.data.MGTagGen;
 import dev.xkmc.modulargolems.init.registrate.GolemItems;
 import dev.xkmc.modulargolems.init.registrate.GolemTypes;
 import net.minecraft.resources.ResourceLocation;
@@ -31,8 +34,13 @@ public class JGModifiers {
 	public static final RegistryEntry<QoaikuAttackModifier> QOAIKU_ATK;
 	public static final RegistryEntry<AbackModifier> ABACK;
 	public static final RegistryEntry<LegendaryModifier> LEGENDARY;
+	public static final RegistryEntry<SedimentLordModifier> SEDIMENT;
+	public static final RegistryEntry<PurpleSandModifier> PURPLE_SAND;
+	public static final RegistryEntry<ProsperousEnvoyModifier> PROSPEROUS_ENVOY;
+	public static final RegistryEntry<PotionDefenseModifier> RAMPANT;
 
-	public static final ItemEntry<SimpleUpgradeItem> ITEM_VILLAGE;
+	public static final ItemEntry<SimpleUpgradeItem> ITEM_VILLAGE, ITEM_ABACK, ITEM_RAMPANT,
+			ITEM_SEDIMENT, ITEM_PURPLE_SAND, ITEM_PROSPEROUS_ENVOY;
 
 	static {
 		GREEDY = reg("greedy", () -> new VillagerMetalModifier(StatFilterType.HEALTH, 2), "Golem repairs and gets bonus when using emerald block or netherite block on it");
@@ -42,8 +50,20 @@ public class JGModifiers {
 		QOAIKU_ATK = reg("qoaiku_attack", () -> new QoaikuAttackModifier(5), "Golem deal Drown damage if possible. Deal %s%% extra damage against mobs sensitive to water.");
 		ABACK = reg("aback", () -> new AbackModifier(StatFilterType.MASS, 1), "Golem inflict Aback effect to target");
 		LEGENDARY = reg("legendary", () -> new LegendaryModifier(StatFilterType.MASS, 4), "Consume [%s] to gain %s of legendary status");
+		SEDIMENT = reg("sediment_lord", () -> new SedimentLordModifier(StatFilterType.MASS, 1), "Reduce damage from undead by %s%%. Immune to wither effect damage");
+		PURPLE_SAND = reg("purple_sand", () -> new PurpleSandModifier(StatFilterType.MASS, 1), "When taking magic damage, gain Magic Absorption and reduce damage by %s%%");
+		PROSPEROUS_ENVOY = reg("prosperous_envoy", () -> new ProsperousEnvoyModifier(StatFilterType.MASS, 3), "On attack, stack %s seconds of Anesthetized effect per point of damage on target");
+		RAMPANT = reg("rampant", () -> new PotionDefenseModifier(1, () -> JerotesVillageMobEffects.RAMPANT.get()), null);
 
-		ITEM_VILLAGE = regUpgradeImpl("greedy", () -> GREEDY, 1, false, JerotesGolems.MODID).register();
+		ITEM_VILLAGE = regUpgradeImpl("greedy", () -> GREEDY, 1, false, JerotesGolems.MODID).lang("Jerotes Upgrade: Carved Nature").register();
+		ITEM_ABACK = regUpgradeImpl("aback", () -> ABACK, 1, false, JerotesGolems.MODID).lang("Jerotes Upgrade: Shock Sight ").register();
+		ITEM_RAMPANT = regUpgradeImpl("rampant", () -> RAMPANT, 1, false, JerotesGolems.MODID).lang("Jerotes Upgrade: Rampant").register();
+		ITEM_SEDIMENT = regUpgradeImpl("sediment_lord", () -> SEDIMENT, 1, false, JerotesGolems.MODID).lang("Jerotes Upgrade: Sediment Lord").register();
+		ITEM_PURPLE_SAND = regUpgradeImpl("purple_sand", () -> PURPLE_SAND, 1, false, JerotesGolems.MODID).lang("Jerotes Upgrade: Purple Sand").register();
+		ITEM_PROSPEROUS_ENVOY = regUpgradeImpl("prosperous_envoy", () -> PROSPEROUS_ENVOY, 1, false, JerotesGolems.MODID)
+				.lang("Potion Upgrade: Prosperous Envoy")
+				.tag(MGTagGen.POTION_UPGRADES)
+				.register();
 
 	}
 

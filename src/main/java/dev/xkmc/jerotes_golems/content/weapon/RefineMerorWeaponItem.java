@@ -58,7 +58,7 @@ public class RefineMerorWeaponItem extends MetalGolemWeaponItem implements IDama
 					e.getAttributeValue(Attributes.ATTACK_DAMAGE),
 					Math.max(cache.getPreDamageOriginal(), cache.getPreDamage()));
 			cache.addDealtModifier(DamageModifier.nonlinearMiddle(81,
-					x -> Math.max(x, (float) Math.sqrt(dmg))));
+					x -> Math.max(x, (float) Math.sqrt(x * dmg))));
 		}
 	}
 

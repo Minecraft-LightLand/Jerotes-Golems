@@ -24,6 +24,9 @@ public class JGConfig {
 		public final ForgeConfigSpec.DoubleValue qoaikuAttackDamageBonus;
 		public final ForgeConfigSpec.DoubleValue serponChainBladeDamageFactor;
 		public final ForgeConfigSpec.IntValue legendaryChargeDuration;
+		public final ForgeConfigSpec.DoubleValue sedimentLordDamageReduction;
+		public final ForgeConfigSpec.DoubleValue purpleSandReduction;
+		public final ForgeConfigSpec.IntValue prosperousEnvoyDuration;
 
 		Common(ForgeConfigSpec.Builder builder) {
 			builder.push("modifiers");
@@ -39,6 +42,12 @@ public class JGConfig {
 					.defineInRange("qoaikuAttackDamageBonus", 0.1, 0, 1);
 			legendaryChargeDuration = builder.comment("Legendary: Charge duration")
 					.defineInRange("legendaryChargeDuration", 1200, 100, 24000);
+			sedimentLordDamageReduction = builder.comment("Sediment Lord: Damage Reduction from undead")
+					.defineInRange("sedimentLordDamageReduction", 0.75, 0, 1);
+			purpleSandReduction = builder.comment("Purple Sand: Damage Reduction from magic damage")
+					.defineInRange("purpleSandReduction", 0.75, 0, 1);
+			prosperousEnvoyDuration = builder.comment("Prosperous Envoy: Anesthetic duration per level per point of damage")
+					.defineInRange("prosperousEnvoyDuration", 6, 0, 100);
 			builder.pop();
 			builder.push("weapons");
 			serponChainBladeDamageFactor = builder.comment("Serpon Chain Blade: follow up damage factor")

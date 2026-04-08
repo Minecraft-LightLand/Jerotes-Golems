@@ -55,10 +55,11 @@ public class UltimateMerorWeaponItem extends MetalGolemWeaponItem implements IDa
 	public void onDamage(AttackCache cache, DamageSource source, MetalGolemEntity e, ItemStack stack) {
 		if (EntityAndItemFind.isLegendary(e)) {
 			var dmg = Math.max(
-					Math.max(e.getAttributeValue(Attributes.ATTACK_DAMAGE), cache.getAttackTarget().getMaxHealth()),
+					e.getAttributeValue(Attributes.ATTACK_DAMAGE),
 					Math.max(cache.getPreDamageOriginal(), cache.getPreDamage()));
+			var dmg2 = Math.max(dmg, Math.sqrt(dmg * cache.getAttackTarget().getMaxHealth()));
 			cache.addDealtModifier(DamageModifier.nonlinearMiddle(81,
-					x -> Math.max(x, (float) Math.sqrt(dmg))));
+					x -> Math.max(x, (float) Math.sqrt(x * dmg2))));
 		}
 	}
 
