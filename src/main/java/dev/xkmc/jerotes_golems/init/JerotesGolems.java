@@ -1,6 +1,7 @@
 package dev.xkmc.jerotes_golems.init;
 
 import com.tterrag.registrate.providers.ProviderType;
+import dev.xkmc.jerotes_golems.content.behavior.JerotesBehaviorRegistry;
 import dev.xkmc.jerotes_golems.content.fraction.JGFactionRegistry;
 import dev.xkmc.jerotes_golems.events.JGAttackListener;
 import dev.xkmc.jerotes_golems.init.data.*;
@@ -55,6 +56,7 @@ public class JerotesGolems {
 	public static void setup(final FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
 			JGFactionRegistry.register();
+			JerotesBehaviorRegistry.register();
 		});
 	}
 

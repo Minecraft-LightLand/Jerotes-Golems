@@ -3,6 +3,7 @@ package dev.xkmc.jerotes_golems.content.ranged;
 import com.jerotes.jerotesvillage.entity.Shoot.Other.MerorBulletEntity;
 import com.jerotes.jerotesvillage.init.JerotesVillageEntityType;
 import com.jerotes.jerotesvillage.init.JerotesVillageItems;
+import com.jerotes.jerotesvillage.item.MerorShotgun;
 import dev.xkmc.jerotes_golems.content.client.JGModelPaths;
 import dev.xkmc.jerotes_golems.init.data.JGLang;
 import dev.xkmc.modulargolems.content.client.armor.GolemModelPaths;
@@ -43,9 +44,17 @@ public class MerorMachineGunItem extends ProjectileWeaponItem implements IShould
 		if (CannonPoseUtil.BEACON.isOutOfRange(e, hand, 15)) return;
 		var target = e.getTarget();
 		if (target == null || !target.isAlive()) return;
-		var ammo = e.getProjectile(stack);
 		var inf = e.isHostile() || stack.getEnchantmentLevel(Enchantments.INFINITY_ARROWS) > 0;
-		if (!inf && ammo.isEmpty()) return;
+		if (!inf) {
+			int bullet = MerorShotgun.getBullet(stack);
+			if (bullet <= 0) {
+				var ammo = e.getProjectile(stack);
+				if (ammo.isEmpty()) return;
+				ammo.shrink(1);
+				bullet = 8;
+			}
+			MerorShotgun.setBullet(stack, bullet - 1);
+		}
 		var pos = CannonPoseUtil.BEACON.getOrigin(e, hand);
 		var dst = target.position().add(0, target.getBbHeight() / 2, 0);
 		var dir = dst.subtract(pos).normalize();
@@ -59,7 +68,6 @@ public class MerorMachineGunItem extends ProjectileWeaponItem implements IShould
 		if (!e.isSilent()) {
 			e.level().playSound(null, e.getX(), e.getY(), e.getZ(), SoundEvents.GENERIC_EXPLODE, e.getSoundSource(), 1.0F, 5.0F);
 		}
-		if (!inf) ammo.shrink(1);
 	}
 
 	@Override
