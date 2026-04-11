@@ -15,7 +15,7 @@ public class JerotesBehaviorRegistry {
 		WeaponRegistry.CROSSBOW.register(JerotesGolems.loc("meror_shotgun"),
 				(stack) -> WeaponStatus.RANGED.of(stack.is(JerotesVillageItems.MEROR_SHOTGUN.get())),
 				(e, stack) -> new MerorShotgunBehavior(), 20);
-		WeaponRegistry.CROSSBOW.register(JerotesGolems.loc("meror_shotgun"),
+		WeaponRegistry.INSTANT.register(JerotesGolems.loc("meror_pistol"),
 				(stack) -> WeaponStatus.RANGED.of(stack.is(JerotesVillageItems.MEROR_IMPACT_PISTOL.get())),
 				(e, stack) -> new MerorImpactPistolBehavior(), 20);
 	}

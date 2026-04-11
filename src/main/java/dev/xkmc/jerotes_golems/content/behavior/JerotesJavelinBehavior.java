@@ -11,6 +11,13 @@ import org.jetbrains.annotations.Nullable;
 
 public class JerotesJavelinBehavior extends ThrowableBehavior {
 
+	@Override
+	public float getSpeed(ItemStack stack, Projectile proj) {
+		if (stack.getItem() instanceof JerotesItemThrownJavelinUse javelin)
+			return javelin.getJavelinSpeed();
+		return super.getSpeed(stack, proj);
+	}
+
 	protected @Nullable Projectile getProjectile(ProjectileWeaponUser user, ItemStack stack, LivingEntity target, int time) {
 		if (!(stack.getItem() instanceof JerotesItemThrownJavelinUse javelin)) return null;
 		var ans = javelin.JerotesThrownJavelin(user.user(), stack);
