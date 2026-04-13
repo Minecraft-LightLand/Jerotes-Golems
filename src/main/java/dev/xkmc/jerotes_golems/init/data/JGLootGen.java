@@ -53,6 +53,8 @@ public class JGLootGen {
 						.add(LootTableTemplate.getItem(JerotesVillageItems.REFINE_MEROR_METAL_INGOT.get(), 4, 8))
 						.add(LootTableTemplate.getItem(JerotesVillageItems.MEROR_ENERGY_REGIME.get(), 2, 4)))
 				.withPool(LootPool.lootPool()
+						.add(LootTableTemplate.getItem(JGItems.ULTIMATE_ENERGY_REGIME.get(), 1)))
+				.withPool(LootPool.lootPool()
 						.add(LootTableTemplate.getItem(JerotesVillageItems.OMINOUS_BANNER_PROJECTION_EMERALD_FRAGMENT.get(), 2, 4)))
 				.withPool(LootPool.lootPool()
 						.add(LootTableTemplate.getItem(GDItems.MEDAL_OF_CONQUEROR.get(), 2, 4)))

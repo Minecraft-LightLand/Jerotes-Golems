@@ -7,6 +7,7 @@ import dev.xkmc.golemdungeons.init.reg.GDItems;
 import dev.xkmc.jerotes_golems.content.weapon.JGSpecialMaterial;
 import dev.xkmc.jerotes_golems.content.weapon.JGWeaponMaterial;
 import dev.xkmc.jerotes_golems.init.reg.JGItems;
+import dev.xkmc.jerotes_golems.init.reg.JGModifiers;
 import dev.xkmc.modulargolems.init.data.RecipeGen;
 import dev.xkmc.modulargolems.init.material.GolemWeaponType;
 import dev.xkmc.modulargolems.init.material.VanillaGolemWeaponMaterial;
@@ -14,6 +15,7 @@ import dev.xkmc.modulargolems.init.registrate.GolemItems;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.SmithingTransformRecipeBuilder;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -89,6 +91,41 @@ public class JGRecipeGen {
 					.define('A', JerotesVillageItems.REFINE_MEROR_METAL_INGOT.get())
 					.define('B', JerotesVillageItems.MEROR_ENERGY_REGIME.get())
 					.save(pvd);
+		}
+
+		// upgrades
+		{
+
+			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, JGModifiers.ITEM_ABACK.get(),
+					1)::unlockedBy, JerotesVillageItems.BRIGHT_LAND_DRUM.get())
+					.requires(GolemItems.EMPTY_UPGRADE.get())
+					.requires(JerotesVillageItems.BRIGHT_LAND_DRUM.get())
+					.save(pvd);
+
+			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, JGModifiers.ITEM_RAMPANT.get(),
+					1)::unlockedBy, JerotesVillageItems.FROST_YETI_HAIR.get())
+					.requires(GolemItems.EMPTY_UPGRADE.get())
+					.requires(JerotesVillageItems.FROST_YETI_HAIR.get())
+					.save(pvd);
+
+			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, JGModifiers.ITEM_SEDIMENT.get(),
+					1)::unlockedBy, JerotesVillageItems.SEDIMENT_LORD_ROBE_PIECES.get())
+					.requires(GolemItems.EMPTY_UPGRADE.get())
+					.requires(JerotesVillageItems.SEDIMENT_LORD_ROBE_PIECES.get())
+					.save(pvd);
+
+			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, JGModifiers.ITEM_PURPLE_SAND.get(),
+					1)::unlockedBy, JerotesVillageItems.PURPLE_SAND_HAG_HAIR.get())
+					.requires(GolemItems.EMPTY_UPGRADE.get())
+					.requires(JerotesVillageItems.PURPLE_SAND_HAG_HAIR.get())
+					.save(pvd);
+
+			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, JGModifiers.ITEM_PROSPEROUS_ENVOY.get(),
+					1)::unlockedBy, JerotesVillageItems.PROSPEROUS_ENVOY_FLOWER.get())
+					.requires(GolemItems.EMPTY_UPGRADE.get())
+					.requires(JerotesVillageItems.PROSPEROUS_ENVOY_FLOWER.get())
+					.save(pvd);
+
 		}
 
 		// misc

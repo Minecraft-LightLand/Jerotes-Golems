@@ -66,7 +66,7 @@ public class MerorShotgunBehavior implements ICrossbowBehavior {
 		if (!mob.isSilent()) {
 			mob.level().playSound(null, mob.getX(), mob.getY(), mob.getZ(), SoundEvents.GENERIC_EXPLODE, mob.getSoundSource(), 1.0F, 5.0F);
 		}
-		return 5;
+		return 10;
 	}
 
 }

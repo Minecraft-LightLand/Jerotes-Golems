@@ -204,7 +204,7 @@ dependencies {
     implementation fg.deobf("dev.xkmc.l2tabs:l2tabs:0.3.3")
     implementation fg.deobf("dev.xkmc.l2itemselector:l2itemselector:0.1.9")
     implementation fg.deobf("dev.xkmc.l2damagetracker:l2damagetracker:0.3.7")
-    implementation fg.deobf("dev.xkmc.mob_weapon_api:mob_weapon_api:0.2.14")
+    implementation fg.deobf("dev.xkmc.mob_weapon_api:mob_weapon_api:0.2.16")
     implementation fg.deobf("dev.xkmc.modulargolems:modulargolems:${modulargolems_version}-slim")
     implementation fg.deobf("dev.xkmc.golemdungeons:golemdungeons:${golemdungeons_version}-slim")
     implementation fg.deobf("dev.xkmc.l2modularblock:l2modularblock:1.1.0")
@@ -240,7 +240,7 @@ tasks.register('publishCurseForge', TaskPublishCurseForge) {
     mainFile.addEnvironment("Client", "Server")
     mainFile.addGameVersion("1.20.1")
     mainFile.addModLoader("Forge", "NeoForge")
-    mainFile.addRequirement("l2library", "modulargolems")
+    mainFile.addRequirement("l2library", "modulargolems","golem-dungeons","jerotes-village")
     mainFile.releaseType = "release"
     disableVersionDetection()
 }
@@ -248,7 +248,7 @@ tasks.register('publishCurseForge', TaskPublishCurseForge) {
 modrinth {
     token = secrets.get("modrinth_token")
     projectId = project.modrinth_project
-    versionName = "Golem Dungoens ${project.ll_version}"
+    versionName = "Jerotes Village Golems ${project.ll_version}"
     versionNumber = project.ll_version
     versionType = "release"
     uploadFile = new File("./build/libs/${modid}-${ll_version}.jar")
@@ -258,5 +258,7 @@ modrinth {
     dependencies {
         required.project "l2library"
         required.project "modular-golems"
+        required.project "golem-dungeons"
+        required.project "golem-dungeons"
     }
 }

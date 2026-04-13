@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_sediment_lord_robe_pieces": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "jerotesvillage:sediment_lord_robe_pieces"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "jerotes_village_golems:sediment_lord"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_sediment_lord_robe_pieces",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "jerotes_village_golems:sediment_lord"
+    ]
+  },
+  "sends_telemetry_event": false
+}

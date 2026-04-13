@@ -7,6 +7,7 @@ import dev.xkmc.jerotes_golems.init.reg.JGModifiers;
 import dev.xkmc.modulargolems.content.entity.common.AbstractGolemEntity;
 import dev.xkmc.modulargolems.content.entity.humanoid.HumanoidGolemEntity;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.item.UseAnim;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -26,12 +27,12 @@ public class JGEventHandler {
 	@SubscribeEvent
 	public static void humanoidBlock(LivingEvent.LivingTickEvent event) {
 		if (event.getEntity() instanceof HumanoidGolemEntity golem) {
-			if (golem.getMainHandItem().getItem() instanceof ItemTwoHanded item && item.canBlock()) {
-				if (golem.getOffhandItem().isEmpty()) {
-					if (!golem.isUsingItem()) {
-						golem.startUsingItem(InteractionHand.MAIN_HAND);
-					}
-				}
+			if (golem.getMainHandItem().getItem() instanceof ItemTwoHanded t &&
+					golem.getMainHandItem().getUseAnimation() == UseAnim.BLOCK &&
+					t.canBlock() && golem.getOffhandItem().isEmpty() &&
+					!golem.isUsingItem()
+			) {
+				golem.startUsingItem(InteractionHand.MAIN_HAND);
 			}
 		}
 	}

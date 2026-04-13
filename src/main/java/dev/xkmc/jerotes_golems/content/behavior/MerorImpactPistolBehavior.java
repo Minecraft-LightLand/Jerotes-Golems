@@ -40,7 +40,7 @@ public class MerorImpactPistolBehavior implements IInstantWeaponBehavior {
 			MerorImpactPistol.setBullet(stack, bullet + 5);
 			setCD(mob, stack, 80);
 		}
-		return 5;
+		return 20;
 	}
 
 }
