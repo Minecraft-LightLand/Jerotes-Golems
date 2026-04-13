@@ -259,6 +259,5 @@ modrinth {
         required.project "l2library"
         required.project "modular-golems"
         required.project "golem-dungeons"
-        required.project "golem-dungeons"
     }
 }
