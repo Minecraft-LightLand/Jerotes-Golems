@@ -32,7 +32,7 @@ public class PurpleSandModifier extends GolemModifier {
 			return;
 		if (source.is(L2DamageTypes.MAGIC)) {
 			cache.addDealtModifier(DamageModifier.multTotal((1 - JGConfig.COMMON.purpleSandReduction.get().floatValue())));
-			entity.addEffect(new MobEffectInstance(JerotesMobEffects.MAGIC_ABSORPTION.get(), 0, 1200), entity);
+			entity.addEffect(new MobEffectInstance(JerotesMobEffects.MAGIC_ABSORPTION.get(), 1200, 0), entity);
 		}
 	}
 

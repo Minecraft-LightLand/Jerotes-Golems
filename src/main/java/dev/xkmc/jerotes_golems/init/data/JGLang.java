@@ -1,6 +1,7 @@
 package dev.xkmc.jerotes_golems.init.data;
 
 import com.tterrag.registrate.providers.RegistrateLangProvider;
+import dev.xkmc.golemdungeons.init.GolemDungeons;
 import dev.xkmc.jerotes_golems.init.JerotesGolems;
 import dev.xkmc.modulargolems.init.ModularGolems;
 import net.minecraft.ChatFormatting;
@@ -61,6 +62,8 @@ public enum JGLang {
 		pvd.add(Util.makeDescriptionId("trial", QoaikuGolemSpawn.QOAIKU_ALL), "Deep Ocean Machinery");
 		pvd.add(Util.makeDescriptionId("trial", MerorGolemSpawn.MEROR_ALL), "Meror Remnant");
 		pvd.add(Util.makeDescriptionId("trial", MerorGolemSpawn.REFINE_MEROR_ALL), "Pride of Legend");
+
+		pvd.add("trial_selector." + JerotesGolems.MODID, "Second Round Pilgrim");
 	}
 
 }
