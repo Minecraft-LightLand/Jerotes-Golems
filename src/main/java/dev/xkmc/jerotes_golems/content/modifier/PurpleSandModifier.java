@@ -38,7 +38,7 @@ public class PurpleSandModifier extends GolemModifier {
 
 	@Override
 	public List<MutableComponent> getDetail(int v) {
-		int fac = (int) Math.round(100 * (1 - JGConfig.COMMON.purpleSandReduction.get()));
+		int fac = (int) Math.round(100 * JGConfig.COMMON.purpleSandReduction.get());
 		return List.of(Component.translatable(this.getDescriptionId() + ".desc", fac).withStyle(ChatFormatting.GREEN));
 	}
 

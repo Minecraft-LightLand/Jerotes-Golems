@@ -1,6 +1,7 @@
 package dev.xkmc.jerotes_golems.init;
 
 import com.tterrag.registrate.providers.ProviderType;
+import dev.xkmc.golemdungeons.content.item.SummonWandSelector;
 import dev.xkmc.jerotes_golems.content.behavior.JerotesBehaviorRegistry;
 import dev.xkmc.jerotes_golems.content.fraction.JGFactionRegistry;
 import dev.xkmc.jerotes_golems.events.JGAttackListener;
@@ -10,6 +11,7 @@ import dev.xkmc.jerotes_golems.init.reg.JGEntities;
 import dev.xkmc.jerotes_golems.init.reg.JGItems;
 import dev.xkmc.jerotes_golems.init.reg.JGModifiers;
 import dev.xkmc.l2damagetracker.contents.attack.AttackEventHandler;
+import dev.xkmc.l2itemselector.select.item.IItemSelector;
 import dev.xkmc.l2library.base.L2Registrate;
 import dev.xkmc.l2library.init.data.L2TagGen;
 import dev.xkmc.l2library.serial.config.PacketHandlerWithConfig;
@@ -45,6 +47,7 @@ public class JerotesGolems {
 		JGEffects.register();
 		JGEntities.register();
 		JGConfig.init();
+		IItemSelector.register(new SummonWandSelector(MODID));
 		AttackEventHandler.register(7901, new JGAttackListener());
 	}
 
