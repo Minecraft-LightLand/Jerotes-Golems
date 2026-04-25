@@ -1,6 +1,7 @@
 package dev.xkmc.jerotes_golems.init.reg;
 
 import com.jerotes.jerotesvillage.init.JerotesVillageMobEffects;
+import com.jerotes.jerotesvillage.spell.OtherSpellType;
 import com.tterrag.registrate.builders.ItemBuilder;
 import com.tterrag.registrate.providers.ProviderType;
 import com.tterrag.registrate.util.entry.ItemEntry;
@@ -39,8 +40,11 @@ public class JGModifiers {
 	public static final RegistryEntry<ProsperousEnvoyModifier> PROSPEROUS_ENVOY;
 	public static final RegistryEntry<PotionDefenseModifier> RAMPANT;
 
+	public static final RegistryEntry<SpellModifier> CORROSIVER, MALIGNASAUR, SERPON;
+
 	public static final ItemEntry<SimpleUpgradeItem> ITEM_VILLAGE, ITEM_ABACK, ITEM_RAMPANT,
-			ITEM_SEDIMENT, ITEM_PURPLE_SAND, ITEM_PROSPEROUS_ENVOY;
+			ITEM_SEDIMENT, ITEM_PURPLE_SAND, ITEM_PROSPEROUS_ENVOY,
+			ITEM_CORROSIVER, ITEM_MALIGNASAUR, ITEM_SERPON;
 
 	static {
 		GREEDY = reg("greedy", () -> new VillagerMetalModifier(StatFilterType.HEALTH, 2), "Golem repairs and gets bonus when using emerald block or netherite block on it");
@@ -55,15 +59,20 @@ public class JGModifiers {
 		PROSPEROUS_ENVOY = reg("prosperous_envoy", () -> new ProsperousEnvoyModifier(StatFilterType.MASS, 3), "On attack, stack %s seconds of Anesthetized effect per point of damage on target");
 		RAMPANT = reg("rampant", () -> new PotionDefenseModifier(1, () -> JerotesVillageMobEffects.RAMPANT.get()), null);
 
+		CORROSIVER = reg("corrosive_breath", () -> new SpellModifier(StatFilterType.MASS, 3, OtherSpellType.JEROTESVILLAGE_CORROSIVE_BREATH, lv -> lv + 2), "Unleash corrosive breath");
+		MALIGNASAUR = reg("ocean_current_breath", () -> new SpellModifier(StatFilterType.MASS, 3, OtherSpellType.JEROTESVILLAGE_OCEAN_CURRENT_BREATH, lv -> lv + 2), "Unleash ocean current breath");
+		SERPON = reg("serpon_sirocco", () -> new SpellModifier(StatFilterType.MASS, 3, OtherSpellType.JEROTESVILLAGE_SERPON_SIROCCO, lv -> lv + 2), "Unleash Serpon Sirocco");
+
 		ITEM_VILLAGE = regUpgradeImpl("greedy", () -> GREEDY, 1, false, JerotesGolems.MODID).lang("Jerotes Upgrade: Carved Nature").register();
 		ITEM_ABACK = regUpgradeImpl("aback", () -> ABACK, 1, false, JerotesGolems.MODID).lang("Jerotes Upgrade: Shock Sight ").register();
 		ITEM_RAMPANT = regUpgradeImpl("rampant", () -> RAMPANT, 1, false, JerotesGolems.MODID).lang("Jerotes Upgrade: Rampant").register();
 		ITEM_SEDIMENT = regUpgradeImpl("sediment_lord", () -> SEDIMENT, 1, false, JerotesGolems.MODID).lang("Jerotes Upgrade: Sediment Lord").register();
 		ITEM_PURPLE_SAND = regUpgradeImpl("purple_sand", () -> PURPLE_SAND, 1, false, JerotesGolems.MODID).lang("Jerotes Upgrade: Purple Sand").register();
-		ITEM_PROSPEROUS_ENVOY = regUpgradeImpl("prosperous_envoy", () -> PROSPEROUS_ENVOY, 1, false, JerotesGolems.MODID)
-				.lang("Potion Upgrade: Prosperous Envoy")
-				.tag(MGTagGen.POTION_UPGRADES)
-				.register();
+		ITEM_PROSPEROUS_ENVOY = regUpgradeImpl("prosperous_envoy", () -> PROSPEROUS_ENVOY, 1, false, JerotesGolems.MODID).lang("Potion Upgrade: Prosperous Envoy").tag(MGTagGen.POTION_UPGRADES).register();
+
+		ITEM_CORROSIVER = regUpgradeImpl("corrosiver", () -> CORROSIVER, 1, false, JerotesGolems.MODID).lang("Jerotes Spell Upgrade: Corrosive Breath").register();
+		ITEM_MALIGNASAUR = regUpgradeImpl("gemstone_malignasaur", () -> MALIGNASAUR, 1, false, JerotesGolems.MODID).lang("Jerotes Spell Upgrade: Ocean Current Breath").register();
+		ITEM_SERPON = regUpgradeImpl("serpon", () -> SERPON, 1, false, JerotesGolems.MODID).lang("Jerotes Spell Upgrade: Serpon Sirocco").register();
 
 	}
 
