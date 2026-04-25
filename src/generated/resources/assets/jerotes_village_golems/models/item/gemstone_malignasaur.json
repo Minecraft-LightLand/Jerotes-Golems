@@ -1,0 +1,20 @@
+{
+  "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "jerotes_village_golems:item/gemstone_malignasaur_purple",
+      "predicate": {
+        "modulargolems:blue_arrow": 0.5
+      }
+    },
+    {
+      "model": "jerotes_village_golems:item/gemstone_malignasaur_blue",
+      "predicate": {
+        "modulargolems:blue_arrow": 1.0
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "jerotes_village_golems:item/upgrades/gemstone_malignasaur"
+  }
+}
