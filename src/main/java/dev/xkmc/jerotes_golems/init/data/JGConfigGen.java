@@ -41,6 +41,7 @@ public class JGConfigGen extends ConfigDataProvider {
 					.addStat(GolemTypes.STAT_ATTACK.get(), 25)
 					.addStat(GolemTypes.STAT_SWEEP.get(), 1)
 					.addModifier(JGModifiers.FIRE_AFFINITY.get(), 1)
+					.addModifier(JGModifiers.SERPON.get(), 1)
 					.end()
 
 					.addMaterial(JerotesGolems.loc("meror"), Ingredient.of(JerotesVillageItems.MEROR_METAL_INGOT.get()))

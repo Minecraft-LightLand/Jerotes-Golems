@@ -40,11 +40,11 @@ public class JGModifiers {
 	public static final RegistryEntry<ProsperousEnvoyModifier> PROSPEROUS_ENVOY;
 	public static final RegistryEntry<PotionDefenseModifier> RAMPANT;
 
-	public static final RegistryEntry<SpellModifier> CORROSIVER, MALIGNASAUR, SERPON;
+	public static final RegistryEntry<SpellModifier> CORROSIVER, MALIGNASAUR, SERPON, WILL;
 
 	public static final ItemEntry<SimpleUpgradeItem> ITEM_VILLAGE, ITEM_ABACK, ITEM_RAMPANT,
 			ITEM_SEDIMENT, ITEM_PURPLE_SAND, ITEM_PROSPEROUS_ENVOY,
-			ITEM_CORROSIVER, ITEM_MALIGNASAUR, ITEM_SERPON;
+			ITEM_CORROSIVER, ITEM_MALIGNASAUR, ITEM_SERPON, ITEM_WILL;
 
 	static {
 		GREEDY = reg("greedy", () -> new VillagerMetalModifier(StatFilterType.HEALTH, 2), "Golem repairs and gets bonus when using emerald block or netherite block on it");
@@ -61,7 +61,8 @@ public class JGModifiers {
 
 		CORROSIVER = reg("corrosive_breath", () -> new SpellModifier(StatFilterType.MASS, 3, OtherSpellType.JEROTESVILLAGE_CORROSIVE_BREATH, lv -> lv + 2), "Unleash corrosive breath");
 		MALIGNASAUR = reg("ocean_current_breath", () -> new SpellModifier(StatFilterType.MASS, 3, OtherSpellType.JEROTESVILLAGE_OCEAN_CURRENT_BREATH, lv -> lv + 2), "Unleash ocean current breath");
-		SERPON = reg("serpon_sirocco", () -> new SpellModifier(StatFilterType.MASS, 3, OtherSpellType.JEROTESVILLAGE_SERPON_SIROCCO, lv -> lv + 2), "Unleash Serpon Sirocco");
+		SERPON = reg("serpon_sirocco", () -> new SpellModifier(StatFilterType.MASS, 5, OtherSpellType.JEROTESVILLAGE_SERPON_SIROCCO, lv -> lv + 2), "Unleash Serpon Sirocco");
+		WILL = reg("indomitable_will", () -> new SpellModifier(StatFilterType.MASS, 3, OtherSpellType.JEROTESVILLAGE_INDOMITABLE_WILL, lv -> lv + 2), "Unleash Indomitable Will");
 
 		ITEM_VILLAGE = regUpgradeImpl("greedy", () -> GREEDY, 1, false, JerotesGolems.MODID).lang("Jerotes Upgrade: Carved Nature").register();
 		ITEM_ABACK = regUpgradeImpl("aback", () -> ABACK, 1, false, JerotesGolems.MODID).lang("Jerotes Upgrade: Shock Sight ").register();
@@ -73,6 +74,7 @@ public class JGModifiers {
 		ITEM_CORROSIVER = regUpgradeImpl("corrosiver", () -> CORROSIVER, 1, false, JerotesGolems.MODID).lang("Jerotes Spell Upgrade: Corrosive Breath").register();
 		ITEM_MALIGNASAUR = regUpgradeImpl("gemstone_malignasaur", () -> MALIGNASAUR, 1, false, JerotesGolems.MODID).lang("Jerotes Spell Upgrade: Ocean Current Breath").register();
 		ITEM_SERPON = regUpgradeImpl("serpon", () -> SERPON, 1, false, JerotesGolems.MODID).lang("Jerotes Spell Upgrade: Serpon Sirocco").register();
+		ITEM_WILL = regUpgradeImpl("mountain_realm", () -> WILL, 1, false, JerotesGolems.MODID).lang("Jerotes Spell Upgrade: Indomitable Will").register();
 
 	}
 

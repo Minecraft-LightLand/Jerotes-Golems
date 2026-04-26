@@ -36,7 +36,8 @@
       "modulargolems:magic_immune": 1
     },
     "jerotes_village_golems:serpon_alloy": {
-      "jerotes_village_golems:fire_affinity": 1
+      "jerotes_village_golems:fire_affinity": 1,
+      "jerotes_village_golems:serpon_sirocco": 1
     },
     "jerotes_village_golems:villager_metal": {
       "jerotes_village_golems:greedy": 1,
