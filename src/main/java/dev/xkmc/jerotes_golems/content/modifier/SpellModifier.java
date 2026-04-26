@@ -15,9 +15,11 @@ public class SpellModifier extends GolemModifier {
 
 	private final OtherSpellType spell;
 	private final Int2IntFunction levelMap;
+	private final int range;
 
-	public SpellModifier(StatFilterType type, int maxLevel, OtherSpellType spell, Int2IntFunction levelMap) {
+	public SpellModifier(StatFilterType type, int maxLevel, int range, OtherSpellType spell, Int2IntFunction levelMap) {
 		super(type, maxLevel);
+		this.range = range;
 		this.spell = spell;
 		this.levelMap = levelMap;
 	}
@@ -30,7 +32,7 @@ public class SpellModifier extends GolemModifier {
 	public class SpellAttackGoal extends BaseRangedAttackGoal {
 
 		public SpellAttackGoal(AbstractGolemEntity<?, ?> golem, int lv) {
-			super(100, 0, 25, golem, lv);
+			super(100, 0, range, golem, lv);
 		}
 
 		@Override
