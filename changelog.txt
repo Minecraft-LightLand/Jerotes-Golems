@@ -1,2 +1,8 @@
+0.2.1
+- Trial golems are not in the same team as Jerotes fractions
+- Add recipe to ultimate spear
+- Add 4 more boss upgrades
+- Fix some upgrade descriptions and effects
+
 0.2.0
 - Initial Release
