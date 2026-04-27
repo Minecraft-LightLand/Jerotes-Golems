@@ -40,7 +40,8 @@ public class JGModifiers {
 	public static final RegistryEntry<ProsperousEnvoyModifier> PROSPEROUS_ENVOY;
 	public static final RegistryEntry<PotionDefenseModifier> RAMPANT;
 
-	public static final RegistryEntry<SpellModifier> CORROSIVER, MALIGNASAUR, SERPON, WILL;
+	public static final RegistryEntry<SpellModifier> CORROSIVER, SERPON, WILL;
+	public static final RegistryEntry<MultiTargetSpellModifier> MALIGNASAUR;
 
 	public static final ItemEntry<SimpleUpgradeItem> ITEM_VILLAGE, ITEM_ABACK, ITEM_RAMPANT,
 			ITEM_SEDIMENT, ITEM_PURPLE_SAND, ITEM_PROSPEROUS_ENVOY,
@@ -60,7 +61,7 @@ public class JGModifiers {
 		RAMPANT = reg("rampant", () -> new PotionDefenseModifier(1, () -> JerotesVillageMobEffects.RAMPANT.get()), null);
 
 		CORROSIVER = reg("corrosive_breath", () -> new SpellModifier(StatFilterType.MASS, 3, 25, OtherSpellType.JEROTESVILLAGE_CORROSIVE_BREATH, lv -> lv + 2), "Unleash corrosive breath");
-		MALIGNASAUR = reg("ocean_current_breath", () -> new SpellModifier(StatFilterType.MASS, 3, 25, OtherSpellType.JEROTESVILLAGE_OCEAN_CURRENT_BREATH, lv -> lv + 2), "Unleash ocean current breath");
+		MALIGNASAUR = reg("ocean_current_breath", () -> new MultiTargetSpellModifier(StatFilterType.MASS, 3, 25, 5, OtherSpellType.JEROTESVILLAGE_OCEAN_CURRENT_BREATH), "Unleash ocean current breath");
 		SERPON = reg("serpon_sirocco", () -> new SpellModifier(StatFilterType.MASS, 4, 15, OtherSpellType.JEROTESVILLAGE_SERPON_SIROCCO, lv -> lv), "Unleash Serpon Sirocco");
 		WILL = reg("indomitable_will", () -> new SpellModifier(StatFilterType.MASS, 1, 15, OtherSpellType.JEROTESVILLAGE_INDOMITABLE_WILL, lv -> lv + 3), "Unleash Indomitable Will");
 

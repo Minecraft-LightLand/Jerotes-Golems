@@ -91,5 +91,17 @@
 	"modifier.jerotes_village_golems.purple_sand.desc": "受到的魔法伤害减少%s%%，随后获得魔法吸收效果",
 	"modifier.jerotes_village_golems.rampant": "嚣张",
 	"modifier.jerotes_village_golems.sediment_lord": "沉降领主",
-	"modifier.jerotes_village_golems.sediment_lord.desc": "受到来自亡灵生物的伤害减少%s%%。免疫凋零伤害"
+	"modifier.jerotes_village_golems.sediment_lord.desc": "受到来自亡灵生物的伤害减少%s%%。免疫凋零伤害",
+	"item.jerotes_village_golems.corrosiver": "Jerotes 法术升级: 腐蚀吐息",
+	"item.jerotes_village_golems.gemstone_malignasaur": "Jerotes 法术升级: 洋流吐息",
+	"item.jerotes_village_golems.mountain_realm": "Jerotes 法术升级: 不屈意志",
+	"item.jerotes_village_golems.serpon": "Jerotes 法术升级:蛇龙热风术 ",
+	"modifier.jerotes_village_golems.corrosive_breath": "腐蚀吐息",
+	"modifier.jerotes_village_golems.corrosive_breath.desc": "发射腐蚀吐息",
+	"modifier.jerotes_village_golems.indomitable_will": "不屈意志",
+	"modifier.jerotes_village_golems.indomitable_will.desc": "触发不屈意志",
+	"modifier.jerotes_village_golems.ocean_current_breath": "洋流吐息",
+	"modifier.jerotes_village_golems.ocean_current_breath.desc": "发射洋流吐息",
+	"modifier.jerotes_village_golems.serpon_sirocco": "蛇龙热风术",
+	"modifier.jerotes_village_golems.serpon_sirocco.desc": "释放蛇龙热风术"
 }

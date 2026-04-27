@@ -29,8 +29,9 @@ public class BitterColdAxe extends MetalGolemWeaponItem implements IDamageListen
 		if (target.getTicksFrozen() < 280) {
 			target.setTicksFrozen(280);
 		}
-		target.addEffect(new MobEffectInstance(JerotesMobEffects.CORROSIVE.get(), 100));
+		target.addEffect(new MobEffectInstance(JerotesMobEffects.CORROSIVE.get(), 100, 2));
 		target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 3));
+		target.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100, 2));
 	}
 
 	public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
