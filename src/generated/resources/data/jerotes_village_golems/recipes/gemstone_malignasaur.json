@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "modulargolems:empty_upgrade"
+    },
+    {
+      "item": "jerotesvillage:malignasaur_teeth"
+    }
+  ],
+  "result": {
+    "item": "jerotes_village_golems:gemstone_malignasaur"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "jerotes_village_golems:ultimate_energy_regime"
+  },
+  "base": {
+    "item": "jerotes_village_golems:refine_meror_golem_spear"
+  },
+  "result": {
+    "item": "jerotes_village_golems:ultimate_meror_spear"
+  },
+  "template": {
+    "item": "jerotesvillage:meror_standard_upgrade_smithing_template"
+  }
+}

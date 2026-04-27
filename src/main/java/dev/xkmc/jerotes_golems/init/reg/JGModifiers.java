@@ -61,8 +61,8 @@ public class JGModifiers {
 
 		CORROSIVER = reg("corrosive_breath", () -> new SpellModifier(StatFilterType.MASS, 3, 25, OtherSpellType.JEROTESVILLAGE_CORROSIVE_BREATH, lv -> lv + 2), "Unleash corrosive breath");
 		MALIGNASAUR = reg("ocean_current_breath", () -> new SpellModifier(StatFilterType.MASS, 3, 25, OtherSpellType.JEROTESVILLAGE_OCEAN_CURRENT_BREATH, lv -> lv + 2), "Unleash ocean current breath");
-		SERPON = reg("serpon_sirocco", () -> new SpellModifier(StatFilterType.MASS, 5, 15, OtherSpellType.JEROTESVILLAGE_SERPON_SIROCCO, lv -> lv), "Unleash Serpon Sirocco");
-		WILL = reg("indomitable_will", () -> new SpellModifier(StatFilterType.MASS, 3, 15, OtherSpellType.JEROTESVILLAGE_INDOMITABLE_WILL, lv -> lv + 2), "Unleash Indomitable Will");
+		SERPON = reg("serpon_sirocco", () -> new SpellModifier(StatFilterType.MASS, 4, 15, OtherSpellType.JEROTESVILLAGE_SERPON_SIROCCO, lv -> lv), "Unleash Serpon Sirocco");
+		WILL = reg("indomitable_will", () -> new SpellModifier(StatFilterType.MASS, 1, 15, OtherSpellType.JEROTESVILLAGE_INDOMITABLE_WILL, lv -> lv + 3), "Unleash Indomitable Will");
 
 		ITEM_VILLAGE = regUpgradeImpl("greedy", () -> GREEDY, 1, false, JerotesGolems.MODID).lang("Jerotes Upgrade: Carved Nature").register();
 		ITEM_ABACK = regUpgradeImpl("aback", () -> ABACK, 1, false, JerotesGolems.MODID).lang("Jerotes Upgrade: Shock Sight ").register();
