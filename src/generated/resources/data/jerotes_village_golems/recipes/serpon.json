@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "modulargolems:empty_upgrade"
+    },
+    {
+      "item": "jerotesvillage:serpon_combat_executer_medal"
+    }
+  ],
+  "result": {
+    "item": "jerotes_village_golems:serpon"
+  }
+}

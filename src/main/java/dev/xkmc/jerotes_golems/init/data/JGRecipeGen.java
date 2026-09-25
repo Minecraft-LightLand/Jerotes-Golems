@@ -126,6 +126,30 @@ public class JGRecipeGen {
 					.requires(JerotesVillageItems.PROSPEROUS_ENVOY_FLOWER.get())
 					.save(pvd);
 
+			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, JGModifiers.ITEM_CORROSIVER.get(),
+					1)::unlockedBy, JerotesVillageItems.CORROSIVER_CLAW.get())
+					.requires(GolemItems.EMPTY_UPGRADE.get())
+					.requires(JerotesVillageItems.CORROSIVER_CLAW.get())
+					.save(pvd);
+
+			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, JGModifiers.ITEM_MALIGNASAUR.get(),
+					1)::unlockedBy, JerotesVillageItems.MALIGNASAUR_TEETH.get())
+					.requires(GolemItems.EMPTY_UPGRADE.get())
+					.requires(JerotesVillageItems.MALIGNASAUR_TEETH.get())
+					.save(pvd);
+
+			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, JGModifiers.ITEM_SERPON.get(),
+					1)::unlockedBy, JerotesVillageItems.SERPON_COMBAT_EXECUTER_MEDAL.get())
+					.requires(GolemItems.EMPTY_UPGRADE.get())
+					.requires(JerotesVillageItems.SERPON_COMBAT_EXECUTER_MEDAL.get())
+					.save(pvd);
+
+			unlock(pvd, ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, JGModifiers.ITEM_WILL.get(),
+					1)::unlockedBy, JerotesVillageItems.TYRANT_OF_THE_MOUNTAIN_REALM_HELMET_PLUME.get())
+					.requires(GolemItems.EMPTY_UPGRADE.get())
+					.requires(JerotesVillageItems.TYRANT_OF_THE_MOUNTAIN_REALM_HELMET_PLUME.get())
+					.save(pvd);
+
 		}
 
 		// misc
@@ -271,6 +295,14 @@ public class JGRecipeGen {
 							RecipeCategory.COMBAT, JGItems.SPECIAL_WEAPONS[JGSpecialMaterial.WONDERLAND_BLADE.ordinal()].get())::unlocks,
 					GolemItems.METALGOLEM_WEAPON[GolemWeaponType.SWORD.ordinal()][VanillaGolemWeaponMaterial.DIAMOND.ordinal()].get())
 					.save(pvd, JGItems.SPECIAL_WEAPONS[JGSpecialMaterial.WONDERLAND_BLADE.ordinal()].getId());
+
+			unlock(pvd, SmithingTransformRecipeBuilder.smithing(
+							Ingredient.of(JerotesVillageItems.MEROR_STANDARD_UPGRADE_SMITHING_TEMPLATE.get()),
+							Ingredient.of(JGItems.WEAPONS[GolemWeaponType.SPEAR.ordinal()][JGWeaponMaterial.REFINE_MEROR.ordinal()].get()),
+							Ingredient.of(JGItems.ULTIMATE_ENERGY_REGIME.get()),
+							RecipeCategory.COMBAT, JGItems.ULTIMATE_MEROR_SPEAR.get())::unlocks,
+					JGItems.ULTIMATE_ENERGY_REGIME.get())
+					.save(pvd, JGItems.ULTIMATE_MEROR_SPEAR.getId());
 		}
 	}
 

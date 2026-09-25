@@ -25,8 +25,7 @@ public class PurpleSandModifier extends GolemModifier {
 	@Override
 	public void onDamaged(AttackCache cache, AbstractGolemEntity<?, ?> entity, int level) {
 		var event = cache.getLivingDamageEvent();
-		var attacker = cache.getAttacker();
-		if (event == null || attacker == null) return;
+		if (event == null) return;
 		var source = event.getSource();
 		if (source.is(DamageTypeTags.BYPASSES_INVULNERABILITY) || source.is(DamageTypeTags.BYPASSES_EFFECTS))
 			return;
