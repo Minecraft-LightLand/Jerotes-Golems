@@ -229,7 +229,7 @@ dependencies {
     compileOnly fg.deobf("curse.maven:architectury-api-419699:5137938")
 
     implementation fg.deobf("curse.maven:jerotes-warehouse-1249728:7633801")
-    implementation fg.deobf("curse.maven:jerotes-village-1004844:7633938")
+    implementation fg.deobf("curse.maven:jerotes-village-1004844:8898824")
 
 }
 

@@ -59,7 +59,7 @@ public class JGModifiers {
 		PROSPEROUS_ENVOY = reg("prosperous_envoy", () -> new ProsperousEnvoyModifier(StatFilterType.MASS, 3), "On attack, stack %s seconds of Anesthetized effect per point of damage on target");
 		RAMPANT = reg("rampant", () -> new PotionDefenseModifier(1, () -> JerotesVillageMobEffects.RAMPANT.get()), null);
 
-		CORROSIVER = reg("corrosive_breath", () -> new SpellModifier(StatFilterType.MASS, 3, 25, OtherSpellType.JEROTESVILLAGE_CORROSIVE_BREATH, lv -> lv + 2), "Unleash corrosive breath");
+		CORROSIVER = reg("corrosive_breath", () -> new SpellModifier(StatFilterType.MASS, 3, 25, OtherSpellType.JEROTESVILLAGE_CORROSIVER_BREATH, lv -> lv + 2), "Unleash corrosive breath");
 		MALIGNASAUR = reg("ocean_current_breath", () -> new SpellModifier(StatFilterType.MASS, 3, 25, OtherSpellType.JEROTESVILLAGE_OCEAN_CURRENT_BREATH, lv -> lv + 2), "Unleash ocean current breath");
 		SERPON = reg("serpon_sirocco", () -> new SpellModifier(StatFilterType.MASS, 5, 15, OtherSpellType.JEROTESVILLAGE_SERPON_SIROCCO, lv -> lv), "Unleash Serpon Sirocco");
 		WILL = reg("indomitable_will", () -> new SpellModifier(StatFilterType.MASS, 3, 15, OtherSpellType.JEROTESVILLAGE_INDOMITABLE_WILL, lv -> lv + 2), "Unleash Indomitable Will");
