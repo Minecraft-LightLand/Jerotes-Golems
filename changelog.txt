@@ -1,3 +1,6 @@
+0.2.2
+- Update compat to
+
 0.2.1
 - Trial golems are not in the same team as Jerotes fractions
 - Add recipe to ultimate spear
